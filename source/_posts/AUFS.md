@@ -61,7 +61,7 @@ AUFS是一种联合文件系统 (Union File System, UnionFS, UFS)。AUFS又叫An
 
 正因为此种结构，Docker在从Registry处pull Image时是以“pulling fs layer”这样一层一层的方式下载。这里下载的每一层都是某个镜像开发者在前一层上创建的虚拟磁盘。
 
-![Docker里的AUFS](_/AUFS和Docker.png)
+![Docker里的AUFS](/images/Docker/AUFS和Docker.png)
 
 上图是一个典型的Apache服务器容器结构，在最下面的Kernel是Docker外面的操作系统内核，最底层的Image是Debian，上层的Image依次添加了emacs和Apache，最上层的writable部分即是正在运行的可读写的容器。
 
