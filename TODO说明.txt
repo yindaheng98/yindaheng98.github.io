@@ -1,3 +1,0 @@
-把要添加的图片文件夹放入source/images/XXX文件夹中
-将所有的图片引用TTT/XXXX.png改为/images/XXX/TTT/XXXX.png
-不可以带下划线_
