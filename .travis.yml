@@ -5,7 +5,7 @@ node_js:
 cache: npm
 branches:
   only:
-    - source # build master branch only
+    - master # build master branch only
 script:
   - cp -r source/_posts/. source
   - hexo generate # generate static files
