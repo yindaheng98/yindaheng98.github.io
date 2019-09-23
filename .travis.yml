@@ -9,8 +9,5 @@ branches:
 script:
   - cp -r source/_posts/. source
   - hexo generate # generate static files
-deploy:
-  provider: script
-  script: bash deploy.sh $GH_TOKEN
-  on:
-    branch: master
+after_script:
+  - bash deploy.sh $GH_TOKEN
