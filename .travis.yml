@@ -10,10 +10,7 @@ script:
   - cp -r source/_posts/. source
   - hexo generate # generate static files
 deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GH_TOKEN
-  keep-history: true
+  provider: script
+  script: bash deploy.sh $GH_TOKEN
   on:
     branch: master
-  local-dir: public
