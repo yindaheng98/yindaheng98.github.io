@@ -1,3 +1,8 @@
+---
+title: Redis简介
+date: 2019-08-20 15:39
+tags: 分布式,Redis
+---
 # Redis
 
 [推荐Blog](https://www.cnblogs.com/bigben0123/p/9115597.html)
@@ -12,7 +17,7 @@
 
 ## I/O多路复用机制是什么
 
-![多路复用](_/多路复用.jpg)
+![多路复用](i/多路复用.jpg)
 
 * 一个多路复用程序监听端口
 * 多个请求连接到达时，通过跟踪多个socket的状态控制多个IO操作

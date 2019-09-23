@@ -1,4 +1,9 @@
-# 在mattrayner/docker-lamp的1804版里加vsftpd
+---
+title: 如何在mattrayner/docker-lamp的1804版里加vsftpd
+date: 2019-04-17 17:03
+tags: Docker,Dockerfile,运用
+---
+# 如何在mattrayner/docker-lamp的1804版里加vsftpd
 
 ## 在Dockerfile里面
 

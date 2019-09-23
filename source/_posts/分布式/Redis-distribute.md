@@ -1,3 +1,8 @@
+---
+title: Redis中的分布式
+date: 2019-08-20 22:52
+tags: 分布式,Redis
+---
 # Redis中的分布式
 
 ## 复制

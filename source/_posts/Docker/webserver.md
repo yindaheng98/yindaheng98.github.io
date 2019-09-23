@@ -1,3 +1,8 @@
+---
+title: 如何在Ubuntu上整一个LAMP
+date: 2019-04-16 20:36
+tags: 配置服务器,运用
+---
 # 如何在Ubuntu上整一个LAMP
 
 二话不说先装个vim换源👇（docker上的ubuntu没有预装vim还要自己下😅

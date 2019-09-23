@@ -1,4 +1,9 @@
-# docker-compose笔记
+---
+title: docker-compose的使用方法
+date: 2019-04-25 22:56
+tags: Docker,docker-compose,运用
+---
+# docker-compose的使用方法
 
 [先来一个讲的比较好的博文](https://www.jianshu.com/p/658911a8cff3)
 

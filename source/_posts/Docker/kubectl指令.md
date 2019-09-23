@@ -1,3 +1,8 @@
+---
+title: kubectl指令
+date: 2019-09-19 16:55
+tags: Docker,k8s,kubectl,运用
+---
 # kubectl指令
 
 ## 与docker指令功能类似的在kubectl指令

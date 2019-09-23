@@ -1,4 +1,9 @@
-# Apache2反向代理
+---
+title: Apache2反向代理的配置方法
+date: 2019-05-06 21:58
+tags: 配置服务器,运用
+---
+# Apache2反向代理的配置方法
 
 ——基于mattrayner/lamp:latest-1804
 

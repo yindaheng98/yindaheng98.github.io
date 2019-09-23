@@ -103,3 +103,8 @@ local_search:
 highlight_theme: night bright
 code_copy:
     enable: true
+
+#目录
+toc:
+  maxDepth: 3
+  slugify: false
