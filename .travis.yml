@@ -6,6 +6,9 @@ cache: npm
 branches:
   only:
     - source # build master branch only
+install:
+  - npm install
+  - npm install hexo-deployer-git --save
 script:
   - cp -r source/_posts/. source
   - hexo generate # generate static files
