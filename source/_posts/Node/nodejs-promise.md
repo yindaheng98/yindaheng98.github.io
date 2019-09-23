@@ -1,3 +1,8 @@
+---
+title:  nodejs中的Promise对象
+
+date: 2019-09-23 08:05:38
+---
 # nodejs中的Promise对象
 
 `Promise`是一种有三个状态的对象（“执行中`pending`”、“完成`resolve`”、“失败`reject`”），构造`Promise`对象时的构造函数参数是一个有两个参数的函数，这个函数的两个参数分别对应着`Promise`对象到达两个终点状态`resolve`或`reject`时要调用的函数。

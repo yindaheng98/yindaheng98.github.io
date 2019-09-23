@@ -1,7 +1,7 @@
 ---
-title: AUFS技术
-date: 2019-09-05 22:43
-tags: Docker,操作系统,思想
+title:  AUFS技术
+
+date: 2019-09-23 08:05:38
 ---
 # AUFS技术
 

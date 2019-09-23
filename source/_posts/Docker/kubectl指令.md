@@ -1,7 +1,7 @@
 ---
-title: kubectl指令
-date: 2019-09-19 16:55
-tags: Docker,k8s,kubectl,运用
+title:  kubectl指令
+
+date: 2019-09-23 08:05:38
 ---
 # kubectl指令
 

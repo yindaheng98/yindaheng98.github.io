@@ -1,7 +1,7 @@
 ---
-title: Kubernetes(k8s)介绍
-date: 2019-09-19 10:04
-tags: Docker,k8s,架构,思想
+title:  Kubernetes(k8s)介绍
+
+date: 2019-09-23 08:05:38
 ---
 # Kubernetes(k8s)介绍
 

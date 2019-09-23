@@ -1,7 +1,7 @@
 ---
-title: 如何在Ubuntu上整一个LAMP
-date: 2019-04-16 20:36
-tags: 配置服务器,运用
+title:  如何在Ubuntu上整一个LAMP
+
+date: 2019-09-23 08:05:38
 ---
 # 如何在Ubuntu上整一个LAMP
 
