@@ -1,7 +1,7 @@
 ---
+date: 2019-05-09 23:52:32
 title:  nodejs中的Promise对象
-
-date: 2019-09-23 08:05:38
+tags: Node
 ---
 # nodejs中的Promise对象
 

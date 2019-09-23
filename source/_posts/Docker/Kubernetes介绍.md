@@ -1,7 +1,7 @@
 ---
+date: 2019-09-23 14:22:53
 title:  Kubernetes(k8s)介绍
-
-date: 2019-09-23 08:05:38
+tags: Docker
 ---
 # Kubernetes(k8s)介绍
 

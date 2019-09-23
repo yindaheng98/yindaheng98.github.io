@@ -1,7 +1,7 @@
 ---
+date: 2019-09-12 11:43:14
 title:  OSGi
-
-date: 2019-09-23 08:05:38
+tags: Java
 ---
 # OSGi
 

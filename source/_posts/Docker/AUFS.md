@@ -1,7 +1,7 @@
 ---
+date: 2019-09-23 14:21:50
 title:  AUFS技术
-
-date: 2019-09-23 08:05:38
+tags: Docker
 ---
 # AUFS技术
 

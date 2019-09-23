@@ -1,7 +1,7 @@
 ---
+date: 2019-09-23 14:22:44
 title:  kubectl指令
-
-date: 2019-09-23 08:05:38
+tags: Docker
 ---
 # kubectl指令
 
