@@ -9,5 +9,4 @@ branches:
 script:
   - cp -r source/_posts/. source
   - hexo generate # generate static files
-after_script:
   - bash deploy.sh $GH_TOKEN
