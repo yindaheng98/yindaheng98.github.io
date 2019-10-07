@@ -1,8 +1,10 @@
 ---
 title:  kubectl指令
 date: 2019-09-23 14:22:44
-tags: Docker
-categories: Docker
+tags: 
+ - Docker
+categories: 
+ - Docker
 ---
 # kubectl指令
 
