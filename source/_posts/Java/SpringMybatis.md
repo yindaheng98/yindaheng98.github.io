@@ -1,8 +1,10 @@
 ---
 title:  Mybatis
 date: 2019-09-12 22:33:23
-tags: Java
-categories: Java
+tags: 
+ - Java
+categories: 
+ - Java
 ---
 # Mybatis
 

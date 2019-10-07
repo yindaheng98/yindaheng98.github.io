@@ -1,8 +1,10 @@
 ---
 title:  mattrayner/docker-lamp的1804版的dockerfile解读
 date: 2019-09-23 14:22:13
-tags: Docker
-categories: Docker
+tags: 
+ - Docker
+categories: 
+ - Docker
 ---
 # mattrayner/docker-lamp的1804版的dockerfile解读
 

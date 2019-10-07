@@ -1,8 +1,10 @@
 ---
 title:  Spring使用笔记
 date: 2019-09-12 22:06:42
-tags: Java
-categories: Java
+tags: 
+ - Java
+categories: 
+ - Java
 ---
 # Spring使用笔记
 
