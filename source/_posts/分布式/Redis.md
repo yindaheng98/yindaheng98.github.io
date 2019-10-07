@@ -1,8 +1,8 @@
 ---
 title:  Redis
-date: 2019-10-07 09:20:06
-tags: 
-categories: 
+date: 2019-09-23 14:25:52
+tags: 分布式
+categories: 分布式
 ---
 # Redis
 

@@ -1,8 +1,8 @@
 ---
 title:  自我介绍
-date: 2019-10-07 09:20:06
-tags: 
-categories: 
+date: 2019-09-10 23:26:44
+tags: 面试,校内推免面试
+categories: 面试,校内推免面试
 ---
 # 自我介绍
 

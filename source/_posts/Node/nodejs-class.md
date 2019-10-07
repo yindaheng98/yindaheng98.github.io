@@ -1,8 +1,8 @@
 ---
 title:  nodejs模块化（类和对象）
-date: 2019-10-07 09:20:06
-tags: 
-categories: 
+date: 2019-04-24 10:06:00
+tags: Node
+categories: Node
 ---
 # nodejs模块化（类和对象）
 

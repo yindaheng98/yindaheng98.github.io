@@ -1,8 +1,8 @@
 ---
 title:  REST和RESTful API
-date: 2019-10-07 09:20:06
-tags: 
-categories: 
+date: 2019-09-23 14:24:22
+tags: Java
+categories: Java
 ---
 # REST和RESTful API
 

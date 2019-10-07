@@ -1,8 +1,8 @@
 ---
 title:  OSGi
-date: 2019-10-07 09:20:06
-tags: 
-categories: 
+date: 2019-09-12 11:43:14
+tags: Java
+categories: Java
 ---
 # OSGi
 
