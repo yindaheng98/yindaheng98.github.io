@@ -1,7 +1,8 @@
 ---
-date: 2019-09-23 14:23:26
 title:  Apache2反向代理的配置方法
+date: 2019-09-23 14:23:26
 tags: Docker
+categories: Docker
 ---
 # Apache2反向代理的配置方法
 

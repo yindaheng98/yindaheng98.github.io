@@ -1,7 +1,8 @@
 ---
-date: 2019-09-12 17:57:43
 title:  Spring Cloud
+date: 2019-09-12 17:57:43
 tags: Java
+categories: Java
 ---
 # Spring Cloud
 

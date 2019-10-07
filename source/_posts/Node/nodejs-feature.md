@@ -1,7 +1,8 @@
 ---
-date: 2019-09-23 14:25:21
 title:  nodejs重要特性
+date: 2019-09-23 14:25:21
 tags: Node
+categories: Node
 ---
 # nodejs重要特性
 

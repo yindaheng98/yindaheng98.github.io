@@ -1,7 +1,8 @@
 ---
-date: 2019-08-21 15:32:37
 title:  AWS
+date: 2019-08-21 15:32:37
 tags: 云计算
+categories: 云计算
 ---
 # AWS
 

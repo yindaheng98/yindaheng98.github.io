@@ -1,7 +1,8 @@
 ---
-date: 2019-09-24 16:44:09
 title:  Cassandra简介
+date: 2019-09-24 16:44:09
 tags: 数据库
+categories: 数据库
 ---
 # Cassandra简介
 

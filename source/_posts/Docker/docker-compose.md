@@ -1,7 +1,8 @@
 ---
-date: 2019-09-23 14:22:23
 title:  docker-compose的使用方法
+date: 2019-09-23 14:22:23
 tags: Docker
+categories: Docker
 ---
 # docker-compose的使用方法
 
