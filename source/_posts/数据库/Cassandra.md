@@ -3,6 +3,8 @@ title:  Cassandra简介
 date: 2019-09-24 16:44:09
 tags: 
  - 数据库
+ - 原理
+ - 工具
 categories: 
  - 数据库
 ---

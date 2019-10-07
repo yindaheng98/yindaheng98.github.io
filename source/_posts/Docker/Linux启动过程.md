@@ -3,6 +3,8 @@ title:  Linux系统的启动过程
 date: 2019-09-23 14:23:15
 tags: 
  - Docker
+ - 操作系统
+ - 原理
 categories: 
  - Docker
 ---

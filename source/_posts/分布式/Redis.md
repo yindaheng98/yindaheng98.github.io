@@ -3,6 +3,8 @@ title:  Redis
 date: 2019-09-23 14:25:52
 tags: 
  - 分布式
+ - 工具
+ - 原理
 categories: 
  - 分布式
 ---
