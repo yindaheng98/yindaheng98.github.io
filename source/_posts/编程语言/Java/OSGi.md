@@ -5,6 +5,8 @@ tags:
  - Java
  - 编程思想
 categories: 
+ - 编程语言
+ - Java
 ---
 # OSGi
 

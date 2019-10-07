@@ -6,6 +6,7 @@ tags:
  - 原理
  - 工具
 categories: 
+ - 数据库
 ---
 # Cassandra简介
 

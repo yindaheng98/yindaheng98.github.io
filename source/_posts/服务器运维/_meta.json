@@ -6,7 +6,9 @@
             "服务器运维",
             "实践"
         ],
-        "categories": []
+        "categories": [
+            "服务器运维"
+        ]
     },
     "webserver.md": {
         "title": " 如何在Ubuntu上整一个LAMP",
@@ -15,6 +17,8 @@
             "服务器运维",
             "实践"
         ],
-        "categories": []
+        "categories": [
+            "服务器运维"
+        ]
     }
 }

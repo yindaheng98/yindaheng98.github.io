@@ -6,6 +6,7 @@ tags:
  - 工具
  - 原理
 categories: 
+ - 分布式
 ---
 # Redis中的分布式
 

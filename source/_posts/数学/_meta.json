@@ -5,7 +5,9 @@
         "tags": [
             "数学"
         ],
-        "categories": []
+        "categories": [
+            "数学"
+        ]
     },
     "算法.md": {
         "title": " 算法笔记",
@@ -13,6 +15,8 @@
         "tags": [
             "数学"
         ],
-        "categories": []
+        "categories": [
+            "数学"
+        ]
     }
 }

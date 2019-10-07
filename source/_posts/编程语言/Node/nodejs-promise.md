@@ -6,6 +6,8 @@ tags:
  - 编程工具
  - 编程思想
 categories: 
+ - 编程语言
+ - Node
 ---
 # nodejs中的Promise对象
 

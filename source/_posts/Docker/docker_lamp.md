@@ -7,6 +7,7 @@ tags:
  - Dockerfile
  - 服务器运维
 categories: 
+ - Docker
 ---
 # mattrayner/docker-lamp的1804版的dockerfile解读
 

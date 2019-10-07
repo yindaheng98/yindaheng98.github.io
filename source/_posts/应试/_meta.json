@@ -5,7 +5,9 @@
         "tags": [
             "应试"
         ],
-        "categories": []
+        "categories": [
+            "应试"
+        ]
     },
     "self-intro.md": {
         "title": " 自我介绍",
@@ -13,7 +15,9 @@
         "tags": [
             "应试"
         ],
-        "categories": []
+        "categories": [
+            "应试"
+        ]
     },
     "vocabulary.md": {
         "title": " 一些重要词汇",
@@ -21,7 +25,9 @@
         "tags": [
             "应试"
         ],
-        "categories": []
+        "categories": [
+            "应试"
+        ]
     },
     "上机.md": {
         "title": " 对上机有用的一些Tips",
@@ -29,7 +35,9 @@
         "tags": [
             "应试"
         ],
-        "categories": []
+        "categories": [
+            "应试"
+        ]
     },
     "笔记.md": {
         "title": " 面试笔记",
@@ -37,6 +45,8 @@
         "tags": [
             "应试"
         ],
-        "categories": []
+        "categories": [
+            "应试"
+        ]
     }
 }

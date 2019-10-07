@@ -6,7 +6,10 @@
             "Node",
             "编程思想"
         ],
-        "categories": []
+        "categories": [
+            "编程语言",
+            "Node"
+        ]
     },
     "nodejs-express.md": {
         "title": " nodejs-express",
@@ -16,7 +19,10 @@
             "编程工具",
             "框架"
         ],
-        "categories": []
+        "categories": [
+            "编程语言",
+            "Node"
+        ]
     },
     "nodejs-feature.md": {
         "title": " nodejs重要特性",
@@ -25,7 +31,10 @@
             "Node",
             "编程工具"
         ],
-        "categories": []
+        "categories": [
+            "编程语言",
+            "Node"
+        ]
     },
     "nodejs-install.md": {
         "title": " Nodejs学习",
@@ -34,7 +43,10 @@
             "Node",
             "编程工具"
         ],
-        "categories": []
+        "categories": [
+            "编程语言",
+            "Node"
+        ]
     },
     "nodejs-promise.md": {
         "title": " nodejs中的Promise对象",
@@ -44,6 +56,9 @@
             "编程工具",
             "编程思想"
         ],
-        "categories": []
+        "categories": [
+            "编程语言",
+            "Node"
+        ]
     }
 }

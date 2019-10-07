@@ -6,6 +6,7 @@ tags:
  - 原理
  - 操作系统
 categories: 
+ - Docker
 ---
 # AUFS技术
 

@@ -6,7 +6,9 @@
             "分布式",
             "原理"
         ],
-        "categories": []
+        "categories": [
+            "分布式"
+        ]
     },
     "Redis-distribute.md": {
         "title": " Redis中的分布式",
@@ -16,7 +18,9 @@
             "工具",
             "原理"
         ],
-        "categories": []
+        "categories": [
+            "分布式"
+        ]
     },
     "Redis.md": {
         "title": " Redis",
@@ -26,6 +30,8 @@
             "工具",
             "原理"
         ],
-        "categories": []
+        "categories": [
+            "分布式"
+        ]
     }
 }

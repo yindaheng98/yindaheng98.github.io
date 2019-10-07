@@ -5,6 +5,8 @@ tags:
  - Node
  - 编程思想
 categories: 
+ - 编程语言
+ - Node
 ---
 # nodejs模块化（类和对象）
 

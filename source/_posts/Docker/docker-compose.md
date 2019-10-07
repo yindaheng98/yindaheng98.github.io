@@ -6,6 +6,7 @@ tags:
  - 实战
  - docker-compose
 categories: 
+ - Docker
 ---
 # docker-compose的使用方法
 
