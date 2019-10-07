@@ -7,9 +7,7 @@
             "原理",
             "操作系统"
         ],
-        "categories": [
-            "Docker"
-        ]
+        "categories": []
     },
     "docker-compose.md": {
         "title": " docker-compose的使用方法",
@@ -19,9 +17,7 @@
             "实战",
             "docker-compose"
         ],
-        "categories": [
-            "Docker"
-        ]
+        "categories": []
     },
     "docker-vsftpd.md": {
         "title": " 如何在mattrayner/docker-lamp的1804版里加vsftpd",
@@ -32,9 +28,7 @@
             "Dockerfile",
             "服务器运维"
         ],
-        "categories": [
-            "Docker"
-        ]
+        "categories": []
     },
     "docker.md": {
         "title": " Docker的使用方法",
@@ -43,9 +37,7 @@
             "Docker",
             "实战"
         ],
-        "categories": [
-            "Docker"
-        ]
+        "categories": []
     },
     "docker_lamp.md": {
         "title": " mattrayner/docker-lamp的1804版的dockerfile解读",
@@ -56,9 +48,7 @@
             "Dockerfile",
             "服务器运维"
         ],
-        "categories": [
-            "Docker"
-        ]
+        "categories": []
     },
     "kubectl指令.md": {
         "title": " kubectl指令",
@@ -68,9 +58,7 @@
             "实战",
             "k8s"
         ],
-        "categories": [
-            "Docker"
-        ]
+        "categories": []
     },
     "Kubernetes介绍.md": {
         "title": " Kubernetes(k8s)介绍",
@@ -80,9 +68,7 @@
             "实战",
             "k8s"
         ],
-        "categories": [
-            "Docker"
-        ]
+        "categories": []
     },
     "Kubernetes使用.md": {
         "title": " Kubernetes(k8s)的使用方法",
@@ -92,9 +78,7 @@
             "实战",
             "k8s"
         ],
-        "categories": [
-            "Docker"
-        ]
+        "categories": []
     },
     "Linux启动过程.md": {
         "title": " Linux系统的启动过程",
@@ -104,9 +88,7 @@
             "操作系统",
             "原理"
         ],
-        "categories": [
-            "Docker"
-        ]
+        "categories": []
     },
     "原理概述.md": {
         "title": " Docker原理概述",
@@ -114,10 +96,6 @@
         "tags": [
             "Docker"
         ],
-        "categories": [
-            "Docker",
-            "操作系统",
-            "原理"
-        ]
+        "categories": []
     }
 }

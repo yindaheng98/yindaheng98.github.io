@@ -6,7 +6,6 @@ tags:
  - 实战
  - k8s
 categories: 
- - Docker
 ---
 # kubectl指令
 

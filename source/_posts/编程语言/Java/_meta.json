@@ -6,9 +6,7 @@
             "Java",
             "编程思想"
         ],
-        "categories": [
-            "Java"
-        ]
+        "categories": []
     },
     "RESTful.md": {
         "title": " REST和RESTful API",
@@ -17,9 +15,7 @@
             "Java",
             "编程思想"
         ],
-        "categories": [
-            "Java"
-        ]
+        "categories": []
     },
     "SpringCloud.md": {
         "title": " Spring Cloud",
@@ -29,9 +25,7 @@
             "编程工具",
             "Spring"
         ],
-        "categories": [
-            "Java"
-        ]
+        "categories": []
     },
     "SpringMybatis.md": {
         "title": " Mybatis",
@@ -41,9 +35,7 @@
             "编程工具",
             "Spring"
         ],
-        "categories": [
-            "Java"
-        ]
+        "categories": []
     },
     "SpringTips.md": {
         "title": " Spring使用笔记",
@@ -52,9 +44,7 @@
             "Java",
             "Spring"
         ],
-        "categories": [
-            "Java"
-        ]
+        "categories": []
     },
     "Spring基础.md": {
         "title": " Spring结构",
@@ -64,9 +54,7 @@
             "Spring",
             "编程工具"
         ],
-        "categories": [
-            "Java"
-        ]
+        "categories": []
     },
     "Spring结构.md": {
         "title": " Spring原理",
@@ -76,9 +64,7 @@
             "Spring",
             "编程工具"
         ],
-        "categories": [
-            "Java"
-        ]
+        "categories": []
     },
     "注解.md": {
         "title": " Java注解和Java反射",
@@ -88,8 +74,6 @@
             "编程工具",
             "编程思想"
         ],
-        "categories": [
-            "Java"
-        ]
+        "categories": []
     }
 }

@@ -6,7 +6,6 @@ tags:
  - 操作系统
  - 原理
 categories: 
- - Docker
 ---
 # Linux系统的启动过程
 

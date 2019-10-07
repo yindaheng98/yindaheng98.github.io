@@ -6,7 +6,6 @@ tags:
  - 实战
  - k8s
 categories: 
- - Docker
 ---
 # Kubernetes(k8s)的使用方法
 

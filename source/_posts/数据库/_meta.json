@@ -7,9 +7,7 @@
             "原理",
             "工具"
         ],
-        "categories": [
-            "数据库"
-        ]
+        "categories": []
     },
     "Cassandra.md": {
         "title": " Cassandra简介",
@@ -19,8 +17,6 @@
             "原理",
             "工具"
         ],
-        "categories": [
-            "数据库"
-        ]
+        "categories": []
     }
 }
