@@ -3,6 +3,8 @@ title:  Kubernetes(k8s)的使用方法
 date: 2019-09-23 14:23:03
 tags: 
  - Docker
+ - 实战
+ - k8s
 categories: 
  - Docker
 ---
