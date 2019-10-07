@@ -1,8 +1,8 @@
 ---
 title:  CDN的原理和实现方式
-date: 2019-09-23 14:25:45
-tags: 分布式
-categories: 分布式
+date: 2019-10-07 09:20:06
+tags: 
+categories: 
 ---
 # CDN的原理和实现方式
 <!-- ttoc -->

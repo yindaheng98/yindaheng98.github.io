@@ -1,8 +1,8 @@
 ---
 title:  一些重要词汇
-date: 2019-08-21 22:19:22
-tags: 面试
-categories: 面试
+date: 2019-10-07 09:20:06
+tags: 
+categories: 
 ---
 # 一些重要词汇
 
