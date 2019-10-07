@@ -10,10 +10,13 @@
     </div>
 
     <!-- Archive by year, display in page( archive ) -->
-    <div id="layout-archive-year" style="display: 
-        <% if(is_archive()){ %>         	
-            block">        
+    <div id="layout-archive-year" style=
+        <% if(is_archive()) { %> 
+            "display: block"
+        <% } else { %> 
+            "display: none"
         <% } %>
+        >
         
         <ul>
             <% site.posts.sort('date', 'desc').each(function(post) { %>
@@ -37,13 +40,13 @@
     </div>
 
      <!-- Archive by month, called by page( categories, tags... ) -->
-    <div id="layout-archive-month" style="display: 
+    <div id="layout-archive-month" style=
         <% if(is_archive()) { %> 
-            none"> 
+            "display: none"
         <% } else { %> 
-            block"> 
+            "display: block"
         <% } %>
-
+        >
         <% var last_year, last_month; %>
         <% page.posts.each(function(post, i){ %>
             <% 

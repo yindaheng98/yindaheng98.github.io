@@ -166,7 +166,7 @@ socialShare:
 # social
 social:
     github:
-        url: http://github.com/
+        url: http://github.com/yindaheng98
         icon: fa fa-github
     weibo:
         url: http://github.com/
@@ -195,7 +195,7 @@ cotent_author: Sariay
 # gallery_format: natural | square
 gallery_format: natural
 # one time to load 4 rows or other count, 0 to load img automatically when scrolling.(0,1,2,3,4,5,6......)
-gallery_limit: 0
+gallery_limit: 5
 # data url
 gallery_data: plugin/gallerypage/data.json
 
