@@ -1,5 +1,5 @@
 ---
-title:  OSGi
+title: OSGi
 date: 2019-09-12 11:43:14
 tags: 
  - Java

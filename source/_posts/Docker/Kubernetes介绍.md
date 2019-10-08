@@ -1,5 +1,5 @@
 ---
-title:  Kubernetes(k8s)介绍
+title: Kubernetes(k8s)介绍
 date: 2019-09-23 14:22:53
 tags: 
  - Docker
@@ -7,6 +7,7 @@ tags:
  - k8s
 categories: 
  - Docker
+cover: i/module_01_cluster.png
 ---
 # Kubernetes(k8s)介绍
 

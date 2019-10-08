@@ -1,5 +1,5 @@
 ---
-title:  Apache2反向代理的配置方法
+title: Apache2反向代理的配置方法
 date: 2019-10-07 21:05:59
 tags: 
  - 服务器运维

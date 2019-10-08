@@ -1,5 +1,5 @@
 ---
-title:  Go语言
+title: Go语言
 date: 2019-09-16 09:55:44
 tags: 
  - 编程语言

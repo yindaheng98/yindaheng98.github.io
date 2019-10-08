@@ -1,5 +1,5 @@
 ---
-title:  Redis中的分布式
+title: Redis中的分布式
 date: 2019-09-23 14:25:59
 tags: 
  - 分布式

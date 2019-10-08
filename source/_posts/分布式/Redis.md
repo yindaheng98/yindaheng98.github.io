@@ -1,5 +1,5 @@
 ---
-title:  Redis
+title: Redis
 date: 2019-09-23 14:25:52
 tags: 
  - 分布式
@@ -7,6 +7,7 @@ tags:
  - 原理
 categories: 
  - 分布式
+cover: i/多路复用.jpg
 ---
 # Redis
 

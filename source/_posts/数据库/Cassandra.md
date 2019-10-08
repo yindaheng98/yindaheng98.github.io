@@ -1,5 +1,5 @@
 ---
-title:  Cassandra简介
+title: Cassandra简介
 date: 2019-09-24 16:44:09
 tags: 
  - 数据库
@@ -7,6 +7,7 @@ tags:
  - 工具
 categories: 
  - 数据库
+cover: i/Cassandra集群.png
 ---
 # Cassandra简介
 

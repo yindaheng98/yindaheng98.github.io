@@ -1,5 +1,5 @@
 ---
-title:  模式：根据业务能力拆分
+title: 模式：根据业务能力拆分
 date: 2019-09-22 18:01:52
 tags: 
  - 翻译
@@ -7,6 +7,7 @@ tags:
  - 编程思想
 categories: 
  - 翻译
+cover: i/successtriangle.png
 ---
 # 模式：根据业务能力拆分
 

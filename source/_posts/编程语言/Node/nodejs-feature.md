@@ -1,5 +1,5 @@
 ---
-title:  nodejs重要特性
+title: nodejs重要特性
 date: 2019-09-23 14:25:21
 tags: 
  - Node
@@ -7,6 +7,7 @@ tags:
 categories: 
  - 编程语言
  - Node
+cover: i/nodejs_1.jpg
 ---
 # nodejs重要特性
 

@@ -1,5 +1,5 @@
 ---
-title:  REST和RESTful API
+title: REST和RESTful API
 date: 2019-09-23 14:24:22
 tags: 
  - Java
@@ -7,6 +7,7 @@ tags:
 categories: 
  - 编程语言
  - Java
+cover: i/RESTful图.jpg
 ---
 # REST和RESTful API
 
