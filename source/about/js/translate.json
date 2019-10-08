@@ -1,0 +1,19 @@
+{
+  "写作": "Writing",
+  "数据处理": "Data Processing",
+  "机器学习": "Machine Learning",
+  "服务器运维": "Server operation and maintenance",
+  "前端开发": "Frontend Development",
+  "后端开发": "Backend Development",
+  "本地应用程序": "Native Application",
+  "嵌入式应用": "Embedded Application",
+
+  "郭亚": "Ya Guo",
+  "江南大学，教授": "Professor, Jiangnan University",
+  "江南大学，副教授": "Associate Professor, Jiangnan University",
+
+  "WebSiteAnalysisKit": "WebSite-AnalysisKit",
+
+  "2016 至 2017 年度国家奖学金": "National Scholarship(2016-2017)",
+  "入选江南大学至善学院（Honor School）": "Admitted by Honor School of Jiangnan University"
+}

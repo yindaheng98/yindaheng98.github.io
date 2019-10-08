@@ -1,0 +1,347 @@
+---
+layout: false
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>尹达恒-主页</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/frozen.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/specialize.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body style="background: gray;padding: 30px">
+<div class="lang-tag"><a href="index_eng.html">English(建设中)</a>|<span>中文</span></div>
+
+<div class="container-fluid" id="CV">
+    <div class="row head">
+        <div class="head-side col-lg-4 col-md-4 col-sm-5 col-xs-5">
+            <img class="head-side-img" alt="picture" src="images/me.jpg">
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7" style="padding-top: 15px;">
+            <h1 style="display: inline-block">Daheng Yin&nbsp;</h1>
+            <h1 style="display: inline-block">&nbsp;尹达恒</h1>
+            <br>
+            <h4>B.Eng Student</h4>
+            <br>
+            <table>
+                <tr>
+                    <td>
+                        Major in <a href="https://en.wikipedia.org/wiki/Internet_of_things">IoT</a>(Internet of Things)
+                        <br>
+                        <a href="http://iot.jiangnan.edu.cn/">Department of IoT</a>
+                        <br>
+                        <a href="http://www.jiangnan.edu.cn/">Jiangnan University</a>
+                        <br>
+                        <br>
+                        Contact: <u> 1030616134@vip.jiangnan.edu.cn </u>
+                        <br>
+                        <u> +86 188-0057-2931 </u>
+                        <br>
+                        Github:
+                        <a href="https://github.com/yindaheng98">
+                            <img class="icon" alt="picture" src="images/github.svg">
+                        </a>
+                    </td>
+                    <td valign="top">
+                        <img style="width: 100%;" alt="picture" src="images/JNUlogo.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <section>
+        <h3 class="section-title">Self-Description</h3>
+        In 2016, I graduated from Mianyang Senior High School in my hometown Xiantao, Hubei Province and became a
+        freshman in Jiangnan University in Wuxi, Jiangsu Province. After 3 years of hardworking but colorful life, I'm a
+        Junior student and is going to graduate next year.
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title">个人特质</h3>
+        <h5>优点：</h5>
+        <p>目前代码量30000+行，具有良好的编码能力和架构能力:)</p>
+        <p>历经两个数学竞赛和两个数学建模竞赛，具有较良好的数学抽象和建模能力:)</p>
+        <p>领导完成三人以上的项目4个，合作完成三人以上的项目多个，具有较良好的合作精神和领导能力:)</p>
+        <h5>缺点</h5>
+        <p>工作狂，不善社交，不善闲聊，逢人只会讨论技术不然就会冷场:(</p>
+        <p>脑子不会拐弯，容易钻牛角尖，会不自觉地在一些不太重要的技术细节上耗费时间:(</p>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title">Learning Interests</h3>
+        I'm interested in interpretability of neural networks and human-inspired computation model.
+        I want to do research related to the foundation of human intelligent.
+    </section>
+    <br>
+
+    <section>
+        <h3 class="section-title">Education</h3>
+        <table>
+            <tbody>
+            <tr v-for="d in 教育经历">
+                <td>{{ d.时间 }}</td>
+                <td>{{ d.地点 }}</td>
+                <td>{{ d.经历 }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title">科研经历</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>时间</th>
+                <th>主要内容</th>
+                <th>指导老师</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="d in 科研经历">
+                <td>{{ d.时间 }}</td>
+                <td>{{ d.课题 }}</td>
+                <td>
+                    <div v-if="d.指导老师==null">/</div>
+                    <div v-for="t,i in d.指导老师">{{ i }}<span v-if="t!=null">（{{ t }}）</span></div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title">Projects</h3>
+        <table style="table-layout: fixed">
+            <thead>
+            <tr>
+                <th style="width: 125px">When</th>
+                <th style="width: 125px">Name</th>
+                <th style="width: 140px">Scale</th>
+                <th>Description</th>
+                <th style="width: 180px">Related Materials</th>
+                <th style="width: 165px">Adviser</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="d in 实践经历">
+                <td>{{ d.时间 }}</td>
+                <td>{{ d.项目名称 }}</td>
+                <td>
+                    {{ d.参与人数 }} participants,<br>
+                    {{ d.代码行数 }} lines code
+                </td>
+                <td>{{ d.项目内容 }}
+                    <!--
+                    <div>↓相关工具和框架↓<br>
+                        <span v-for="t in d.相关工具">/{{ t }}</span>
+                    </div>
+                    -->
+                </td>
+                <td>
+                    <div v-if="d.部署页面">
+                        Deploy Page：
+                        <a :href="d.部署页面">
+                            <img class="icon" alt="picture" src="images/web.svg">
+                        </a>
+                    </div>
+                    <div v-if="d.Github页面">
+                        Github Page：
+                        <a :href="d.Github页面">
+                            <img class="icon" alt="picture" src="images/github.svg">
+                        </a>
+                    </div>
+                    <div v-if="d.详情">
+                        Details：
+                        <a v-if="d.详情.text" :href="d.详情.text"><img class="icon" alt="picture" src="images/HTML.svg"></a>
+                        <a v-if="d.详情.ppt" :href="d.详情.ppt"><img class="icon" alt="picture" src="images/PPT.svg"></a>
+                        <a v-if="d.详情.pdf" :href="d.详情.pdf"><img class="icon" alt="picture" src="images/PDF.svg"></a>
+                    </div>
+                </td>
+                <td>
+                    <div v-if="d.指导老师">
+                        <div v-for="t,i in d.指导老师">{{ i }}<br>（{{ t }}）</div>
+                    </div>
+                    <div v-else>/</div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title">Code quantity
+            <small>(lines)</small>
+        </h3>
+        <table>
+            <thead>
+            <tr>
+                <th v-for="n,i in 代码量">{{ i }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td v-for="n,i in 代码量">{{ n }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <small>
+            Note 1：Counted by a self-made python script, lines with more than 2 characters (spaces and labels were not
+            included).<br>
+            Note 2：Files containing cooperators' code have been manually cleared, even if some of they also containing
+            my own code.<br>
+            Note 3：C/C++ was not counted for technical reasons.<br>
+            Note 4：Counted on July 20th, 2019.
+        </small>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title">Skills</h3>
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+                <th>Proficient</th>
+                <th>Competent</th>
+                <th>Beginner</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="d,i in 个人技能">
+                <td>{{ i }}</td>
+                <td>
+                    <div v-if="d[0]==null">/</div>
+                    <span v-else v-for="t in d[0]">/ {{ t }} </span>
+                </td>
+                <td>
+                    <div v-if="d[1]==null">/</div>
+                    <span v-else v-for="t in d[1]">/ {{ t }} </span>
+                </td>
+                <td>
+                    <div v-if="d[2]==null">/</div>
+                    <span v-else v-for="t in d[2]">/ {{ t }} </span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title">Awards</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>When</th>
+                <th>Award</th>
+                <th class="center-td">Link to Credit</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="d in 个人荣誉">
+                <td>{{ d.时间 }}</td>
+                <td>
+                    {{ d.荣誉 }}
+                    <small>{{ d.注释 }}</small>
+                </td>
+                <td class="center-td">
+                    <a v-if="d.证书链接" :href="d.证书链接">
+                        <img class="icon" alt="picture" src="images/credit.svg">
+                    </a>
+                    <span v-else>/</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title">Academic Competitions and Exams</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>When</th>
+                <th>Competitions / Exams</th>
+                <th>Grade</th>
+                <th class="center-td">Link to Credit</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="d in 竞赛考试经历">
+                <td>{{ d.时间 }}</td>
+                <td>{{ d.竞赛考试 }}</td>
+                <td>{{ d.成绩 }}</td>
+                <td class="center-td">
+                    <span v-if="d.证书链接==null">/</span>
+                    <a v-else :href="d.证书链接">
+                        <img class="icon" alt="picture" src="images/credit.svg">
+                    </a></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h5 class="section-title">Articles</h5>
+        <small>No publication yet</small>
+        <table>
+            <thead>
+            <tr>
+                <th>When</th>
+                <th>Title</th>
+                <th>Authors</th>
+                <th>Related Projects</th>
+                <th class="center-td">Link</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="d in 论著">
+                <td>{{ d.时间 }}</td>
+                <td>{{ d.题目 }}</td>
+                <td class="center-td">{{ d.作者人数 }}</td>
+                <td>{{ d.相关项目 }}</td>
+                <td class="center-td"><a :href="d.原文链接">
+                    <img class="icon" alt="picture" src="images/PDF.svg">
+                </a></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+</div>
+<div class="ui-loading-block show" id="LOAD">
+    <div class="ui-loading-cnt">
+        <i class="ui-loading-bright"></i>
+        <p>Loading...</p>
+    </div>
+</div>
+</body>
+<script src="js/translate.js"></script>
+<script>
+    document.getElementById('LOAD').classList.add('show');
+    document.getElementById('CV').style.display = 'none';
+    GET('js/chs.json', (data) => {
+        GET('js/translate.json', (dict) => {
+            new Vue({
+                el: "#CV",
+                data: () => {
+                    document.getElementById('LOAD').classList.remove('show');
+                    document.getElementById('CV').style.display = '';
+                    return translate_all(data, dict);
+                }
+            })
+        })
+    });
+</script>
+
+</html>

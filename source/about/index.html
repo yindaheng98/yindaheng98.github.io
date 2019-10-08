@@ -1,0 +1,445 @@
+---
+layout: false
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>尹达恒-主页</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/frozen.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/specialize.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body style="background: gray;padding: 30px">
+<div class="lang-tag"><a href="index_eng.html">English(建设中)</a>|<span>中文</span></div>
+
+<div class="container-fluid" id="CV">
+    <div class="row head">
+        <div class="head-side col-lg-4 col-md-4 col-sm-5 col-xs-5">
+            <img class="head-side-img" alt="picture" src="images/me.jpg">
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7" style="padding-top: 15px;">
+            <h1 style="display: inline-block">Daheng Yin&nbsp;</h1>
+            <h1 style="display: inline-block">&nbsp;尹达恒</h1>
+            <br>
+            <h4>本科在读</h4>
+            <br>
+            <table>
+                <tr>
+                    <td>
+                        <a href="http://www.jiangnan.edu.cn/">江南大学</a>
+                        <small>211工程院校/教育部直属高校</small>
+                        <br>
+                        <a href="http://iot.jiangnan.edu.cn/">物联网工程学院</a>
+                        <br>
+                        <a href="https://baike.baidu.com/item/物联网">物联网工程</a>专业
+                        <br>
+                        <br>
+                        联系方式：<u> 1030616134@vip.jiangnan.edu.cn </u>
+                        <br>
+                        <u> +86 188-0057-2931 </u>
+                        <br>
+                        Github主页
+                        <a href="https://github.com/yindaheng98">
+                            <img class="icon" alt="picture" src="images/github.svg">
+                        </a>
+                        <br>
+                        Blogs →
+                        <a href="/blog/index">
+                            <img class="icon" alt="picture" src="images/web.svg">
+                        </a>
+                        <br>
+                    </td>
+                    <td valign="top">
+                        <img style="width: 100%;" alt="picture" src="images/JNUlogo.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <section>
+        <p>尹达恒，男，汉族，生于湖北沔阳，预备党员，现就读于江南大学物联网工程系1601班。</p>
+        <p>祖无功名，身无利禄。无大富大贵之相，无高额宽眉之貌。实乃芸芸众生，平凡大众，不足为奇。</p>
+        <p>忆高中时，某夜行将就寝，忽有天地虚无，万事皆空之感，恍恍惚惚，迷迷荡荡。余觉怪，卧而思，欲忆朝暮为欢之事以下之。
+            然空虚之感愈思愈甚，以至辗转反侧，通宵达旦，终至天明。朝而饔，食不能下咽，如面幽幽深渊而背涛涛洪流，惊恐不能自已。
+            朝食毕，行学堂小路，思天地人生。天地既虚，何物为实？盖实于天地之虚者，唯治学之一途也。
+            何以故？虚无者非为天地也，为天地予人之恐也。天地予人虚无之恐，而又赋人慧知工巧，盖使人循知制巧以克虚无之恐也。
+            知者，格天虚之像以明道，致物空之因而成德也。
+            巧者，得知者之道，遵天地之德，视人能之虚，作工巧以完。
+            故知者格虚致因以觅万物道德，巧者循德作工以完人能之虚，皆得填虚无之恐。
+            而欲达格虚明道，循德作工之一境，必行治学之一途。
+            故非治学者不能克虚无之恐也。</p>
+        <p>余虽生性愚钝，然悟此道而入治学之途，至今六年有余，未尝懈怠。觉治学之途，行愈苦而心愈乐。苦中求乐，苦乐相生，盖治学之实矣。</p>
+    </section>
+    <br>
+
+    <section>
+        <h3 class="section-title">研究兴趣</h3>
+        <h5>理论研究兴趣：</h5>
+        <p>机器学习算法、神经网络可解释性、类人脑计算模型</p>
+        <h5>应用研究兴趣：</h5>
+        <p>医疗数据挖掘、机器学习算法在询证医学中的应用</p>
+        <p>云计算系统、微服务系统的开发与部署、基于浏览器的跨平台移动应用开发</p>
+        <p>大规模并行计算</p>
+        <br>
+    </section>
+
+    <section>
+        <h3 class="section-title">教育经历</h3>
+        <table>
+            <tbody>
+            <tr v-for="d in 教育经历">
+                <td>{{ d.时间 }}</td>
+                <td>{{ d.地点 }}</td>
+                <td>{{ d.经历 }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title">科研经历</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>时间</th>
+                <th>主要内容</th>
+                <th>指导老师</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="d in 科研经历">
+                <td>{{ d.时间 }}</td>
+                <td>{{ d.课题 }}</td>
+                <td>
+                    <div v-if="d.指导老师==null">/</div>
+                    <div v-for="t,i in d.指导老师">{{ i }}<span v-if="t!=null">（{{ t }}）</span></div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title" id="实践经历">实践经历</h3>
+        <table style="table-layout: fixed">
+            <thead>
+            <tr>
+                <th style="width: 125px">时间</th>
+                <th style="width: 165px">项目名称</th>
+                <th class="center-td" style="width: 30px">参与人数</th>
+                <th class="center-td" style="width: 75px">代码行数</th>
+                <th>项目内容</th>
+                <th style="width: 170px">相关资料</th>
+                <th style="width: 165px">指导老师</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="d in 实践经历">
+                <td>{{ d.时间 }}</td>
+                <td>{{ d.项目名称 }}</td>
+                <td class="center-td">{{ d.参与人数 }}</td>
+                <td class="center-td">{{ d.代码行数 }}</td>
+                <td>{{ d.项目内容 }}
+                    <!--
+                    <div>↓相关工具和框架↓<br>
+                        <span v-for="t in d.相关工具">/{{ t }}</span>
+                    </div>
+                    -->
+                </td>
+                <td>
+                    <div v-if="d.部署页面">
+                        项目部署页：
+                        <a :href="d.部署页面">
+                            <img class="icon" alt="picture" src="images/web.svg">
+                        </a>
+                    </div>
+                    <div v-if="d.Github页面">
+                        Github主页：
+                        <a :href="d.Github页面">
+                            <img class="icon" alt="picture" src="images/github.svg">
+                        </a>
+                    </div>
+                    <div v-if="d.详情">
+                        介绍：
+                        <a v-if="d.详情.text" :href="d.详情.text"><img class="icon" alt="picture" src="images/HTML.svg"></a>
+                        <a v-if="d.详情.ppt" :href="d.详情.ppt"><img class="icon" alt="picture" src="images/PPT.svg"></a>
+                        <a v-if="d.详情.pdf" :href="d.详情.pdf"><img class="icon" alt="picture" src="images/PDF.svg"></a>
+                    </div>
+                </td>
+                <td>
+                    <div v-if="d.指导老师">
+                        <div v-for="t,i in d.指导老师">{{ i }}<br>（{{ t }}）</div>
+                    </div>
+                    <div v-else>/</div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title">代码量
+            <small>(行数)</small>
+        </h3>
+        <table>
+            <thead>
+            <tr>
+                <th v-for="n,i in 代码量">{{ i }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td v-for="n,i in 代码量">{{ n }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <small>
+            注1：自制的统计脚本，统计字符数大于2的行（空格和tab不计字符数），涵盖大学阶段的所有代码，包括课程实践、课程实验、课后作业等<br>
+            注2：已手动清除了别人写的代码：不管有没有自己写的代码，只要文件里包含别人写的代码直接去除。因此统计结果可能偏小<br>
+            注3：由于有大量的VisualStudio自动生成的MFC代码和自己写的C/C++代码混在一起，因此C/C++代码量不作统计<br>
+            注4：统计时间2019年7月20日
+        </small>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title">已掌握的技能</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>领域</th>
+                <th>熟练掌握</th>
+                <th>比较熟悉</th>
+                <th>基本掌握</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="d,i in 个人技能">
+                <td>{{ i }}</td>
+                <td>
+                    <div v-if="d[0]==null">/</div>
+                    <span v-else v-for="t in d[0]">/ {{ t }} </span>
+                </td>
+                <td>
+                    <div v-if="d[1]==null">/</div>
+                    <span v-else v-for="t in d[1]">/ {{ t }} </span>
+                </td>
+                <td>
+                    <div v-if="d[2]==null">/</div>
+                    <span v-else v-for="t in d[2]">/ {{ t }} </span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title" id="个人荣誉">个人荣誉</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>时间</th>
+                <th>荣誉</th>
+                <th class="center-td">证书链接</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="d in 个人荣誉">
+                <td>{{ d.时间 }}</td>
+                <td>
+                    {{ d.荣誉 }}
+                    <small>{{ d.注释 }}</small>
+                </td>
+                <td class="center-td">
+                    <a v-if="d.证书链接" :href="d.证书链接">
+                        <img class="icon" alt="picture" src="images/credit.svg">
+                    </a>
+                    <span v-else>/</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title" id="竞赛">竞赛 / 考试</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>时间</th>
+                <th>竞赛 / 考试</th>
+                <th>成绩</th>
+                <th class="center-td">证书链接</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="d in 竞赛考试经历">
+                <td>{{ d.时间 }}</td>
+                <td>{{ d.竞赛考试 }}</td>
+                <td>{{ d.成绩 }}</td>
+                <td class="center-td">
+                    <span v-if="d.证书链接==null">/</span>
+                    <a v-else :href="d.证书链接">
+                        <img class="icon" alt="picture" src="images/credit.svg">
+                    </a></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h5 class="section-title" id="文章">写过的一些文章</h5>
+        <small>本科阶段未发表过论文</small>
+        <table>
+            <thead>
+            <tr>
+                <th>时间</th>
+                <th>题目</th>
+                <th>作者人数</th>
+                <th>相关项目</th>
+                <th class="center-td">原文链接</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="d in 论著">
+                <td>{{ d.时间 }}</td>
+                <td>{{ d.题目 }}</td>
+                <td class="center-td">{{ d.作者人数 }}</td>
+                <td>{{ d.相关项目 }}</td>
+                <td class="center-td"><a :href="d.原文链接">
+                    <img class="icon" alt="picture" src="images/PDF.svg">
+                </a></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title">学习动机与人生理想</h3>
+        <h5>学习动机：</h5>
+        <ul>
+            <li>
+                <b>关于云计算：</b>
+                私以为云计算是未来信息化社会的一大发展趋势，就供电从家用发电机发展到区域性的供电网络再到国家电网一样，
+                未来社会的信息化将建立在一个类似“国家计算网”的体系之上。
+                在这个体系中，分布在全国各地的服务器就像发电厂，网络就像电线，将计算服务像电能一样“输送”到千家万户。
+                家庭物联网应用或是其他云计算应用之于“云计算网络”就像家用电器之于电网。
+                用户购买、使用这些物联网软硬件应用（购买和使用电器），这些应用将自己的计算密集型任务交付到用户购买的云计算平台（电器从电网获取电能）。
+                用户在使用这些计算资源的时候就像用电一样，按需使用，按量付费（家门口的电表）。
+                如此一来，就像电网实现了电能的集中供应，云计算将实现计算资源的集中供应。
+                这种由边缘计算到云计算的进化将帮助人类社会完成真正的“万物互联”。
+            </li>
+            <li>
+                <b>关于软件开发：</b>
+                私以为基于浏览器的移动应用将会是5G时代的主流应用形式。
+                基于浏览器的移动应用不需要安装，不需要更新，有大量优秀的设计框架，可以实现从即时通讯到3D建模渲染之类的各类应用功能，
+                并且天生就是MVC模式的经典范例；和安装式的应用相比，基于浏览器的移动应用的唯一缺点是加载应用时要下载较多的数据，
+                但是在5G时代，这个缺点基本会被超高的网速所掩盖。
+            </li>
+            <li>
+                <b>关于微服务系统</b>：
+                我开始学习微服务开发与部署最初原因纯粹是实际需要。
+                在我所参与的大部分实践项目中，项目规划和大致框架都是由我亲自给出。
+                当到了大二大三左右，大家的学习方向都变得多样化，实践项目的规模也变得越来越大，
+                因此为了在项目规划中适应团队成员能力的多样化和不断增大的项目规模，学习微服务开发与部署是必然选择。
+                在软件开发领域，尤其是后台服务开发领域，微服务架构确实是革命性的突破，
+                它能很方便地实现诸如热更新和跨域访问之类的复杂功能，再搭配上持续集成和持续部署模式，能极大地简化软件部署的流程，提高生产力。
+                另外，微服务架构可以很容易地进行多种语言混合开发。
+                对于软件架构来说，混合语言开发意味着可以用各种语言取长补短，将独立的功能都用最适合的语言实现；
+                对于开发人员来说，混合语言开发意味着每个人都可以用自己最擅长的语言，开发这个语言最擅长实现的功能，极大地提升软件开发的灵活性。<br>
+                <small>ExpertField项目的9人开发组从未讨论过开发语言的问题，因为可以想用哪个就用哪个</small>
+            </li>
+            <li>
+                <b>关于医学</b>：
+                “21世纪是生物医学的世纪”，我深以为然。
+                在物联网工程专业这几年的学习过程中，我越来越觉得所谓信息化终究只是工具的革新，工具必须要找到使用的方向才有革新的价值。
+                而作为健康产业之核心的医学就是信息化工具合适的使用方向之一。
+            </li>
+            <li>
+                <b>关于医疗数据挖掘</b>：
+                我为了接触医疗数据经老师介绍到无锡市人民医院协助一些临床数据的处理与分析，但是发现人民医院作为无锡市最好的医院，
+                其信息化程度还只停留在电子病历、电子处方层面，对于患者临床数据只能做的收集和整理，统计分析工作尚处于起步阶段，
+                在我所接触的肾内科也没有见到有很强的信息学能力的医生(见到过一个只会R语言数据统计的生物信息学博士)。
+                从学科价值来说，作为医学研究最前线的临床医学和信息学的结合具有重大研究意义。
+                在这一领域，研究人员可以很容易地获取到获取到医疗信息化进程中积累下来的大量与患者实际情况直接相关的第一手资料，
+                在这种情况下，数据挖掘不仅能很容易地进行，因为分析的数据与患者直接相关，数据挖掘得出的结论也比一般的试验数据分析更具普遍意义。
+                结合临床医疗领域数据爆炸但是挖掘不足的现状，私以为医疗数据挖掘会成为生物医学领域新的“医疗仪器”
+            </li>
+            <li>
+                <b>关于询证医学</b>：
+                在无锡市人民医院协助临床数据分析时看了不少医学方面的论文，在这个过程中深感医学论文的数量庞大，
+                渐渐的有了学习询证医学的想法，同时也觉得机器学习天生就和询证医学需要的大量数据分析的需求非常契合，觉得这是一个很有前途的方向。
+                在一个顶级医院中，使用一群顶级的医疗专家的知识训练出一套自动化的询证诊断工具，将之在全国医院推广，将会产生巨大的社会价值。
+                自动化询证医学的价值不仅在于能在某些场景疾病的诊断治疗中减轻医生的工作量，
+                更在于这种系统是将一些原本属于顶级专家的知识提取并推广至城镇甚至乡村医院，让无数人能够享受到一些原本在顶级医院才能享受到的诊断服务，
+                其意义重大。
+            </li>
+            <li>
+                <b>关于并行计算</b>：
+                并行计算是一个有趣的编程思路，它和我在线性代数课学的知识完美契合，抽象思考付诸实践感觉很爽<br>
+                （在学校超算俱乐部协助老师进行太湖之光系统的算法库移植让我有种在为国家发展贡献自己能力的使命感）
+            </li>
+            <li>
+                <b>关于数学和编程</b>：
+                LEGO积木从幼儿园一直玩到高中毕业，编程和证明数学公式时搭积木的感觉令我愉悦
+            </li>
+            <li>
+                <b>关于计算机专业</b>：
+                学计算机专业并不是因为喜欢计算机本身，只是单纯喜爱抽象思考的感觉和把抽象思考付诸实践（计算数学模拟）时的爽快感
+            </li>
+        </ul>
+        <br>
+        <h5>理想：</h5>
+        <p>未来希望从事与医疗数据挖掘有关的应用研究。</p>
+        <p>发掘机器学习在健康领域的应用潜力和价值。</p>
+    </section>
+    <br>
+    <section>
+        <h3 class="section-title">个人特质</h3>
+        <h5>优点：</h5>
+        <p>目前代码量35000+行，具有良好的编码能力和架构能力:)</p>
+        <p>历经两个数学竞赛和两个数学建模竞赛，具有较良好的数学抽象和建模能力:)</p>
+        <p>领导完成三人以上的项目4个，合作完成三人以上的项目多个，具有较良好的合作精神和领导能力:)</p>
+        <h5>缺点</h5>
+        <p>工作狂，不善社交，不善闲聊，逢人只会讨论技术不然就会冷场:(</p>
+        <p>脑子不会拐弯，容易钻牛角尖，会不自觉地在一些不太重要的技术细节上耗费时间:(</p>
+    </section>
+</div>
+<div class="ui-loading-block show" id="LOAD">
+    <div class="ui-loading-cnt">
+        <i class="ui-loading-bright"></i>
+        <p>正在加载中...</p>
+    </div>
+</div>
+</body>
+<script>
+    document.getElementById('LOAD').classList.add('show');
+    document.getElementById('CV').style.display = 'none';
+    let xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    xmlhttp.onreadystatechange = () => {
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            new Vue({
+                el: "#CV",
+                data: () => {
+                    document.getElementById('LOAD').classList.remove('show');
+                    document.getElementById('CV').style.display = '';
+                    return JSON.parse(xmlhttp.responseText)
+                }
+            })
+        }
+    };
+    xmlhttp.open("GET", "js/chs.json", true);
+    xmlhttp.send();
+</script>
+
+</html>
