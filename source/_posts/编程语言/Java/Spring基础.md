@@ -8,7 +8,7 @@ tags:
 categories: 
  - 编程语言
  - Java
-cover: /Java/i/Spring架构.png
+cover: /编程语言/Java/i/Spring架构.png
 ---
 # Spring结构
 

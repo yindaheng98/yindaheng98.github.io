@@ -7,7 +7,7 @@ tags:
 categories: 
  - 编程语言
  - Java
-cover: /Java/i/RESTful图.jpg
+cover: /编程语言/Java/i/RESTful图.jpg
 ---
 # REST和RESTful API
 

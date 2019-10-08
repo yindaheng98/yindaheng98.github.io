@@ -7,7 +7,7 @@ tags:
 categories: 
  - 编程语言
  - Node
-cover: /Node/i/nodejs_1.jpg
+cover: /编程语言/Node/i/nodejs_1.jpg
 ---
 # nodejs重要特性
 
