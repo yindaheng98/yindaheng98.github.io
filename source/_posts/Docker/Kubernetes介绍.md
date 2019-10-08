@@ -7,7 +7,7 @@ tags:
  - k8s
 categories: 
  - Docker
-cover: i/module_01_cluster.png
+cover: /Docker/i/module_01_cluster.png
 ---
 # Kubernetes(k8s)介绍
 

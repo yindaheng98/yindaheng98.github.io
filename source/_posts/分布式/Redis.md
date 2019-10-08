@@ -7,7 +7,7 @@ tags:
  - 原理
 categories: 
  - 分布式
-cover: i/多路复用.jpg
+cover: /分布式/i/多路复用.jpg
 ---
 # Redis
 

@@ -7,7 +7,7 @@ tags:
  - 工具
 categories: 
  - 数据库
-cover: i/Cassandra集群.png
+cover: /数据库/i/Cassandra集群.png
 ---
 # Cassandra简介
 

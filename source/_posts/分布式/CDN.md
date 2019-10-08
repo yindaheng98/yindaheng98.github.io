@@ -6,7 +6,7 @@ tags:
  - 原理
 categories: 
  - 分布式
-cover: i/无CDN访问网站.png
+cover: /分布式/i/无CDN访问网站.png
 ---
 # CDN的原理和实现方式
 <!-- ttoc -->

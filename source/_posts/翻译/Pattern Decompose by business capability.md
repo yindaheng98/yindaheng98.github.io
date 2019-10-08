@@ -7,7 +7,7 @@ tags:
  - 编程思想
 categories: 
  - 翻译
-cover: i/successtriangle.png
+cover: /翻译/i/successtriangle.png
 ---
 # 模式：根据业务能力拆分
 

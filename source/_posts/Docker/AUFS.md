@@ -7,7 +7,7 @@ tags:
  - 操作系统
 categories: 
  - Docker
-cover: i/AUFS和Docker.png
+cover: /Docker/i/AUFS和Docker.png
 ---
 # AUFS技术
 
