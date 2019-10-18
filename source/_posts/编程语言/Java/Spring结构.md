@@ -1,14 +1,3 @@
----
-title: Spring原理
-date: 2019-09-12 23:44:20
-tags: 
- - Java
- - Spring
- - 编程工具
-categories: 
- - 编程语言
- - Java
----
 # Spring原理
 
 ## Bean和Spring

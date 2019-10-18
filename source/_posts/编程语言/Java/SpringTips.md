@@ -1,13 +1,3 @@
----
-title: Spring使用笔记
-date: 2019-09-12 22:06:42
-tags: 
- - Java
- - Spring
-categories: 
- - 编程语言
- - Java
----
 # Spring使用笔记
 
 ## application.properties和application.yml
