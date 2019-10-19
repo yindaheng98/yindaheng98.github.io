@@ -1,3 +1,5 @@
+---
+---
 # 如何在Ubuntu上整一个LAMP
 
 二话不说先装个vim换源👇（docker上的ubuntu没有预装vim还要自己下😅

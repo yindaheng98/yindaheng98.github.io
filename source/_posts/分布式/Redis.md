@@ -1,3 +1,5 @@
+---
+---
 # Redis
 
 [推荐Blog](https://www.cnblogs.com/bigben0123/p/9115597.html)
