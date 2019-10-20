@@ -1,4 +1,11 @@
 ---
+title: AWS
+date: 2019-10-08 08:07:40
+tags: 
+ - 云计算
+ - 工具
+categories: 
+ - 云计算
 ---
 # AWS
 

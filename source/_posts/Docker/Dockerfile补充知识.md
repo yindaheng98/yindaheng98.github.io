@@ -1,4 +1,10 @@
 ---
+title: Dockerfile的一些补充知识
+date: 2019-10-18 07:18:05
+tags: 
+ - Docker
+categories: 
+ - Docker
 ---
 # Dockerfile的一些补充知识
 

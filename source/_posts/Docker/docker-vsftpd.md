@@ -1,4 +1,13 @@
 ---
+title: 如何在mattrayner/docker-lamp的1804版里加vsftpd
+date: 2019-09-23 07:37:12
+tags: 
+ - Docker
+ - 实战
+ - Dockerfile
+ - 服务器运维
+categories: 
+ - Docker
 ---
 # 如何在mattrayner/docker-lamp的1804版里加vsftpd
 

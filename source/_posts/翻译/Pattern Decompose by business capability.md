@@ -1,4 +1,13 @@
 ---
+title: 模式：根据业务能力拆分
+date: 2019-10-08 08:07:40
+tags: 
+ - 翻译
+ - 微服务
+ - 编程思想
+categories: 
+ - 翻译
+cover: /翻译/i/successtriangle.png
 ---
 # 模式：根据业务能力拆分
 

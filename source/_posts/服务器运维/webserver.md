@@ -1,4 +1,11 @@
 ---
+title: 如何在Ubuntu上整一个LAMP
+date: 2019-10-07 13:37:55
+tags: 
+ - 服务器运维
+ - 实践
+categories: 
+ - 服务器运维
 ---
 # 如何在Ubuntu上整一个LAMP
 

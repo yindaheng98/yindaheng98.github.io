@@ -1,4 +1,13 @@
 ---
+title: AUFS技术
+date: 2019-09-23 07:37:12
+tags: 
+ - Docker
+ - 原理
+ - 操作系统
+categories: 
+ - Docker
+cover: /Docker/i/AUFS和Docker.png
 ---
 # AUFS技术
 

@@ -1,4 +1,14 @@
 ---
+title: Spring结构
+date: 2019-10-07 13:37:55
+tags: 
+ - Java
+ - Spring
+ - 编程工具
+categories: 
+ - 编程语言
+ - Java
+cover: /编程语言/Java/i/Spring架构.png
 ---
 # Spring结构
 

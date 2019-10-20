@@ -1,4 +1,13 @@
 ---
+title: nodejs重要特性
+date: 2019-10-07 13:37:55
+tags: 
+ - Node
+ - 编程工具
+categories: 
+ - 编程语言
+ - Node
+cover: /编程语言/Node/i/nodejs_1.jpg
 ---
 # nodejs重要特性
 
