@@ -1,6 +1,6 @@
 ---
 title: nodejs中的Promise对象
-date: 2019-05-09 23:52:32
+date: 2019-05-10 11:28:49
 tags: 
  - Node
  - 编程工具
