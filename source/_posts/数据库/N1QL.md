@@ -3,6 +3,7 @@ title: N1QL使用方法
 date: 2019-11-11 08:22:14
 tags: 
  - 数据库
+ - 实践
 categories: 
  - 数据库
 cover: /数据库/i/Artboard.svg
