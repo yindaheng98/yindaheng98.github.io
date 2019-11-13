@@ -1,6 +1,6 @@
 ---
-title: Spring结构
-date: 2019-09-23 07:37:12
+title: Spring架构
+date: 2019-11-13 09:00:24
 tags: 
  - Java
  - Spring
@@ -10,7 +10,7 @@ categories:
  - Java
 cover: /编程语言/Java/i/Spring架构.png
 ---
-# Spring结构
+# Spring架构
 
 ![Spring架构](i/Spring架构.png)
 
