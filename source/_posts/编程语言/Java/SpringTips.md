@@ -1,14 +1,15 @@
 ---
-title: Spring使用笔记
-date: 2019-09-23 07:37:12
+title: (持续更新)Spring使用笔记
+date: 2019-11-13 08:55:07
 tags: 
  - Java
  - Spring
+ - 持续更新
 categories: 
  - 编程语言
  - Java
 ---
-# Spring使用笔记
+# (持续更新)Spring使用笔记
 
 ## application.properties和application.yml
 
