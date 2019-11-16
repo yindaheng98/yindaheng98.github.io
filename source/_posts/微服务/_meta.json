@@ -64,5 +64,15 @@
         "categories": [
             "微服务"
         ]
+    },
+    "ServiceMesh.md": {
+        "title": "Service Mesh 服务网格——后k8s时代的微服务",
+        "tags": [
+            "微服务"
+        ],
+        "categories": [
+            "微服务"
+        ],
+        "cover": "/微服务/i/ServiceMesh0.jpg"
     }
 }
