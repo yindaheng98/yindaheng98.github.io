@@ -6,11 +6,6 @@
 	<%- partial('plugin/search') %>
 <% } %>
 
-<!-- love effect -->
-<% if (theme.love.enable) { %>
-	<%- js('plugin/love/love.js') %>
-<% } %>
-
 <!-- back to top -->
 <% if (theme.totop.enable) { %>
 	<%- partial('widget/totop') %>
@@ -30,3 +25,12 @@
 		'js/main.js'
 	]) 
 %>
+
+<% if (theme.mermaid.enable) { %>
+	<script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
+	<script>
+	  if (window.mermaid) {
+		mermaid.initialize({theme: 'forest'});
+	  }
+	</script>
+  <% } %>
