@@ -180,7 +180,7 @@ jQuery(document).ready(function($) {
 					Annie_Scroll();
 				}
 				return timeoutCalled();
-			}, delayTimeG * 20); // delayTime = delayTimeG * 20 = 10s
+			}, delayTimeG * 2); // delayTime = delayTimeG * 20 = 10s
 
 		img.crossOrigin = "Anonymous"; // TODO: CROS bug!
 		img.src = curImgSrc;
