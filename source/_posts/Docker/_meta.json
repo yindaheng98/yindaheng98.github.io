@@ -141,5 +141,15 @@
         "categories": [
             "Docker"
         ]
+    },
+    "Kubernetes结构.md": {
+        "title": "Kubernetes(k8s)的结构",
+        "tags": [
+            "Docker"
+        ],
+        "categories": [
+            "Docker"
+        ],
+        "cover": "/Docker/i/K8s.png"
     }
 }
