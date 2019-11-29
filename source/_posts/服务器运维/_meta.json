@@ -20,5 +20,14 @@
         "categories": [
             "服务器运维"
         ]
+    },
+    "ubuntu-proxy.md": {
+        "title": "Ubuntu代理使用总结",
+        "tags": [
+            "服务器运维"
+        ],
+        "categories": [
+            "服务器运维"
+        ]
     }
 }

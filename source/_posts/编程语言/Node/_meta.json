@@ -61,5 +61,16 @@
             "编程语言",
             "Node"
         ]
+    },
+    "nodejs-tips.md": {
+        "title": "nodejs补充知识",
+        "tags": [
+            "编程语言",
+            "Node"
+        ],
+        "categories": [
+            "编程语言",
+            "Node"
+        ]
     }
 }
