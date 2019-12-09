@@ -60,7 +60,8 @@
         "categories": [
             "编程语言",
             "Node"
-        ]
+        ],
+        "cover": "/编程语言/Node/i/nodejs_4.png"
     },
     "nodejs-tips.md": {
         "title": "nodejs补充知识",
