@@ -151,5 +151,14 @@
             "Docker"
         ],
         "cover": "/Docker/i/K8s.png"
+    },
+    "Docker-proxy.md": {
+        "title": "Docker 代理总结",
+        "tags": [
+            "Docker"
+        ],
+        "categories": [
+            "Docker"
+        ]
     }
 }
