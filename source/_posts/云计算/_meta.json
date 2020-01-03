@@ -32,5 +32,14 @@
             "云计算"
         ],
         "cover": "/云计算/i/SCSI.jpg"
+    },
+    "OAuth.md": {
+        "title": "OAuth简介",
+        "tags": [
+            "云计算"
+        ],
+        "categories": [
+            "云计算"
+        ]
     }
 }
