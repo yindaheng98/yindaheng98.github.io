@@ -9,7 +9,6 @@ categories:
  - 编程语言
  - Go
 ---
-# Go语言
 
 ## Go语言的核心思想
 

@@ -8,7 +8,6 @@ categories:
  - 数据库
 cover: /数据库/i/Artboard.svg
 ---
-# N1QL使用方法
 
 ![封面](i/Artboard.svg)
 

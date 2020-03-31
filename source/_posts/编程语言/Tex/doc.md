@@ -10,7 +10,6 @@ categories:
  - 编程语言
  - Tex
 ---
-# LATEX生态中与文学编程思想有关的工具：doc和docStrip包
 
 LATEX生态系统中的doc/docStrip包虽不及ipython jupyter的设计精妙复杂且用途广泛，但仍是文学编程思想在LATEX生态中的一种体现。它赋予了TEX文学编程的能力。正如doc包的作者在其文档开头所写：
 

@@ -11,7 +11,6 @@ categories:
  - Vue
 cover: /编程语言/Vue/i/bili_v_1543902267485.gif
 ---
-# Vue入门
 
 ## 为什么要写这个
 

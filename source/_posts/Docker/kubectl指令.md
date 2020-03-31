@@ -8,7 +8,6 @@ tags:
 categories: 
  - Docker
 ---
-# kubectl指令
 
 ## 与docker指令功能类似的在kubectl指令
 

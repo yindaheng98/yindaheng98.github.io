@@ -9,7 +9,6 @@ categories:
  - Node
 cover: /编程语言/Node/i/nodejs_1.jpg
 ---
-# nodejs重要特性
 
 ## 回调函数
 

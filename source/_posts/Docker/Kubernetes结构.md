@@ -7,7 +7,6 @@ categories:
  - Docker
 cover: /Docker/i/K8s.png
 ---
-# Kubernetes(k8s)的结构
 
 [教程参考](https://juejin.im/post/5b63f4506fb9a04f8856f340)
 [教程参考](https://www.huweihuang.com/article/kubernetes/kubernetes-architecture/)

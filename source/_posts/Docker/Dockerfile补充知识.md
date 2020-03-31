@@ -6,7 +6,6 @@ tags:
 categories: 
  - Docker
 ---
-# Dockerfile的一些补充知识
 
 ## 向进程发送停止信号
 

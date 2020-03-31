@@ -8,7 +8,6 @@ tags:
 categories: 
  - Docker
 ---
-# Linux系统的启动过程
 
 ## 总括
 

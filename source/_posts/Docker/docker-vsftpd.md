@@ -9,7 +9,6 @@ tags:
 categories: 
  - Docker
 ---
-# 如何在mattrayner/docker-lamp的1804版里加vsftpd
 
 ## 在Dockerfile里面
 

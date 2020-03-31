@@ -9,7 +9,6 @@ categories:
  - Java
 cover: /编程语言/Java/i/RESTful图.jpg
 ---
-# REST和RESTful API
 
 ## REST是什么
 

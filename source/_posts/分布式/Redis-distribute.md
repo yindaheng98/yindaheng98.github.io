@@ -8,7 +8,6 @@ tags:
 categories: 
  - 分布式
 ---
-# Redis中的分布式
 
 ## 复制
 

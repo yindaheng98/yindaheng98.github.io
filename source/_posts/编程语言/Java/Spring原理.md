@@ -10,7 +10,6 @@ categories:
  - 编程语言
  - Java
 ---
-# Spring原理
 
 ## Bean和Spring
 

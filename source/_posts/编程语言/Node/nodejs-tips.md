@@ -8,7 +8,6 @@ categories:
  - 编程语言
  - Node
 ---
-# nodejs补充知识
 
 ## 在指定目录下运行npm
 

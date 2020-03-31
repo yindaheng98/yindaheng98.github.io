@@ -9,7 +9,6 @@ categories:
  - 分布式
 cover: /分布式/i/多路复用.jpg
 ---
-# Redis
 
 [推荐Blog](https://www.cnblogs.com/bigben0123/p/9115597.html)
 

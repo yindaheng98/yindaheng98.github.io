@@ -12,7 +12,6 @@ categories:
  - 编程语言
  - Go
 ---
-# 信号、go进程和iris优雅停机
 
 ## 信号
 

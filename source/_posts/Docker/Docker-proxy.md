@@ -6,7 +6,6 @@ tags:
 categories: 
  - Docker
 ---
-# Docker 代理总结
 
 ## 为docker pull设置代理
 

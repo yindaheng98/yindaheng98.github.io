@@ -8,7 +8,6 @@ tags:
 categories: 
  - Docker
 ---
-# Kubernetes(k8s)的使用方法
 
 ## 安装
 

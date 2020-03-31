@@ -7,7 +7,6 @@ tags:
 categories: 
  - 云计算
 ---
-# AWS
 
 * 计算
   * **Amazon EC2**

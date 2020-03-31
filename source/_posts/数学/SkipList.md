@@ -6,7 +6,6 @@ tags:
 categories: 
  - 数学
 ---
-# 跳表(SkipList)的数学思考
 
 ## [跳表是什么](https://blog.csdn.net/pcwl1206/article/details/83512600)
 

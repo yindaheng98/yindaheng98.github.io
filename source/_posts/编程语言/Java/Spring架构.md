@@ -10,7 +10,6 @@ categories:
  - Java
 cover: /编程语言/Java/i/Spring架构.png
 ---
-# Spring架构
 
 ![Spring架构](i/Spring架构.png)
 

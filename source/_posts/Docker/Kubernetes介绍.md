@@ -9,7 +9,6 @@ categories:
  - Docker
 cover: /Docker/i/module_01_cluster.png
 ---
-# Kubernetes(k8s)介绍
 
 ## Kubernetes是什么
 

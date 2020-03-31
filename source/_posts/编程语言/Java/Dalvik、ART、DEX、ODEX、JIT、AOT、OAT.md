@@ -9,7 +9,6 @@ categories:
  - 编程语言
  - Java
 ---
-# (未完成)Dalvik、ART、DEX、ODEX、JIT、AOT、OAT
 
 [介绍](https://blog.csdn.net/Strange_Monkey/article/details/85019528)
 

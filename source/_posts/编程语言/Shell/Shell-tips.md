@@ -8,7 +8,6 @@ categories:
  - 编程语言
  - Shell
 ---
-# Shell拾遗
 
 ## getopts和getopt
 

@@ -9,7 +9,6 @@ categories:
  - Docker
 cover: /Docker/i/AUFS和Docker.png
 ---
-# AUFS技术
 
 [教程参考](https://coolshell.cn/articles/17061.html)
 

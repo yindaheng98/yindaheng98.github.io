@@ -8,7 +8,6 @@ tags:
 categories: 
  - 云计算
 ---
-# (未完成)RDMA介绍
 
 RDMA（Remote Direct Memory Access）技术是一种**直接在内存和内存之间进行资料互传**的技术，在数据传输的过程中，**不需要和操作系统Kernel做沟通**，完全实现了Kernel Bypass。
 

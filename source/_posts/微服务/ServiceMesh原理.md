@@ -10,7 +10,6 @@ categories:
  - 微服务
 cover: /微服务/i/serivce-mesh-control-plane.png
 ---
-# Service Mesh 服务网格——原理
 
 [参考教程](https://www.servicemesher.com/istio-handbook/intro/service-mesh-the-microservices-in-post-kubernetes-era.html)
 

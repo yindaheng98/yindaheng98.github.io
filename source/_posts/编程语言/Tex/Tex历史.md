@@ -9,7 +9,6 @@ categories:
  - 编程语言
  - Tex
 ---
-# TEX历史
 
 [参考资料](https://blog.jjgod.org/2006/08/17/constructing-tex-system/)
 [参考资料](http://lyanry.is-programmer.com/posts/332)

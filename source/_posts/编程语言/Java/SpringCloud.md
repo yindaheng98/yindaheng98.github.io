@@ -11,7 +11,6 @@ categories:
  - Java
 cover: /编程语言/Java/i/SpringCloud1.webp
 ---
-# Spring Cloud
 
 [教程参考](https://www.jianshu.com/p/196a7598b30c)
 
