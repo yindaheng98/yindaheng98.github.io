@@ -26,13 +26,49 @@
             "Tex"
         ]
     },
-    "Tex历史.md": {
+    "TeX公式Tips.md": {
+        "title": "TEX公式知识点拾遗",
+        "date": "2020-04-01 11:44:31",
+        "tags": [
+            "编程语言",
+            "Tex"
+        ],
+        "categories": [
+            "编程语言",
+            "Tex"
+        ]
+    },
+    "TeX历史.md": {
         "title": "TEX历史",
         "date": "2020-03-31 06:51:24",
         "tags": [
             "编程语言",
             "Tex",
             "原理"
+        ],
+        "categories": [
+            "编程语言",
+            "Tex"
+        ]
+    },
+    "TeX基础.md": {
+        "title": "TEX基础",
+        "date": "2020-04-01 11:44:31",
+        "tags": [
+            "编程语言",
+            "Tex"
+        ],
+        "categories": [
+            "编程语言",
+            "Tex"
+        ],
+        "cover": "/编程语言/Tex/i/TeXif1.png"
+    },
+    "Tex历史.md": {
+        "title": "TEX历史",
+        "tags": [
+            "编程语言",
+            "Tex"
         ],
         "categories": [
             "编程语言",
