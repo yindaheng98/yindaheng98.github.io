@@ -1,12 +1,25 @@
 {
     "EVE.md": {
         "title": "EVE (Edge Virtualization Engine)",
+        "date": "2020-05-28 14:32:23",
+        "tags": [
+            "边缘计算",
+            "框架"
+        ],
+        "categories": [
+            "边缘计算"
+        ],
+        "cover": "/边缘计算/i/EVEArchit.png"
+    },
+    "CORD.md": {
+        "title": "CORD",
+        "date": "2020-05-28 15:50:26",
         "tags": [
             "边缘计算"
         ],
         "categories": [
             "边缘计算"
         ],
-        "cover": "/边缘计算/i/EVEArchit.png"
+        "cover": "/边缘计算/i/cord-1.jpg"
     }
 }
