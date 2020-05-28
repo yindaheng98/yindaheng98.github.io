@@ -1,0 +1,12 @@
+{
+    "EVE.md": {
+        "title": "EVE (Edge Virtualization Engine)",
+        "tags": [
+            "边缘计算"
+        ],
+        "categories": [
+            "边缘计算"
+        ],
+        "cover": "/边缘计算/i/EVEArchit.png"
+    }
+}
