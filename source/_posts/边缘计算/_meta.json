@@ -21,5 +21,15 @@
             "边缘计算"
         ],
         "cover": "/边缘计算/i/cord-1.jpg"
+    },
+    "AWSIoT.md": {
+        "title": "AWS IoT",
+        "tags": [
+            "边缘计算"
+        ],
+        "categories": [
+            "边缘计算"
+        ],
+        "cover": "/边缘计算/i/DeviceShadow.png"
     }
 }
