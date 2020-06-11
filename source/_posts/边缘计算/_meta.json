@@ -31,5 +31,14 @@
             "边缘计算"
         ],
         "cover": "/边缘计算/i/DeviceShadow.png"
+    },
+    "AzureIoT.md": {
+        "title": "Azure IoT",
+        "tags": [
+            "边缘计算"
+        ],
+        "categories": [
+            "边缘计算"
+        ]
     }
 }
