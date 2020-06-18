@@ -162,5 +162,14 @@
             "Docker"
         ],
         "cover": "/Docker/i/K8s.png"
+    },
+    "namespace.md": {
+        "title": "namespace",
+        "tags": [
+            "Docker"
+        ],
+        "categories": [
+            "Docker"
+        ]
     }
 }

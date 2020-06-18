@@ -1,0 +1,14 @@
+{
+    "Mount.md": {
+        "title": "Mount namespace",
+        "tags": [
+            "Docker",
+            "namespaces"
+        ],
+        "categories": [
+            "Docker",
+            "namespaces"
+        ],
+        "cover": "/Docker/namespaces/../i/mountnamespace.png"
+    }
+}
