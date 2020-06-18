@@ -10,5 +10,16 @@
             "namespaces"
         ],
         "cover": "/Docker/namespaces/../i/mountnamespace.png"
+    },
+    "UTSandUser.md": {
+        "title": "UTS(UNIX Time-sharing System) namespace",
+        "tags": [
+            "Docker",
+            "namespaces"
+        ],
+        "categories": [
+            "Docker",
+            "namespaces"
+        ]
     }
 }
