@@ -21,5 +21,16 @@
             "Docker",
             "namespaces"
         ]
+    },
+    "PIDandIPC.md": {
+        "title": "PID namespace",
+        "tags": [
+            "Docker",
+            "namespaces"
+        ],
+        "categories": [
+            "Docker",
+            "namespaces"
+        ]
     }
 }
