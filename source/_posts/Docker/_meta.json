@@ -132,7 +132,7 @@
         ]
     },
     "cgroups.md": {
-        "title": "(未完成)Linux Cgroup",
+        "title": "Linux Cgroups (Control Groups)",
         "date": "2019-10-28 06:52:23",
         "tags": [
             "Docker",
@@ -165,6 +165,15 @@
     },
     "namespace.md": {
         "title": "namespace",
+        "tags": [
+            "Docker"
+        ],
+        "categories": [
+            "Docker"
+        ]
+    },
+    "sane_behavior.md": {
+        "title": "[纯转载]下一代的CGroup",
         "tags": [
             "Docker"
         ],
