@@ -1,5 +1,6 @@
 ---
 title: PID namespace
+date: 2020-06-18 13:26:31
 tags: 
  - Docker
  - namespaces

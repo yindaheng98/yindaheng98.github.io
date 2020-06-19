@@ -24,6 +24,7 @@
     },
     "AWSIoT.md": {
         "title": "AWS IoT",
+        "date": "2020-05-31 15:30:10",
         "tags": [
             "边缘计算"
         ],
@@ -34,6 +35,7 @@
     },
     "AzureIoT.md": {
         "title": "Azure IoT",
+        "date": "2020-06-11 11:52:58",
         "tags": [
             "边缘计算"
         ],

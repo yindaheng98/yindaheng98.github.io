@@ -1,5 +1,6 @@
 ---
 title: Mount namespace
+date: 2020-06-18 09:46:12
 tags: 
  - Docker
  - namespaces
