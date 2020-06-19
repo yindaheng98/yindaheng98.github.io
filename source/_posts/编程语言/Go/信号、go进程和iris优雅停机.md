@@ -2,12 +2,8 @@
 title: 信号、go进程和iris优雅停机
 date: 2019-10-14 15:24:36
 tags: 
- - 编程语言
  - Go
- - 操作系统
- - 原理
- - 实战
- - 框架
+ - Linux
 categories: 
  - 编程语言
  - Go

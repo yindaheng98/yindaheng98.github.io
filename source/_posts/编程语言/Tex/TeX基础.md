@@ -2,10 +2,8 @@
 title: TEX基础
 date: 2020-04-01 11:44:31
 tags: 
- - 编程语言
  - Tex
- - 实战
- - 框架
+ - Literate Programming
 categories: 
  - 编程语言
  - Tex

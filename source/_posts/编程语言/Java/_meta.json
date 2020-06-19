@@ -4,7 +4,6 @@
         "date": "2019-10-28 06:52:23",
         "tags": [
             "Java",
-            "编程思想",
             "未完成"
         ],
         "categories": [
@@ -16,8 +15,7 @@
         "title": "REST和RESTful API",
         "date": "2019-09-23 07:37:12",
         "tags": [
-            "Java",
-            "编程思想"
+            "Java"
         ],
         "categories": [
             "编程语言",
@@ -30,9 +28,7 @@
         "date": "2019-11-13 08:55:07",
         "tags": [
             "Java",
-            "编程工具",
-            "Spring",
-            "原理"
+            "Spring"
         ],
         "categories": [
             "编程语言",
@@ -45,7 +41,6 @@
         "date": "2019-10-28 06:52:23",
         "tags": [
             "Java",
-            "编程工具",
             "Spring",
             "未完成"
         ],
@@ -71,10 +66,8 @@
         "title": "Spring原理",
         "date": "2019-11-13 09:00:24",
         "tags": [
-            "编程语言",
             "Java",
-            "Spring",
-            "编程工具"
+            "Spring"
         ],
         "categories": [
             "编程语言",
@@ -86,8 +79,7 @@
         "date": "2019-10-06 15:07:24",
         "tags": [
             "Java",
-            "编程工具",
-            "编程思想"
+            "Spring"
         ],
         "categories": [
             "编程语言",
@@ -98,7 +90,6 @@
         "title": "(未完成)Dalvik、ART、DEX、ODEX、JIT、AOT、OAT",
         "date": "2019-10-28 06:52:23",
         "tags": [
-            "编程语言",
             "Java",
             "未完成"
         ],
@@ -112,8 +103,7 @@
         "date": "2019-11-13 09:00:24",
         "tags": [
             "Java",
-            "Spring",
-            "编程工具"
+            "Spring"
         ],
         "categories": [
             "编程语言",

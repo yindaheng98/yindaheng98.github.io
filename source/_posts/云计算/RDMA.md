@@ -3,7 +3,7 @@ title: (未完成)RDMA介绍
 date: 2019-11-18 03:23:10
 tags: 
  - 云计算
- - 原理
+ - RDMA
  - 未完成
 categories: 
  - 云计算

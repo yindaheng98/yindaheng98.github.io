@@ -3,6 +3,7 @@ title: 跳表(SkipList)的数学思考
 date: 2020-01-05 15:43:19
 tags: 
  - 数学
+ - 算法
 categories: 
  - 数学
 ---

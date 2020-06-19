@@ -3,6 +3,8 @@ title: namespace
 date: 2020-06-18 15:59:44
 tags: 
  - Docker
+ - Linux
+ - namespaces
 categories: 
  - Docker
 ---

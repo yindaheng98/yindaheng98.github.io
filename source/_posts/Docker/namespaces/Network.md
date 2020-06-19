@@ -4,6 +4,7 @@ date: 2020-06-18 15:02:42
 tags: 
  - Docker
  - namespaces
+ - Linux
 categories: 
  - Docker
  - namespaces

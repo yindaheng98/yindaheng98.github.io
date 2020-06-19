@@ -3,6 +3,7 @@ title: Dockerfile的一些补充知识
 date: 2019-12-03 16:04:32
 tags: 
  - Docker
+ - Dockerfile
 categories: 
  - Docker
 ---

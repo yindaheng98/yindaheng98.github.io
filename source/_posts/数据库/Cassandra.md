@@ -3,8 +3,7 @@ title: Cassandra简介
 date: 2019-10-06 15:07:24
 tags: 
  - 数据库
- - 原理
- - 工具
+ - NoSQL
 categories: 
  - 数据库
 cover: /数据库/i/Cassandra集群.png

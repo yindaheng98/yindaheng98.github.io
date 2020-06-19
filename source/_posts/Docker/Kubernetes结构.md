@@ -3,6 +3,7 @@ title: Kubernetes(k8s)的结构
 date: 2019-11-21 06:34:45
 tags: 
  - Docker
+ - k8s
 categories: 
  - Docker
 cover: /Docker/i/K8s.png

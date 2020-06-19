@@ -3,6 +3,8 @@ title: AWS IoT
 date: 2020-05-31 15:30:10
 tags: 
  - 边缘计算
+ - IoT
+ - AWS
 categories: 
  - 边缘计算
 cover: /边缘计算/i/DeviceShadow.png

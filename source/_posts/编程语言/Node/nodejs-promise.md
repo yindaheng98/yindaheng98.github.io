@@ -3,8 +3,6 @@ title: nodejs中的Promise对象
 date: 2019-12-09 12:10:32
 tags: 
  - Node
- - 编程工具
- - 编程思想
 categories: 
  - 编程语言
  - Node

@@ -3,7 +3,7 @@ title: EVE (Edge Virtualization Engine)
 date: 2020-05-28 14:32:23
 tags: 
  - 边缘计算
- - 框架
+ - 虚拟机
 categories: 
  - 边缘计算
 cover: /边缘计算/i/EVEArchit.png
