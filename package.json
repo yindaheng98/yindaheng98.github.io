@@ -1,25 +1,17 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
-  "private": true,
-  "hexo": {
-    "version": "3.9.0"
+  "name": "yindaheng98.github.io",
+  "version": "1.0.0",
+  "author": "yindaheng98@163.com",
+  "scripts": {
+    "dev": "vuepress dev .",
+    "build": "vuepress build ."
+  },
+  "devDependencies": {
+    "vuepress": "1.5.0",
+    "vuepress-theme-reco": "1.4.7"
   },
   "dependencies": {
-    "hexo": "^3.9.0",
-    "hexo-all-minifier": "^0.5.3",
-    "hexo-deployer-git": "^2.0.0",
-    "hexo-filter-mermaid-diagrams": "^1.0.5",
-    "hexo-generator-archive": "^0.1.5",
-    "hexo-generator-category": "^0.1.3",
-    "hexo-generator-index": "^0.2.1",
-    "hexo-generator-search-zip": "0.0.1",
-    "hexo-generator-tag": "^0.2.0",
-    "hexo-pagination": "^1.0.0",
-    "hexo-render-pug": "^2.1.4",
-    "hexo-renderer-ejs": "^0.3.1",
-    "hexo-renderer-markdown-it-plus": "^1.0.4",
-    "hexo-renderer-stylus": "^0.3.3",
-    "hexo-server": "^0.3.3"
-  }
+    "vue-class-component": "^7.2.3"
+  },
+  "description": "yindaheng98.github.io"
 }

@@ -1,6 +1,9 @@
 git config user.name "TravisCI"
 git config user.email "yindaheng98@163.com"
-sed -i "s/DEPLOY_TOKEN/$1/g" ./_config.yml
-cat ./_config.yml
+cd .vuepress/dist
 set -e
-hexo deploy
+git init
+git add -A
+git commit -m 'TravisCI Deploy'
+set -e
+git push -u https://$1@github.com/yindaheng98/yindaheng98.github.io.git HEAD:master --force
