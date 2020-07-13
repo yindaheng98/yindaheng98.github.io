@@ -4,4 +4,6 @@ db.json
 *.log
 node_modules/
 public/
+!.vuepress/public/
+.vuepress/public/blogs
 .deploy*/
