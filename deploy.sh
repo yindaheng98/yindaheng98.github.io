@@ -1,6 +1,6 @@
 git config user.name "TravisCI"
 git config user.email "yindaheng98@163.com"
-cd .vuepress/dist
+cd public
 set -e
 git init
 git add -A
