@@ -11,6 +11,20 @@ module.exports = {
       }
     ],
     [
+      "link",
+      {
+        "rel": "stylesheet",
+        "href": "https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "stylesheet",
+        "href": "https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"
+      }
+    ],
+    [
       "meta",
       {
         "name": "viewport",
@@ -82,6 +96,9 @@ module.exports = {
     "startYear": "2018"
   },
   "markdown": {
-    "lineNumbers": true
+    "lineNumbers": true,
+    extendMarkdown: md => {
+      md.use(require("@neilsustc/markdown-it-katex"));
+    }
   }
 }

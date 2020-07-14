@@ -11,7 +11,8 @@
     "vuepress-theme-reco": "1.4.7"
   },
   "dependencies": {
-    "vue-class-component": "^7.2.3"
+    "vue-class-component": "^7.2.3",
+    "@neilsustc/markdown-it-katex": "^0.5.0"
   },
   "description": "yindaheng98.github.io"
 }
