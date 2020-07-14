@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "vue-class-component": "^7.2.3",
-    "@neilsustc/markdown-it-katex": "^0.5.0"
+    "@neilsustc/markdown-it-katex": "^0.5.0",
+    "md5": "^2.2.1",
+    "vue-click-outside": "^1.1.0"
   },
   "description": "yindaheng98.github.io"
 }
