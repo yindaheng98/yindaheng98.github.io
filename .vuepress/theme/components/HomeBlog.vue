@@ -190,7 +190,7 @@ export default {
     }
 
     h1 {
-      margin:17rem auto 1.8rem;
+      margin:7rem auto 1.8rem;
       font-size: 2.5rem;
     }
 
@@ -208,7 +208,7 @@ export default {
     display flex
     align-items: flex-start;
     margin 20px auto 0
-    max-width $homePageWidth
+    max-width 1126px
     .blog-list {
       flex auto
       width 0

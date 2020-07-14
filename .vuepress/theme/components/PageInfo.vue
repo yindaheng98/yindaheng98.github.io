@@ -25,7 +25,7 @@
         :key="subIndex"
         class="tag-item"
         :class="{ 'active': currentTag == subItem }"
-        @click.stop="goTags(subItem)">{{subItem}}</span>
+        @click="goTags(subItem)">{{subItem}}</span>
     </i>
   </div>
 </template>
@@ -101,6 +101,7 @@ export default {
     margin-left 0.5rem
 .tags
   .tag-item
+    cursor pointer
     font-family Ubuntu, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
     &.active
       color $accentColor

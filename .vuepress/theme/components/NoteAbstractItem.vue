@@ -1,14 +1,10 @@
 <template>
   <div
-    class="abstract-item"
-    @click="$router.push(item.path)">
+    class="abstract-item">
     <i v-if="item.frontmatter.sticky" class="iconfont reco-sticky"></i>
     <div class="title">
       <i v-if="item.frontmatter.keys" class="iconfont reco-lock"></i>
       <router-link :to="item.path">{{item.title}}</router-link>
-    </div>
-    <div v-if="item.frontmatter.cover" class="cover">
-      <img :src="'/blogs/' + item.frontmatter.cover" alt="封面" class="cover-img">
     </div>
     <div class="abstract" v-html="item.excerpt"></div>
     <hr class="hr">
@@ -40,10 +36,6 @@ export default {
   box-sizing: border-box;
   transition all .3s
   background-color var(--background-color)
-  cursor: pointer;
-  > * {
-    pointer-events: auto;
-  }
   .reco-sticky
     position absolute
     top 0
@@ -81,17 +73,11 @@ export default {
       transform: scaleX(1);
   .tags
     .tag-item
+      cursor: pointer;
       &.active
         color $accentColor
       &:hover
         color $accentColor
-  .cover
-    width 100%
-    max-height 500px
-    text-align: center;
-    .cover-img
-      max-width 100%
-      max-height 500px
 @media (max-width: $MQMobile)
   .tags
     display block
