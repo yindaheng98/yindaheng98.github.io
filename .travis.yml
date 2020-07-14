@@ -8,6 +8,6 @@ branches:
 install:
   - npm install
 script:
-  - cp -r blogs .vuepress/public/blogs
+  - cp -r blogs .vuepress/public
   - npm run build # generate static files
   - bash deploy.sh $GH_TOKEN
