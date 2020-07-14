@@ -32,7 +32,7 @@ module.exports = {
       }
     ]
   ],
-  "theme": "reco",
+  "theme": require.resolve('./theme'),
   "themeConfig": {
     "nav": [
       {
