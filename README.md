@@ -12,7 +12,7 @@ tagline: Howard Yin的飞升之路
 #   borderRadius: '1rem',
 # }
 bgImageStyle: {
-  height: '800px'
+  height: '100vh'
 }
 isShowTitleInHome: false
 actionText: Guide

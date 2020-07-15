@@ -4,7 +4,7 @@
       <div
         class="mask"
         :style="{
-      background: `url(${$frontmatter.bgImage ? $withBase($frontmatter.bgImage) : require('../images/home-bg.jpg')}) center/cover no-repeat`}"></div>
+      background: `url(${$frontmatter.bgImage ? $withBase($frontmatter.bgImage) : require('../images/home-bg.jpg')}) center top/cover no-repeat`}"></div>
       <ModuleTransition>
         <img
           v-if="recoShowModule && $frontmatter.heroImage"
@@ -22,6 +22,12 @@
         <p v-if="recoShowModule && $frontmatter.tagline !== null" class="description">
           {{ $frontmatter.tagline || $description || 'Welcome to your vuePress-theme-reco site' }}
         </p>
+      </ModuleTransition>
+
+      <ModuleTransition delay="0.12">
+        <div class="scroll-div">
+          <img src="../images/upward.svg" class="scroll-ico"/>
+        </div>
       </ModuleTransition>
     </div>
 
@@ -202,6 +208,19 @@ export default {
       margin: 1.8rem auto;
       font-size: 1.6rem;
       line-height: 1.3;
+    }
+
+    .scroll-div {
+      transform: rotateX(180deg);
+      width: 100%;
+      text-align: center;
+      height: 6em;
+      margin: 12rem auto 0;
+      .scroll-ico {
+        transform: rotateY(180deg);
+        width: 6em;
+        height: 6em;
+      }
     }
   }
   .home-blog-wrapper {
