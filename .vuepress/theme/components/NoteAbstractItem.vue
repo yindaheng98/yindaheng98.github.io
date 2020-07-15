@@ -7,7 +7,9 @@
       <router-link :to="item.path">{{item.title}}</router-link>
     </div>
     <div v-if="item.frontmatter.cover" class="cover">
-      <img :src="'/blogs/' + item.frontmatter.cover" alt="封面" class="cover-img">
+      <img
+        :src="($themeConfig.coverImgBase?$themeConfig.coverImgBase:'') + '/' + item.frontmatter.cover"
+        alt="封面" class="cover-img">
     </div>
     <div class="abstract" v-html="item.excerpt"></div>
     <hr class="hr">

@@ -34,6 +34,7 @@ module.exports = {
   ],
   "theme": require.resolve('./theme'),
   "themeConfig": {
+    "mode": "light",
     "nav": [
       {
         "text": "Home",
@@ -93,12 +94,16 @@ module.exports = {
     "lastUpdated": "Last Updated",
     "author": "Howard Yin",
     "authorAvatar": "/avatar.svg",
-    "startYear": "2018"
+    "startYear": "2018",
+    "coverImgBase": "/blogs"
   },
   "markdown": {
     "lineNumbers": true,
     extendMarkdown: md => {
       md.use(require("@neilsustc/markdown-it-katex"));
     }
-  }
+  },
+  "plugins": [
+    'vuepress-plugin-mermaidjs'
+  ]
 }
