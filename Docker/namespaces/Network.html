@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Network namespace | Yin的笔记本</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css">
+    <meta name="description" content="Yin的笔记本">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.618a5b75.css" as="style"><link rel="preload" href="/assets/js/app.17fd0400.js" as="script"><link rel="preload" href="/assets/js/3.2e743b5c.js" as="script"><link rel="preload" href="/assets/js/1.3190c4f3.js" as="script"><link rel="preload" href="/assets/js/43.1a53d06f.js" as="script"><link rel="prefetch" href="/assets/js/10.1bd0aef8.js"><link rel="prefetch" href="/assets/js/100.dcf22cd2.js"><link rel="prefetch" href="/assets/js/101.6fc49fbd.js"><link rel="prefetch" href="/assets/js/102.e1c80202.js"><link rel="prefetch" href="/assets/js/103.13d09370.js"><link rel="prefetch" href="/assets/js/104.e667bd93.js"><link rel="prefetch" href="/assets/js/105.2d908679.js"><link rel="prefetch" href="/assets/js/106.efabbd0b.js"><link rel="prefetch" href="/assets/js/107.c0244435.js"><link rel="prefetch" href="/assets/js/108.58aa78c0.js"><link rel="prefetch" href="/assets/js/109.3f33efd7.js"><link rel="prefetch" href="/assets/js/11.be87e2c1.js"><link rel="prefetch" href="/assets/js/110.712dd2de.js"><link rel="prefetch" href="/assets/js/111.1c629ac2.js"><link rel="prefetch" href="/assets/js/112.dfc5d7ca.js"><link rel="prefetch" href="/assets/js/113.fb6ed5a8.js"><link rel="prefetch" href="/assets/js/114.5938d9d5.js"><link rel="prefetch" href="/assets/js/115.cf2c4cc3.js"><link rel="prefetch" href="/assets/js/116.a6926514.js"><link rel="prefetch" href="/assets/js/117.a0868440.js"><link rel="prefetch" href="/assets/js/118.cb5103ea.js"><link rel="prefetch" href="/assets/js/119.6af8a467.js"><link rel="prefetch" href="/assets/js/12.9b13f14d.js"><link rel="prefetch" href="/assets/js/120.8137c8ef.js"><link rel="prefetch" href="/assets/js/121.676188fa.js"><link rel="prefetch" href="/assets/js/122.9c9b83f6.js"><link rel="prefetch" href="/assets/js/123.d2b03e21.js"><link rel="prefetch" href="/assets/js/124.55032cc5.js"><link rel="prefetch" href="/assets/js/125.f6c947b8.js"><link rel="prefetch" href="/assets/js/126.93e4c4cd.js"><link rel="prefetch" href="/assets/js/127.9198a2e1.js"><link rel="prefetch" href="/assets/js/128.49a3586d.js"><link rel="prefetch" href="/assets/js/129.5b04b847.js"><link rel="prefetch" href="/assets/js/13.63405490.js"><link rel="prefetch" href="/assets/js/130.d58dd264.js"><link rel="prefetch" href="/assets/js/131.31100510.js"><link rel="prefetch" href="/assets/js/132.b10b7984.js"><link rel="prefetch" href="/assets/js/133.2231255b.js"><link rel="prefetch" href="/assets/js/134.e2ae066f.js"><link rel="prefetch" href="/assets/js/135.84483acd.js"><link rel="prefetch" href="/assets/js/136.8e9901a7.js"><link rel="prefetch" href="/assets/js/137.d57db355.js"><link rel="prefetch" href="/assets/js/138.80924a3e.js"><link rel="prefetch" href="/assets/js/139.a0f707e5.js"><link rel="prefetch" href="/assets/js/14.b04542af.js"><link rel="prefetch" href="/assets/js/140.2bc8941e.js"><link rel="prefetch" href="/assets/js/141.fc406907.js"><link rel="prefetch" href="/assets/js/142.6f3140c7.js"><link rel="prefetch" href="/assets/js/143.b53c1d10.js"><link rel="prefetch" href="/assets/js/144.3aebcdd1.js"><link rel="prefetch" href="/assets/js/145.7b76ff89.js"><link rel="prefetch" href="/assets/js/146.bcfeb47f.js"><link rel="prefetch" href="/assets/js/147.83ce6c66.js"><link rel="prefetch" href="/assets/js/148.a291dd8f.js"><link rel="prefetch" href="/assets/js/149.bac55f33.js"><link rel="prefetch" href="/assets/js/15.84c417a5.js"><link rel="prefetch" href="/assets/js/150.3387562f.js"><link rel="prefetch" href="/assets/js/151.99f07f56.js"><link rel="prefetch" href="/assets/js/152.c9d647e4.js"><link rel="prefetch" href="/assets/js/153.977e2714.js"><link rel="prefetch" href="/assets/js/154.f83b5ecb.js"><link rel="prefetch" href="/assets/js/155.ff164372.js"><link rel="prefetch" href="/assets/js/156.3579bf04.js"><link rel="prefetch" href="/assets/js/157.10ad2d37.js"><link rel="prefetch" href="/assets/js/158.d91b659b.js"><link rel="prefetch" href="/assets/js/159.53a29d57.js"><link rel="prefetch" href="/assets/js/16.ee4fbbce.js"><link rel="prefetch" href="/assets/js/160.ea7ab8b7.js"><link rel="prefetch" href="/assets/js/161.599f10d0.js"><link rel="prefetch" href="/assets/js/162.ceccd4fa.js"><link rel="prefetch" href="/assets/js/163.b589f68e.js"><link rel="prefetch" href="/assets/js/164.43e08c67.js"><link rel="prefetch" href="/assets/js/165.8a18fd44.js"><link rel="prefetch" href="/assets/js/166.131aa114.js"><link rel="prefetch" href="/assets/js/167.f78e4bdf.js"><link rel="prefetch" href="/assets/js/168.0b50efe1.js"><link rel="prefetch" href="/assets/js/169.441716c1.js"><link rel="prefetch" href="/assets/js/17.4d64b502.js"><link rel="prefetch" href="/assets/js/170.e6c69a75.js"><link rel="prefetch" href="/assets/js/171.fa9b9dcc.js"><link rel="prefetch" href="/assets/js/172.65def183.js"><link rel="prefetch" href="/assets/js/173.1e0506d6.js"><link rel="prefetch" href="/assets/js/174.40892b21.js"><link rel="prefetch" href="/assets/js/175.482ca1b0.js"><link rel="prefetch" href="/assets/js/176.a2151090.js"><link rel="prefetch" href="/assets/js/177.8a5323b8.js"><link rel="prefetch" href="/assets/js/178.61a4ad47.js"><link rel="prefetch" href="/assets/js/179.f407f069.js"><link rel="prefetch" href="/assets/js/18.d1007cdb.js"><link rel="prefetch" href="/assets/js/180.a7b8092d.js"><link rel="prefetch" href="/assets/js/19.53878535.js"><link rel="prefetch" href="/assets/js/20.45475cf3.js"><link rel="prefetch" href="/assets/js/21.643757e0.js"><link rel="prefetch" href="/assets/js/22.8c356a78.js"><link rel="prefetch" href="/assets/js/23.d217fc1b.js"><link rel="prefetch" href="/assets/js/24.bd9d7624.js"><link rel="prefetch" href="/assets/js/25.24df3145.js"><link rel="prefetch" href="/assets/js/26.96f6b2a9.js"><link rel="prefetch" href="/assets/js/27.47f4dc84.js"><link rel="prefetch" href="/assets/js/28.5f82dbc3.js"><link rel="prefetch" href="/assets/js/29.78cf0581.js"><link rel="prefetch" href="/assets/js/30.201a7836.js"><link rel="prefetch" href="/assets/js/31.703315d3.js"><link rel="prefetch" href="/assets/js/32.4a737436.js"><link rel="prefetch" href="/assets/js/33.f334272a.js"><link rel="prefetch" href="/assets/js/34.4488e5c4.js"><link rel="prefetch" href="/assets/js/35.7f067342.js"><link rel="prefetch" href="/assets/js/36.d7f4b009.js"><link rel="prefetch" href="/assets/js/37.61432ee0.js"><link rel="prefetch" href="/assets/js/38.7324b9d7.js"><link rel="prefetch" href="/assets/js/39.2c37f8e9.js"><link rel="prefetch" href="/assets/js/4.c4c01032.js"><link rel="prefetch" href="/assets/js/40.814e81b0.js"><link rel="prefetch" href="/assets/js/41.66ad1f7c.js"><link rel="prefetch" href="/assets/js/42.985c4fad.js"><link rel="prefetch" href="/assets/js/44.beef1d2e.js"><link rel="prefetch" href="/assets/js/45.bdc72e10.js"><link rel="prefetch" href="/assets/js/46.328fc979.js"><link rel="prefetch" href="/assets/js/47.9559c8be.js"><link rel="prefetch" href="/assets/js/48.eec1d150.js"><link rel="prefetch" href="/assets/js/49.8cf1dfdf.js"><link rel="prefetch" href="/assets/js/5.9638919a.js"><link rel="prefetch" href="/assets/js/50.21a144aa.js"><link rel="prefetch" href="/assets/js/51.666a2320.js"><link rel="prefetch" href="/assets/js/52.6e82d1fe.js"><link rel="prefetch" href="/assets/js/53.12de08c7.js"><link rel="prefetch" href="/assets/js/54.01cc6f98.js"><link rel="prefetch" href="/assets/js/55.4620739f.js"><link rel="prefetch" href="/assets/js/56.6364734c.js"><link rel="prefetch" href="/assets/js/57.0219b9eb.js"><link rel="prefetch" href="/assets/js/58.fa6dc0c2.js"><link rel="prefetch" href="/assets/js/59.3f0f27d7.js"><link rel="prefetch" href="/assets/js/6.4aa92094.js"><link rel="prefetch" href="/assets/js/60.b95d01b5.js"><link rel="prefetch" href="/assets/js/61.60560db0.js"><link rel="prefetch" href="/assets/js/62.34d2b8fe.js"><link rel="prefetch" href="/assets/js/63.e3084c78.js"><link rel="prefetch" href="/assets/js/64.28879c8f.js"><link rel="prefetch" href="/assets/js/65.be4fbadc.js"><link rel="prefetch" href="/assets/js/66.22fb34bf.js"><link rel="prefetch" href="/assets/js/67.280ba05d.js"><link rel="prefetch" href="/assets/js/68.7028a2e6.js"><link rel="prefetch" href="/assets/js/69.82f8dfce.js"><link rel="prefetch" href="/assets/js/7.74a35fba.js"><link rel="prefetch" href="/assets/js/70.8f8dc86e.js"><link rel="prefetch" href="/assets/js/71.c7fb1635.js"><link rel="prefetch" href="/assets/js/72.55b03e44.js"><link rel="prefetch" href="/assets/js/73.a73fdcdb.js"><link rel="prefetch" href="/assets/js/74.8927ed45.js"><link rel="prefetch" href="/assets/js/75.8622cdd1.js"><link rel="prefetch" href="/assets/js/76.716860e2.js"><link rel="prefetch" href="/assets/js/77.038ca0aa.js"><link rel="prefetch" href="/assets/js/78.a87f595f.js"><link rel="prefetch" href="/assets/js/79.2c7dd55b.js"><link rel="prefetch" href="/assets/js/8.da54dd69.js"><link rel="prefetch" href="/assets/js/80.9e14603c.js"><link rel="prefetch" href="/assets/js/81.7ff25d24.js"><link rel="prefetch" href="/assets/js/82.aaab90f2.js"><link rel="prefetch" href="/assets/js/83.39d012cd.js"><link rel="prefetch" href="/assets/js/84.6a62b29e.js"><link rel="prefetch" href="/assets/js/85.fb4c26b0.js"><link rel="prefetch" href="/assets/js/86.9d671403.js"><link rel="prefetch" href="/assets/js/87.a5f7eb26.js"><link rel="prefetch" href="/assets/js/88.61feecb3.js"><link rel="prefetch" href="/assets/js/89.8e00900a.js"><link rel="prefetch" href="/assets/js/9.4395bd13.js"><link rel="prefetch" href="/assets/js/90.d72cd59c.js"><link rel="prefetch" href="/assets/js/91.3f0ef317.js"><link rel="prefetch" href="/assets/js/92.026695d9.js"><link rel="prefetch" href="/assets/js/93.6d99e84f.js"><link rel="prefetch" href="/assets/js/94.0a91ae83.js"><link rel="prefetch" href="/assets/js/95.496e9a95.js"><link rel="prefetch" href="/assets/js/96.0721690d.js"><link rel="prefetch" href="/assets/js/97.bc7d0644.js"><link rel="prefetch" href="/assets/js/98.9dd6bf0d.js"><link rel="prefetch" href="/assets/js/99.0a22914f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.618a5b75.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-42dd5e05><div data-v-42dd5e05><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-42dd5e05 data-v-42dd5e05><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-95c9a4e8 data-v-42dd5e05 data-v-42dd5e05><h3 class="title" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8>Yin的笔记本</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><input type="password" value="" data-v-95c9a4e8> <span data-v-95c9a4e8>Konck! Knock!</span> <button data-v-95c9a4e8>OK</button></label> <div class="footer" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><span data-v-95c9a4e8><i class="iconfont reco-theme" data-v-95c9a4e8></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-95c9a4e8>vuePress-theme-reco</a></span> <span data-v-95c9a4e8><i class="iconfont reco-copyright" data-v-95c9a4e8></i> <a data-v-95c9a4e8><span data-v-95c9a4e8>Howard Yin</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-42dd5e05><header class="navbar" data-v-42dd5e05><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Yin的笔记本" class="logo"> <span class="site-name">Yin的笔记本</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CNCF/" class="nav-link"><i class="iconfont undefined"></i>
+  CNCF
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="iconfont undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/namespaces/" class="nav-link"><i class="iconfont undefined"></i>
+  namespaces
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes对象/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes对象
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MyIdeas/" class="nav-link"><i class="iconfont undefined"></i>
+  MyIdeas
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Revolution/" class="nav-link"><i class="iconfont undefined"></i>
+  Revolution
+</a></li><li class="dropdown-item"><!----> <a href="/categories/云计算/" class="nav-link"><i class="iconfont undefined"></i>
+  云计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/人工智能/" class="nav-link"><i class="iconfont undefined"></i>
+  人工智能
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="iconfont undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/图像处理/" class="nav-link"><i class="iconfont undefined"></i>
+  图像处理
+</a></li><li class="dropdown-item"><!----> <a href="/categories/应试/" class="nav-link"><i class="iconfont undefined"></i>
+  应试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/校内推免面试/" class="nav-link"><i class="iconfont undefined"></i>
+  校内推免面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="iconfont undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数学/" class="nav-link"><i class="iconfont undefined"></i>
+  数学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/OJ笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  OJ笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/形式语言与自动机/" class="nav-link"><i class="iconfont undefined"></i>
+  形式语言与自动机
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器运维/" class="nav-link"><i class="iconfont undefined"></i>
+  服务器运维
+</a></li><li class="dropdown-item"><!----> <a href="/categories/编程语言/" class="nav-link"><i class="iconfont undefined"></i>
+  编程语言
+</a></li><li class="dropdown-item"><!----> <a href="/categories/C/" class="nav-link"><i class="iconfont undefined"></i>
+  C
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Go/" class="nav-link"><i class="iconfont undefined"></i>
+  Go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="iconfont undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Shell/" class="nav-link"><i class="iconfont undefined"></i>
+  Shell
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Tex/" class="nav-link"><i class="iconfont undefined"></i>
+  Tex
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计算机网络/" class="nav-link"><i class="iconfont undefined"></i>
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/categories/论文笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  论文笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/讨论/" class="nav-link"><i class="iconfont undefined"></i>
+  讨论
+</a></li><li class="dropdown-item"><!----> <a href="/categories/边缘计算/" class="nav-link"><i class="iconfont undefined"></i>
+  边缘计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/量子信息技术/" class="nav-link"><i class="iconfont undefined"></i>
+  量子信息技术
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/yindaheng98" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="http://profile.yindaheng98.top" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-account"></i>
+  Site
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/yindaheng98/Notebook/tree/master/学习笔记" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-查看源码"></i>
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask" data-v-42dd5e05></div> <aside class="sidebar" data-v-42dd5e05><div class="personal-info-wrapper" data-v-0ac41e2e><img src="/avatar.svg" alt="author-avatar" class="personal-img" data-v-0ac41e2e> <h3 class="name" data-v-0ac41e2e>
+    Howard Yin
+  </h3> <div class="num" data-v-0ac41e2e><div data-v-0ac41e2e><h3 data-v-0ac41e2e>169</h3> <h6 data-v-0ac41e2e>Article</h6></div> <div data-v-0ac41e2e><h3 data-v-0ac41e2e>112</h3> <h6 data-v-0ac41e2e>Tag</h6></div></div> <hr data-v-0ac41e2e></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CNCF/" class="nav-link"><i class="iconfont undefined"></i>
+  CNCF
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="iconfont undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/namespaces/" class="nav-link"><i class="iconfont undefined"></i>
+  namespaces
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes对象/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes对象
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MyIdeas/" class="nav-link"><i class="iconfont undefined"></i>
+  MyIdeas
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Revolution/" class="nav-link"><i class="iconfont undefined"></i>
+  Revolution
+</a></li><li class="dropdown-item"><!----> <a href="/categories/云计算/" class="nav-link"><i class="iconfont undefined"></i>
+  云计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/人工智能/" class="nav-link"><i class="iconfont undefined"></i>
+  人工智能
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="iconfont undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/图像处理/" class="nav-link"><i class="iconfont undefined"></i>
+  图像处理
+</a></li><li class="dropdown-item"><!----> <a href="/categories/应试/" class="nav-link"><i class="iconfont undefined"></i>
+  应试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/校内推免面试/" class="nav-link"><i class="iconfont undefined"></i>
+  校内推免面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="iconfont undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数学/" class="nav-link"><i class="iconfont undefined"></i>
+  数学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/OJ笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  OJ笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/形式语言与自动机/" class="nav-link"><i class="iconfont undefined"></i>
+  形式语言与自动机
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器运维/" class="nav-link"><i class="iconfont undefined"></i>
+  服务器运维
+</a></li><li class="dropdown-item"><!----> <a href="/categories/编程语言/" class="nav-link"><i class="iconfont undefined"></i>
+  编程语言
+</a></li><li class="dropdown-item"><!----> <a href="/categories/C/" class="nav-link"><i class="iconfont undefined"></i>
+  C
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Go/" class="nav-link"><i class="iconfont undefined"></i>
+  Go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="iconfont undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Shell/" class="nav-link"><i class="iconfont undefined"></i>
+  Shell
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Tex/" class="nav-link"><i class="iconfont undefined"></i>
+  Tex
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计算机网络/" class="nav-link"><i class="iconfont undefined"></i>
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/categories/论文笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  论文笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/讨论/" class="nav-link"><i class="iconfont undefined"></i>
+  讨论
+</a></li><li class="dropdown-item"><!----> <a href="/categories/边缘计算/" class="nav-link"><i class="iconfont undefined"></i>
+  边缘计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/量子信息技术/" class="nav-link"><i class="iconfont undefined"></i>
+  量子信息技术
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/yindaheng98" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="http://profile.yindaheng98.top" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-account"></i>
+  Site
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/yindaheng98/Notebook/tree/master/学习笔记" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-查看源码"></i>
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Network namespace</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Docker/namespaces/Network.html#linux-虚拟网络设备" class="sidebar-link">Linux 虚拟网络设备</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Docker/namespaces/Network.html#tun-tap" class="sidebar-link">TUN/TAP</a></li><li class="sidebar-sub-header"><a href="/Docker/namespaces/Network.html#veth-pair-一根虚拟网线和两个虚拟网卡" class="sidebar-link">veth-pair-一根虚拟网线和两个虚拟网卡</a></li><li class="sidebar-sub-header"><a href="/Docker/namespaces/Network.html#bridge-虚拟交换机" class="sidebar-link">Bridge-虚拟交换机</a></li></ul></li><li><a href="/Docker/namespaces/Network.html#network-namespace" class="sidebar-link">Network namespace</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/Docker/namespaces/Network.html#docker如何使用network-namespace" class="sidebar-link">Docker如何使用Network namespace</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-95c9a4e8 data-v-42dd5e05><h3 class="title" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8>Network namespace</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><input type="password" value="" data-v-95c9a4e8> <span data-v-95c9a4e8>Konck! Knock!</span> <button data-v-95c9a4e8>OK</button></label> <div class="footer" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><span data-v-95c9a4e8><i class="iconfont reco-theme" data-v-95c9a4e8></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-95c9a4e8>vuePress-theme-reco</a></span> <span data-v-95c9a4e8><i class="iconfont reco-copyright" data-v-95c9a4e8></i> <a data-v-95c9a4e8><span data-v-95c9a4e8>Howard Yin</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-42dd5e05><main class="page"><div class="page-title" style="display:none;"><h1>Network namespace</h1> <hr> <div data-v-3d9cec6e><i class="iconfont reco-account" data-v-3d9cec6e><span data-v-3d9cec6e>Howard Yin</span></i> <i class="iconfont reco-date" data-v-3d9cec6e><span data-v-3d9cec6e>2020-07-13 11:14:04</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3d9cec6e><span class="tag-item" data-v-3d9cec6e>Docker</span><span class="tag-item" data-v-3d9cec6e>namespaces</span><span class="tag-item" data-v-3d9cec6e>Linux</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="linux-虚拟网络设备"><a href="#linux-虚拟网络设备" class="header-anchor">#</a> Linux 虚拟网络设备</h2> <p><img src="i/Linux%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87.png" alt="Linux 虚拟网络设备"></p> <h3 id="tun-tap"><a href="#tun-tap" class="header-anchor">#</a> TUN/TAP</h3> <p>TUN 设备是一种虚拟网络设备，通过此设备，程序可以方便得模拟网络行为。对于物理设备，其协议栈从物理网卡中读写数据：</p> <p><img src="i/%E7%89%A9%E7%90%86.png" alt="物理"></p> <p>而TUN 设备的协议栈从文件中读写数据：</p> <p><img src="i/TUN.png" alt="TUN"></p> <p>所有对这个文件的写操作会通过 TUN 设备转换成一个数据包送给内核；当内核发送一个包给 TUN 设备时，通过读这个文件可以拿到包的内容。</p> <p>TAP 设备与 TUN 设备工作方式完全相同，区别在于：</p> <ul><li>TUN 设备从 /dev/tunX 文件收发 IP 层数据包；
+<ul><li>只能工作在 IP 层，无MAC地址因而也无法桥接物理网卡。</li></ul></li> <li>TAP 设备从 /dev/tapX 文件收发 MAC 层数据包。
+<ul><li>工作与MAC层，拥有 MAC 层功能，可以桥接，支持 MAC 层广播</li></ul></li></ul> <p>TUN/TAP设备的特性经常被用在虚拟机和VPN等应用中。例如使用 TUN 设备搭建一个基于 UDP VPN：</p> <p><img src="i/TUN-VPN.png" alt="TUN VPN"></p> <p>App读写/dev/tunX，可以对其流量进行各种转发或加密等操作。</p> <h3 id="veth-pair-一根虚拟网线和两个虚拟网卡"><a href="#veth-pair-一根虚拟网线和两个虚拟网卡" class="header-anchor">#</a> veth-pair-一根虚拟网线和两个虚拟网卡</h3> <p>veth设备总是成对出现，显然，仅有veth-pair设备，容器是无法访问网络的。因为容器发出的数据包，实质上直接进入了veth1设备的协议栈里。如果容器需要访问网络，需要使用bridge等技术，将veth1接收到的数据包通过某种方式转发出去。</p> <p>创建veth-pair，一端为虚拟网卡veth0，另一端为虚拟网卡veth1：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token function">ip</span> <span class="token function">link</span> <span class="token function">add</span> name veth0 <span class="token builtin class-name">type</span> veth0 peer name veth1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="bridge-虚拟交换机"><a href="#bridge-虚拟交换机" class="header-anchor">#</a> Bridge-虚拟交换机</h3> <p><img src="i/bridge.png" alt="Bridge"></p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token function">ip</span> <span class="token function">link</span> <span class="token function">add</span> br0 <span class="token builtin class-name">type</span> bridge <span class="token comment"># 创建Bridge br0</span>
+<span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> br0 up <span class="token comment"># 启动网桥</span>
+
+<span class="token function">ip</span> <span class="token function">link</span> <span class="token function">add</span> veth0 <span class="token builtin class-name">type</span> veth peer name br-veth0 <span class="token comment"># 创建veth和两个虚拟网卡，veth0——br-veth0</span>
+<span class="token function">ip</span> <span class="token function">link</span> <span class="token function">add</span> veth1 <span class="token builtin class-name">type</span> veth peer name br-veth1 <span class="token comment"># 创建veth和两个虚拟网卡，veth1——br-veth1</span>
+
+<span class="token comment"># 假定有两个Network namespace ns1和ns2</span>
+
+<span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> veth0 netns ns1 <span class="token comment"># 虚拟网卡veth0分配给ns1</span>
+<span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> br-veth0 master br0 <span class="token comment"># 虚拟网卡br-veth0接上网桥</span>
+<span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> br-veth0 up <span class="token comment"># 启动虚拟网卡br-veth0</span>
+
+<span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> veth1 netns ns2 <span class="token comment"># 虚拟网卡veth1分配给ns2</span>
+<span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> br-veth1 master br0 <span class="token comment"># 虚拟网卡br-veth1接上网桥</span>
+<span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> br-veth1 up <span class="token comment"># 启动虚拟网卡br-veth1</span>
+
+<span class="token function">ip</span> netns <span class="token builtin class-name">exec</span> ns1 <span class="token function">ip</span> addr <span class="token function">add</span> <span class="token number">10.1</span>.1.2/24 dev veth0 <span class="token comment"># 给ns1中的虚拟网卡veth0分配IP</span>
+<span class="token function">ip</span> netns <span class="token builtin class-name">exec</span> ns1 <span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> veth0 up <span class="token comment"># 启动虚拟网卡veth0</span>
+
+<span class="token function">ip</span> netns <span class="token builtin class-name">exec</span> ns2 <span class="token function">ip</span> addr <span class="token function">add</span> <span class="token number">10.1</span>.1.3/24 dev veth1 <span class="token comment"># 给ns1中的虚拟网卡veth1分配IP</span>
+<span class="token function">ip</span> netns <span class="token builtin class-name">exec</span> ns2 <span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> veth1 up <span class="token comment"># 启动虚拟网卡veth1</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h2 id="network-namespace"><a href="#network-namespace" class="header-anchor">#</a> Network namespace</h2> <p>Network namespace主要提供了关于网络资源的隔离，包括网络设备、IPv4和IPv6协议栈、IP路由表、防火墙、/proc/net目录、/sys/class/net目录、端口（socket）等等。<strong>一个物理的网络设备最多存在在一个network namespace中</strong>，可以通过创建并连接虚拟网络设备在不同的network namespace间创建通道，以此达到通信的目的。</p> <p>network namespace的使用其实就是在创建的时候添加CLONE_NEWNET标识位。也可以通过命令行工具ip创建network namespace：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token function">ip</span> netns <span class="token function">add</span> test_ns <span class="token comment"># 创建名为test_ns的network namespace</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>如上节所示，通过<code>ip netns exec [network namespace名称] [任意指令]</code>命令可以在新创建的network namespace下运行网络管理命令；通过<code>ip link set [虚拟网卡] netns [network namespace名称]</code>命令将一个虚拟网卡分配给一个network namespace。</p> <h2 id="docker如何使用network-namespace"><a href="#docker如何使用network-namespace" class="header-anchor">#</a> Docker如何使用Network namespace</h2> <ul><li>Host模式：如果启动容器的时候使用host模式，那么这个容器将不会获得一个独立的Network Namespace，而是<strong>和宿主机共用一个Network Namespace</strong>；</li> <li>Container模式：与Host模式类似，Container模式的容器<strong>与一个已存在的容器共用一个Network Namespace</strong>；</li> <li>Bridge模式：<strong>容器使用独立network Namespace，并连接到docker0网桥</strong>，通过docker0网桥以及Iptables NAT表配置与宿主机通信；</li> <li>None模式：该模式将容器<strong>放置在它自己的Network Namespace中，但是并不进行任何配置</strong>；</li> <li>自定义网络：使用自定义的网桥可以控制哪些容器可以相互通信，还可以自动DNS解析容器名称到IP地址，容器编排工具（k8s、docker-compose等）中的容器网络就是基于自定义网络所创建的。
+<ul><li>bridge：与Bridge模式相同，只是不与docker0网桥而是自行创建网桥进行连接；</li> <li>Macvlan：macvlan是linux kernel提供的一种network driver类型，是一种网卡虚拟化方案，一张物理网卡设置多个mac地址从而给多个容器使用。</li></ul></li></ul> <h5 id="注：端口映射"><a href="#注：端口映射" class="header-anchor">#</a> 注：端口映射</h5> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>docker run -p <span class="token number">80</span>:80 <span class="token punctuation">..</span>.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Docker如何将容器的80端口映射到主机的80端口？答案是DNAT，在IPtable中：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>-A DOCKER ! -i docker0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 172.17.0.2:80
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></div> <footer class="page-edit" style="display:none;"><div class="edit-link"><a href="https://github.com/yindaheng98/Notebook/edit/master/学习笔记/Docker/namespaces/Network.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">创建于: </span> <span class="time">2020-06-18 15:02:42</span></div> <br> <div class="last-updated"><span class="prefix">更新于: </span> <span class="time">2020-07-13 11:14:45</span></div></footer> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-44bd5a18 data-v-44bd5a18><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-44bd5a18><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-44bd5a18></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-44bd5a18></path></svg></div></div></div>
+    <script src="/assets/js/app.17fd0400.js" defer></script><script src="/assets/js/3.2e743b5c.js" defer></script><script src="/assets/js/1.3190c4f3.js" defer></script><script src="/assets/js/43.1a53d06f.js" defer></script>
+  </body>
+</html>
