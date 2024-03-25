@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Go的面向对象 | Yin的笔记本</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css">
+    <meta name="description" content="Yin的笔记本">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.2d94763a.css" as="style"><link rel="preload" href="/assets/js/app.7446d6e9.js" as="script"><link rel="preload" href="/assets/js/3.bda2e11a.js" as="script"><link rel="preload" href="/assets/js/1.be3d2055.js" as="script"><link rel="preload" href="/assets/js/230.443545a4.js" as="script"><link rel="prefetch" href="/assets/js/10.56e47c25.js"><link rel="prefetch" href="/assets/js/100.aa0aeda2.js"><link rel="prefetch" href="/assets/js/101.2e33b76f.js"><link rel="prefetch" href="/assets/js/102.fa2efbd8.js"><link rel="prefetch" href="/assets/js/103.608b3670.js"><link rel="prefetch" href="/assets/js/104.e1aafd08.js"><link rel="prefetch" href="/assets/js/105.82cd1403.js"><link rel="prefetch" href="/assets/js/106.1ce8c700.js"><link rel="prefetch" href="/assets/js/107.2a5961eb.js"><link rel="prefetch" href="/assets/js/108.4cbf2baa.js"><link rel="prefetch" href="/assets/js/109.ea543185.js"><link rel="prefetch" href="/assets/js/11.cb2b320c.js"><link rel="prefetch" href="/assets/js/110.211c084c.js"><link rel="prefetch" href="/assets/js/111.6c5f549b.js"><link rel="prefetch" href="/assets/js/112.3d09754a.js"><link rel="prefetch" href="/assets/js/113.f64d4684.js"><link rel="prefetch" href="/assets/js/114.02bbb1ef.js"><link rel="prefetch" href="/assets/js/115.c3b75c28.js"><link rel="prefetch" href="/assets/js/116.5e70b614.js"><link rel="prefetch" href="/assets/js/117.970d7921.js"><link rel="prefetch" href="/assets/js/118.3df90f6c.js"><link rel="prefetch" href="/assets/js/119.8019279e.js"><link rel="prefetch" href="/assets/js/12.88feb844.js"><link rel="prefetch" href="/assets/js/120.19957756.js"><link rel="prefetch" href="/assets/js/121.592af850.js"><link rel="prefetch" href="/assets/js/122.e331193d.js"><link rel="prefetch" href="/assets/js/123.ba2b821b.js"><link rel="prefetch" href="/assets/js/124.4f0fc79b.js"><link rel="prefetch" href="/assets/js/125.e825bb12.js"><link rel="prefetch" href="/assets/js/126.e2fca03b.js"><link rel="prefetch" href="/assets/js/127.22ae51ab.js"><link rel="prefetch" href="/assets/js/128.cda9ec1f.js"><link rel="prefetch" href="/assets/js/129.d59ff074.js"><link rel="prefetch" href="/assets/js/13.6e96e00a.js"><link rel="prefetch" href="/assets/js/130.bb19a8fe.js"><link rel="prefetch" href="/assets/js/131.0be7847d.js"><link rel="prefetch" href="/assets/js/132.2aa58756.js"><link rel="prefetch" href="/assets/js/133.f817cae1.js"><link rel="prefetch" href="/assets/js/134.aa09af60.js"><link rel="prefetch" href="/assets/js/135.d4ac139a.js"><link rel="prefetch" href="/assets/js/136.447aa2ff.js"><link rel="prefetch" href="/assets/js/137.9967ae88.js"><link rel="prefetch" href="/assets/js/138.2a2d6035.js"><link rel="prefetch" href="/assets/js/139.8c12a705.js"><link rel="prefetch" href="/assets/js/14.e7b0a0df.js"><link rel="prefetch" href="/assets/js/140.8c95f111.js"><link rel="prefetch" href="/assets/js/141.44eb6795.js"><link rel="prefetch" href="/assets/js/142.ecba0d68.js"><link rel="prefetch" href="/assets/js/143.f569c7d9.js"><link rel="prefetch" href="/assets/js/144.1c09e672.js"><link rel="prefetch" href="/assets/js/145.1aacac92.js"><link rel="prefetch" href="/assets/js/146.4bf75bf3.js"><link rel="prefetch" href="/assets/js/147.d3fb280c.js"><link rel="prefetch" href="/assets/js/148.cb15f9b6.js"><link rel="prefetch" href="/assets/js/149.57c9d01f.js"><link rel="prefetch" href="/assets/js/15.d5fef372.js"><link rel="prefetch" href="/assets/js/150.39dff30c.js"><link rel="prefetch" href="/assets/js/151.d7dda76b.js"><link rel="prefetch" href="/assets/js/152.96d28f38.js"><link rel="prefetch" href="/assets/js/153.8e0a5cd6.js"><link rel="prefetch" href="/assets/js/154.f754a93b.js"><link rel="prefetch" href="/assets/js/155.be1c77c8.js"><link rel="prefetch" href="/assets/js/156.7a7b2941.js"><link rel="prefetch" href="/assets/js/157.bf90e9e2.js"><link rel="prefetch" href="/assets/js/158.2a0aa9e5.js"><link rel="prefetch" href="/assets/js/159.26d8d022.js"><link rel="prefetch" href="/assets/js/16.40b059ce.js"><link rel="prefetch" href="/assets/js/160.f31ca0cd.js"><link rel="prefetch" href="/assets/js/161.65ae5b75.js"><link rel="prefetch" href="/assets/js/162.9d9f0b1e.js"><link rel="prefetch" href="/assets/js/163.cc1ea9e5.js"><link rel="prefetch" href="/assets/js/164.95e828a0.js"><link rel="prefetch" href="/assets/js/165.bdc23fb2.js"><link rel="prefetch" href="/assets/js/166.d1d5afcc.js"><link rel="prefetch" href="/assets/js/167.f2cf46ea.js"><link rel="prefetch" href="/assets/js/168.03dd1fa9.js"><link rel="prefetch" href="/assets/js/169.27afdeec.js"><link rel="prefetch" href="/assets/js/17.dff3d4b3.js"><link rel="prefetch" href="/assets/js/170.fd9a14a0.js"><link rel="prefetch" href="/assets/js/171.20902b25.js"><link rel="prefetch" href="/assets/js/172.25c12e77.js"><link rel="prefetch" href="/assets/js/173.b426d1e0.js"><link rel="prefetch" href="/assets/js/174.d250c3df.js"><link rel="prefetch" href="/assets/js/175.36437f2e.js"><link rel="prefetch" href="/assets/js/176.80b128e5.js"><link rel="prefetch" href="/assets/js/177.5106eee2.js"><link rel="prefetch" href="/assets/js/178.77b0feb4.js"><link rel="prefetch" href="/assets/js/179.b618f65c.js"><link rel="prefetch" href="/assets/js/18.d53bf64c.js"><link rel="prefetch" href="/assets/js/180.4d07dd88.js"><link rel="prefetch" href="/assets/js/181.533eb2dd.js"><link rel="prefetch" href="/assets/js/182.b603fe73.js"><link rel="prefetch" href="/assets/js/183.741e7cd0.js"><link rel="prefetch" href="/assets/js/184.47ba158f.js"><link rel="prefetch" href="/assets/js/185.d7601f65.js"><link rel="prefetch" href="/assets/js/186.91eb5ba8.js"><link rel="prefetch" href="/assets/js/187.fbc66d35.js"><link rel="prefetch" href="/assets/js/188.1bb566bb.js"><link rel="prefetch" href="/assets/js/189.805b84cf.js"><link rel="prefetch" href="/assets/js/19.6231af1d.js"><link rel="prefetch" href="/assets/js/190.a267ef18.js"><link rel="prefetch" href="/assets/js/191.42e06b68.js"><link rel="prefetch" href="/assets/js/192.4068b200.js"><link rel="prefetch" href="/assets/js/193.99235423.js"><link rel="prefetch" href="/assets/js/194.9a6cbf89.js"><link rel="prefetch" href="/assets/js/195.6c99d59e.js"><link rel="prefetch" href="/assets/js/196.144b9175.js"><link rel="prefetch" href="/assets/js/197.f7758b9d.js"><link rel="prefetch" href="/assets/js/198.331bece3.js"><link rel="prefetch" href="/assets/js/199.bf876b88.js"><link rel="prefetch" href="/assets/js/20.5e114073.js"><link rel="prefetch" href="/assets/js/200.274fdf23.js"><link rel="prefetch" href="/assets/js/201.4ff5d7c2.js"><link rel="prefetch" href="/assets/js/202.91d3ab3d.js"><link rel="prefetch" href="/assets/js/203.eb6b8e43.js"><link rel="prefetch" href="/assets/js/204.0e230206.js"><link rel="prefetch" href="/assets/js/205.fcccf4b4.js"><link rel="prefetch" href="/assets/js/206.379e1277.js"><link rel="prefetch" href="/assets/js/207.ea810300.js"><link rel="prefetch" href="/assets/js/208.d099dec8.js"><link rel="prefetch" href="/assets/js/209.481893e4.js"><link rel="prefetch" href="/assets/js/21.8f0b9e64.js"><link rel="prefetch" href="/assets/js/210.374db4c7.js"><link rel="prefetch" href="/assets/js/211.c472a95f.js"><link rel="prefetch" href="/assets/js/212.502142d8.js"><link rel="prefetch" href="/assets/js/213.ba1b93e6.js"><link rel="prefetch" href="/assets/js/214.305d5c66.js"><link rel="prefetch" href="/assets/js/215.597bbbbe.js"><link rel="prefetch" href="/assets/js/216.a02da417.js"><link rel="prefetch" href="/assets/js/217.fadd1752.js"><link rel="prefetch" href="/assets/js/218.249d3993.js"><link rel="prefetch" href="/assets/js/219.fd8fe529.js"><link rel="prefetch" href="/assets/js/22.d22948ea.js"><link rel="prefetch" href="/assets/js/220.0dc90f03.js"><link rel="prefetch" href="/assets/js/221.f8f87a22.js"><link rel="prefetch" href="/assets/js/222.b3b98d89.js"><link rel="prefetch" href="/assets/js/223.2c42e55e.js"><link rel="prefetch" href="/assets/js/224.7e0d08c9.js"><link rel="prefetch" href="/assets/js/225.f1bd60b8.js"><link rel="prefetch" href="/assets/js/226.a1672dec.js"><link rel="prefetch" href="/assets/js/227.eae1a256.js"><link rel="prefetch" href="/assets/js/228.3ad69b43.js"><link rel="prefetch" href="/assets/js/229.a9409bcb.js"><link rel="prefetch" href="/assets/js/23.5bf378be.js"><link rel="prefetch" href="/assets/js/231.52324585.js"><link rel="prefetch" href="/assets/js/232.0f1d5bc3.js"><link rel="prefetch" href="/assets/js/233.4d2f54de.js"><link rel="prefetch" href="/assets/js/234.73b45c41.js"><link rel="prefetch" href="/assets/js/235.f214700a.js"><link rel="prefetch" href="/assets/js/236.a1c48b41.js"><link rel="prefetch" href="/assets/js/237.a1853ab8.js"><link rel="prefetch" href="/assets/js/238.bc42fc06.js"><link rel="prefetch" href="/assets/js/239.3f20abf4.js"><link rel="prefetch" href="/assets/js/24.4c5eceac.js"><link rel="prefetch" href="/assets/js/240.e38504c0.js"><link rel="prefetch" href="/assets/js/241.daee27d8.js"><link rel="prefetch" href="/assets/js/242.b3316636.js"><link rel="prefetch" href="/assets/js/243.3e6cd2e7.js"><link rel="prefetch" href="/assets/js/244.755979bb.js"><link rel="prefetch" href="/assets/js/245.3f8c8ae0.js"><link rel="prefetch" href="/assets/js/246.e5e0f3d5.js"><link rel="prefetch" href="/assets/js/247.97e14d1a.js"><link rel="prefetch" href="/assets/js/248.0c1a6c31.js"><link rel="prefetch" href="/assets/js/249.6c24a429.js"><link rel="prefetch" href="/assets/js/25.d2663827.js"><link rel="prefetch" href="/assets/js/250.0dabb6ab.js"><link rel="prefetch" href="/assets/js/251.f7d85545.js"><link rel="prefetch" href="/assets/js/252.652eef42.js"><link rel="prefetch" href="/assets/js/253.d95e3c6b.js"><link rel="prefetch" href="/assets/js/254.4bc62cdc.js"><link rel="prefetch" href="/assets/js/255.14274cc4.js"><link rel="prefetch" href="/assets/js/256.218942dc.js"><link rel="prefetch" href="/assets/js/257.eee187b1.js"><link rel="prefetch" href="/assets/js/258.b3521b51.js"><link rel="prefetch" href="/assets/js/259.f1f63097.js"><link rel="prefetch" href="/assets/js/26.204d4119.js"><link rel="prefetch" href="/assets/js/260.222491cd.js"><link rel="prefetch" href="/assets/js/261.64a7f0e8.js"><link rel="prefetch" href="/assets/js/262.5c2d1b86.js"><link rel="prefetch" href="/assets/js/263.979385a3.js"><link rel="prefetch" href="/assets/js/264.daf5d94b.js"><link rel="prefetch" href="/assets/js/265.01e0bc87.js"><link rel="prefetch" href="/assets/js/266.0c42d024.js"><link rel="prefetch" href="/assets/js/267.5442aadc.js"><link rel="prefetch" href="/assets/js/268.cf29cc0d.js"><link rel="prefetch" href="/assets/js/269.3e665c10.js"><link rel="prefetch" href="/assets/js/27.4dd1081b.js"><link rel="prefetch" href="/assets/js/270.1a4a7fc3.js"><link rel="prefetch" href="/assets/js/271.10f8e403.js"><link rel="prefetch" href="/assets/js/272.24f7e37d.js"><link rel="prefetch" href="/assets/js/273.79dd2d51.js"><link rel="prefetch" href="/assets/js/274.27034075.js"><link rel="prefetch" href="/assets/js/275.5877c257.js"><link rel="prefetch" href="/assets/js/276.85d198b9.js"><link rel="prefetch" href="/assets/js/277.3b298ebd.js"><link rel="prefetch" href="/assets/js/278.c86f4566.js"><link rel="prefetch" href="/assets/js/279.5fd5e41d.js"><link rel="prefetch" href="/assets/js/28.2ce166c1.js"><link rel="prefetch" href="/assets/js/280.0d5e94ab.js"><link rel="prefetch" href="/assets/js/281.9a1b8cc7.js"><link rel="prefetch" href="/assets/js/282.04d90fe3.js"><link rel="prefetch" href="/assets/js/283.8108efbe.js"><link rel="prefetch" href="/assets/js/284.82452b4b.js"><link rel="prefetch" href="/assets/js/285.8c642e0e.js"><link rel="prefetch" href="/assets/js/286.553da813.js"><link rel="prefetch" href="/assets/js/287.85cc17f7.js"><link rel="prefetch" href="/assets/js/288.ef7dc1d0.js"><link rel="prefetch" href="/assets/js/289.088f074d.js"><link rel="prefetch" href="/assets/js/29.59703328.js"><link rel="prefetch" href="/assets/js/30.453b85ee.js"><link rel="prefetch" href="/assets/js/31.c2de4989.js"><link rel="prefetch" href="/assets/js/32.ae3cf6e2.js"><link rel="prefetch" href="/assets/js/33.6faeb45b.js"><link rel="prefetch" href="/assets/js/34.f92571ba.js"><link rel="prefetch" href="/assets/js/35.4d3b33c9.js"><link rel="prefetch" href="/assets/js/36.83f3bbd0.js"><link rel="prefetch" href="/assets/js/37.1fa051c8.js"><link rel="prefetch" href="/assets/js/38.2d70a00e.js"><link rel="prefetch" href="/assets/js/39.d134c93f.js"><link rel="prefetch" href="/assets/js/4.c3c6dc84.js"><link rel="prefetch" href="/assets/js/40.09bb9bad.js"><link rel="prefetch" href="/assets/js/41.5e16bdb5.js"><link rel="prefetch" href="/assets/js/42.278f4fc4.js"><link rel="prefetch" href="/assets/js/43.8ee30b45.js"><link rel="prefetch" href="/assets/js/44.3f7e1f44.js"><link rel="prefetch" href="/assets/js/45.daf8b37f.js"><link rel="prefetch" href="/assets/js/46.2950c1a8.js"><link rel="prefetch" href="/assets/js/47.a628d645.js"><link rel="prefetch" href="/assets/js/48.6740bf0d.js"><link rel="prefetch" href="/assets/js/49.a41a2ea1.js"><link rel="prefetch" href="/assets/js/5.d28d00d7.js"><link rel="prefetch" href="/assets/js/50.fdfbbff3.js"><link rel="prefetch" href="/assets/js/51.31d60bba.js"><link rel="prefetch" href="/assets/js/52.ddd424d2.js"><link rel="prefetch" href="/assets/js/53.54d92ed9.js"><link rel="prefetch" href="/assets/js/54.314cc27f.js"><link rel="prefetch" href="/assets/js/55.5586d0b4.js"><link rel="prefetch" href="/assets/js/56.4a4f771a.js"><link rel="prefetch" href="/assets/js/57.4cda5e03.js"><link rel="prefetch" href="/assets/js/58.913b764c.js"><link rel="prefetch" href="/assets/js/59.e83a0459.js"><link rel="prefetch" href="/assets/js/6.b2f44dca.js"><link rel="prefetch" href="/assets/js/60.4a63f782.js"><link rel="prefetch" href="/assets/js/61.d19a419e.js"><link rel="prefetch" href="/assets/js/62.b764cc65.js"><link rel="prefetch" href="/assets/js/63.ddc91e7e.js"><link rel="prefetch" href="/assets/js/64.97990440.js"><link rel="prefetch" href="/assets/js/65.c0580814.js"><link rel="prefetch" href="/assets/js/66.cf062759.js"><link rel="prefetch" href="/assets/js/67.6669ca78.js"><link rel="prefetch" href="/assets/js/68.f384f24d.js"><link rel="prefetch" href="/assets/js/69.0348d551.js"><link rel="prefetch" href="/assets/js/7.ee086f86.js"><link rel="prefetch" href="/assets/js/70.0ecc5aac.js"><link rel="prefetch" href="/assets/js/71.453eaf42.js"><link rel="prefetch" href="/assets/js/72.d393eeac.js"><link rel="prefetch" href="/assets/js/73.27285913.js"><link rel="prefetch" href="/assets/js/74.056140e8.js"><link rel="prefetch" href="/assets/js/75.ef2061dd.js"><link rel="prefetch" href="/assets/js/76.eb08a751.js"><link rel="prefetch" href="/assets/js/77.3e32944e.js"><link rel="prefetch" href="/assets/js/78.12a49f0e.js"><link rel="prefetch" href="/assets/js/79.e1c59d3a.js"><link rel="prefetch" href="/assets/js/8.e7dec2e0.js"><link rel="prefetch" href="/assets/js/80.bbd5bee6.js"><link rel="prefetch" href="/assets/js/81.66614c1a.js"><link rel="prefetch" href="/assets/js/82.2b0af473.js"><link rel="prefetch" href="/assets/js/83.c11c8fb3.js"><link rel="prefetch" href="/assets/js/84.f0e5cc61.js"><link rel="prefetch" href="/assets/js/85.f36c697b.js"><link rel="prefetch" href="/assets/js/86.064e2dab.js"><link rel="prefetch" href="/assets/js/87.314996bf.js"><link rel="prefetch" href="/assets/js/88.267dd9bf.js"><link rel="prefetch" href="/assets/js/89.558d30a3.js"><link rel="prefetch" href="/assets/js/9.33f6c812.js"><link rel="prefetch" href="/assets/js/90.7b4f1f93.js"><link rel="prefetch" href="/assets/js/91.ec998c99.js"><link rel="prefetch" href="/assets/js/92.a936ab28.js"><link rel="prefetch" href="/assets/js/93.4496cd87.js"><link rel="prefetch" href="/assets/js/94.ada35811.js"><link rel="prefetch" href="/assets/js/95.c0d2745e.js"><link rel="prefetch" href="/assets/js/96.8fb1ed20.js"><link rel="prefetch" href="/assets/js/97.90421efb.js"><link rel="prefetch" href="/assets/js/98.1dd4a7e4.js"><link rel="prefetch" href="/assets/js/99.dc563f18.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2d94763a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-42dd5e05><div data-v-42dd5e05><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-42dd5e05 data-v-42dd5e05><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-95c9a4e8 data-v-42dd5e05 data-v-42dd5e05><h3 class="title" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8>Yin的笔记本</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><input type="password" value="" data-v-95c9a4e8> <span data-v-95c9a4e8>Konck! Knock!</span> <button data-v-95c9a4e8>OK</button></label> <div class="footer" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><span data-v-95c9a4e8><i class="iconfont reco-theme" data-v-95c9a4e8></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-95c9a4e8>vuePress-theme-reco</a></span> <span data-v-95c9a4e8><i class="iconfont reco-copyright" data-v-95c9a4e8></i> <a data-v-95c9a4e8><span data-v-95c9a4e8>Howard Yin</span>
+            
+          <span data-v-95c9a4e8>2021 - </span>
+          2024
+        </a></span></div></div> <div class="hide" data-v-42dd5e05><header class="navbar" data-v-42dd5e05><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Yin的笔记本" class="logo"> <span class="site-name">Yin的笔记本</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CNCF/" class="nav-link"><i class="iconfont undefined"></i>
+  CNCF
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="iconfont undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/namespaces/" class="nav-link"><i class="iconfont undefined"></i>
+  namespaces
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes对象/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes对象
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="iconfont undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MyIdeas/" class="nav-link"><i class="iconfont undefined"></i>
+  MyIdeas
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Revolution/" class="nav-link"><i class="iconfont undefined"></i>
+  Revolution
+</a></li><li class="dropdown-item"><!----> <a href="/categories/WebRTC/" class="nav-link"><i class="iconfont undefined"></i>
+  WebRTC
+</a></li><li class="dropdown-item"><!----> <a href="/categories/云计算/" class="nav-link"><i class="iconfont undefined"></i>
+  云计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/人工智能/" class="nav-link"><i class="iconfont undefined"></i>
+  人工智能
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="iconfont undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/图形学/" class="nav-link"><i class="iconfont undefined"></i>
+  图形学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/图像处理/" class="nav-link"><i class="iconfont undefined"></i>
+  图像处理
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="iconfont undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数学/" class="nav-link"><i class="iconfont undefined"></i>
+  数学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/OJ笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  OJ笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博弈论/" class="nav-link"><i class="iconfont undefined"></i>
+  博弈论
+</a></li><li class="dropdown-item"><!----> <a href="/categories/形式语言与自动机/" class="nav-link"><i class="iconfont undefined"></i>
+  形式语言与自动机
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器运维/" class="nav-link"><i class="iconfont undefined"></i>
+  服务器运维
+</a></li><li class="dropdown-item"><!----> <a href="/categories/编程语言/" class="nav-link"><i class="iconfont undefined"></i>
+  编程语言
+</a></li><li class="dropdown-item"><!----> <a href="/categories/C/" class="nav-link"><i class="iconfont undefined"></i>
+  C
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Go/" class="nav-link"><i class="iconfont undefined"></i>
+  Go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="iconfont undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nvidia/" class="nav-link"><i class="iconfont undefined"></i>
+  Nvidia
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Rust/" class="nav-link"><i class="iconfont undefined"></i>
+  Rust
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Shell/" class="nav-link"><i class="iconfont undefined"></i>
+  Shell
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Tex/" class="nav-link"><i class="iconfont undefined"></i>
+  Tex
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/视频编解码/" class="nav-link"><i class="iconfont undefined"></i>
+  视频编解码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计算机网络/" class="nav-link"><i class="iconfont undefined"></i>
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SDN/" class="nav-link"><i class="iconfont undefined"></i>
+  SDN
+</a></li><li class="dropdown-item"><!----> <a href="/categories/论文笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  论文笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/讨论/" class="nav-link"><i class="iconfont undefined"></i>
+  讨论
+</a></li><li class="dropdown-item"><!----> <a href="/categories/边缘计算/" class="nav-link"><i class="iconfont undefined"></i>
+  边缘计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/量子信息技术/" class="nav-link"><i class="iconfont undefined"></i>
+  量子信息技术
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="http://profile.yindaheng98.top" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-account"></i>
+  About
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/yindaheng98/Notebook/tree/master/学习笔记" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-查看源码"></i>
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask" data-v-42dd5e05></div> <aside class="sidebar" data-v-42dd5e05><div class="personal-info-wrapper" data-v-0ac41e2e><img src="/avatar.svg" alt="author-avatar" class="personal-img" data-v-0ac41e2e> <h3 class="name" data-v-0ac41e2e>
+    Howard Yin
+  </h3> <div class="num" data-v-0ac41e2e><div data-v-0ac41e2e><h3 data-v-0ac41e2e>278</h3> <h6 data-v-0ac41e2e>Article</h6></div> <div data-v-0ac41e2e><h3 data-v-0ac41e2e>143</h3> <h6 data-v-0ac41e2e>Tag</h6></div></div> <hr data-v-0ac41e2e></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CNCF/" class="nav-link"><i class="iconfont undefined"></i>
+  CNCF
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="iconfont undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/namespaces/" class="nav-link"><i class="iconfont undefined"></i>
+  namespaces
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes对象/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes对象
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="iconfont undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MyIdeas/" class="nav-link"><i class="iconfont undefined"></i>
+  MyIdeas
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Revolution/" class="nav-link"><i class="iconfont undefined"></i>
+  Revolution
+</a></li><li class="dropdown-item"><!----> <a href="/categories/WebRTC/" class="nav-link"><i class="iconfont undefined"></i>
+  WebRTC
+</a></li><li class="dropdown-item"><!----> <a href="/categories/云计算/" class="nav-link"><i class="iconfont undefined"></i>
+  云计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/人工智能/" class="nav-link"><i class="iconfont undefined"></i>
+  人工智能
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="iconfont undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/图形学/" class="nav-link"><i class="iconfont undefined"></i>
+  图形学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/图像处理/" class="nav-link"><i class="iconfont undefined"></i>
+  图像处理
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="iconfont undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数学/" class="nav-link"><i class="iconfont undefined"></i>
+  数学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/OJ笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  OJ笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博弈论/" class="nav-link"><i class="iconfont undefined"></i>
+  博弈论
+</a></li><li class="dropdown-item"><!----> <a href="/categories/形式语言与自动机/" class="nav-link"><i class="iconfont undefined"></i>
+  形式语言与自动机
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器运维/" class="nav-link"><i class="iconfont undefined"></i>
+  服务器运维
+</a></li><li class="dropdown-item"><!----> <a href="/categories/编程语言/" class="nav-link"><i class="iconfont undefined"></i>
+  编程语言
+</a></li><li class="dropdown-item"><!----> <a href="/categories/C/" class="nav-link"><i class="iconfont undefined"></i>
+  C
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Go/" class="nav-link"><i class="iconfont undefined"></i>
+  Go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="iconfont undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nvidia/" class="nav-link"><i class="iconfont undefined"></i>
+  Nvidia
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Rust/" class="nav-link"><i class="iconfont undefined"></i>
+  Rust
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Shell/" class="nav-link"><i class="iconfont undefined"></i>
+  Shell
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Tex/" class="nav-link"><i class="iconfont undefined"></i>
+  Tex
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/视频编解码/" class="nav-link"><i class="iconfont undefined"></i>
+  视频编解码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计算机网络/" class="nav-link"><i class="iconfont undefined"></i>
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SDN/" class="nav-link"><i class="iconfont undefined"></i>
+  SDN
+</a></li><li class="dropdown-item"><!----> <a href="/categories/论文笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  论文笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/讨论/" class="nav-link"><i class="iconfont undefined"></i>
+  讨论
+</a></li><li class="dropdown-item"><!----> <a href="/categories/边缘计算/" class="nav-link"><i class="iconfont undefined"></i>
+  边缘计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/量子信息技术/" class="nav-link"><i class="iconfont undefined"></i>
+  量子信息技术
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="http://profile.yindaheng98.top" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-account"></i>
+  About
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/yindaheng98/Notebook/tree/master/学习笔记" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-查看源码"></i>
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Go的面向对象</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Go/go%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html#go的接口-interface-类型" class="sidebar-link">Go的接口(interface)类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Go/go%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html#非侵入式" class="sidebar-link">“非侵入式”</a></li><li class="sidebar-sub-header"><a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Go/go%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html#注意事项" class="sidebar-link">注意事项</a></li></ul></li><li><a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Go/go%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html#指针和值" class="sidebar-link">指针和值</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Go/go%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html#类和接口的指针" class="sidebar-link">类和接口的指针</a></li></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-95c9a4e8 data-v-42dd5e05><h3 class="title" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8>Go的面向对象</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><input type="password" value="" data-v-95c9a4e8> <span data-v-95c9a4e8>Konck! Knock!</span> <button data-v-95c9a4e8>OK</button></label> <div class="footer" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><span data-v-95c9a4e8><i class="iconfont reco-theme" data-v-95c9a4e8></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-95c9a4e8>vuePress-theme-reco</a></span> <span data-v-95c9a4e8><i class="iconfont reco-copyright" data-v-95c9a4e8></i> <a data-v-95c9a4e8><span data-v-95c9a4e8>Howard Yin</span>
+            
+          <span data-v-95c9a4e8>2021 - </span>
+          2024
+        </a></span></div></div> <div data-v-42dd5e05><main class="page"><div class="page-title" style="display:none;"><h1>Go的面向对象</h1> <hr> <div data-v-3d9cec6e><i class="iconfont reco-account" data-v-3d9cec6e><span data-v-3d9cec6e>Howard Yin</span></i> <i class="iconfont reco-date" data-v-3d9cec6e><span data-v-3d9cec6e>2019-10-18 07:18:00</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3d9cec6e><span class="tag-item" data-v-3d9cec6e>Go</span><span class="tag-item" data-v-3d9cec6e>概念</span><span class="tag-item" data-v-3d9cec6e>设计思路</span><span class="tag-item" data-v-3d9cec6e>概念</span><span class="tag-item" data-v-3d9cec6e>编程语言</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p>Go没有面向对象，但是可以通过函数方法实现类似面向对象的功能。</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+   <span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">/* 定义结构体 */</span>
+<span class="token keyword">type</span> Circle <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+  radius <span class="token builtin">float64</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//该 method 属于 Circle 类型对象中的方法</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>c Circle<span class="token punctuation">)</span> <span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">float64</span> <span class="token punctuation">{</span>
+  <span class="token comment">//c.radius 即为 Circle 类型对象中的属性</span>
+  <span class="token keyword">return</span> <span class="token number">3.14</span> <span class="token operator">*</span> c<span class="token punctuation">.</span>radius <span class="token operator">*</span> c<span class="token punctuation">.</span>radius
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> c1 Circle
+  c1<span class="token punctuation">.</span>radius <span class="token operator">=</span> <span class="token number">10.00</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;圆的面积 = &quot;</span><span class="token punctuation">,</span> c1<span class="token punctuation">.</span><span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h2 id="go的接口-interface-类型"><a href="#go的接口-interface-类型" class="header-anchor">#</a> Go的接口(interface)类型</h2> <p>Go 语言提供了一种接口数据类型，它把所有的具有共性的方法定义在一起，任何其他类型只要实现了这些方法就是实现了这个接口。</p> <ul><li>定义接口</li></ul> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token comment">/* 定义接口 */</span>
+<span class="token keyword">type</span> my_interface <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+   <span class="token function">method1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+   <span class="token function">method2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">uint64</span>
+   <span class="token function">method3</span><span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">float32</span>
+   <span class="token operator">...</span>
+   方法名<span class="token punctuation">(</span>参数类型<span class="token operator">...</span><span class="token punctuation">)</span> <span class="token punctuation">[</span>返回值类型<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ul><li>实现接口</li></ul> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token comment">/* 定义结构体 */</span>
+<span class="token keyword">type</span> my_struct <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+   my_id <span class="token builtin">int</span>
+   <span class="token comment">/* variables */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 实现接口方法 */</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>变量名 <span class="token operator">*</span>my_struct<span class="token punctuation">)</span> <span class="token function">method1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   变量名<span class="token punctuation">.</span>my_id<span class="token operator">=</span><span class="token number">0</span>
+   <span class="token comment">/* 方法实现 */</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>变量名 my_struct<span class="token punctuation">)</span> <span class="token function">method2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">uint64</span> <span class="token punctuation">{</span>
+   <span class="token comment">/* 方法实现*/</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>变量名 my_struct<span class="token punctuation">)</span> <span class="token function">method3</span><span class="token punctuation">(</span><span class="token builtin">string</span> a<span class="token punctuation">)</span> <span class="token builtin">float32</span> <span class="token punctuation">{</span>
+   <span class="token comment">/* 方法实现*/</span>
+<span class="token punctuation">}</span>
+<span class="token operator">...</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>变量名 my_struct<span class="token punctuation">)</span> 方法名<span class="token punctuation">(</span>参数类型<span class="token operator">...</span><span class="token punctuation">)</span> 返回值类型 <span class="token punctuation">{</span>
+   <span class="token comment">/* 方法实现*/</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><ul><li>实现后即可调用：</li></ul> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> my_variable my_interface
+    my_variable <span class="token operator">=</span> <span class="token function">new</span><span class="token punctuation">(</span>my_struct<span class="token punctuation">)</span>
+    my_variable<span class="token punctuation">.</span><span class="token function">methods3</span><span class="token punctuation">(</span><span class="token string">&quot;Hello world!&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="非侵入式"><a href="#非侵入式" class="header-anchor">#</a> “非侵入式”</h3> <p>何为非侵入式？</p> <p>在java里面必须要借助<code>implement</code>显式地指定接口才能完成接口实现，这样每个类在定义的时候在被它实现的接口“侵入”；而go里面<strong>不需要显式地声明一个类实现了哪个接口</strong>，<strong>只要实现了接口的所有的方法就可以视为完成了实现</strong>从而能赋值给一个接口变量。</p> <h3 id="注意事项"><a href="#注意事项" class="header-anchor">#</a> 注意事项</h3> <h4 id="类的注意事项"><a href="#类的注意事项" class="header-anchor">#</a> 类的注意事项</h4> <ul><li>如果类可导出且方法可导出，在包外可以定义类并调用方法</li> <li>如果类可导出而方法不可导出，在包外可以定义类但不能调用方法</li> <li>如果类不可导出而方法可导出，在包外不可以定义类但可以调用方法（只能调用<strong>包内定义的可导出变量的</strong>可导出方法）</li> <li>如果类不可导出而方法不可导出，在包外不可以定义类也不可以调用方法</li></ul> <h4 id="接口的注意事项"><a href="#接口的注意事项" class="header-anchor">#</a> 接口的注意事项</h4> <ul><li>如果接口可导出且方法可导出，在包外可以完成接口继承和类型转换且可以定义接口变量</li> <li>如果接口可导出而方法不可导出，在包外不能完成接口继承和类型转换（会报错“接口中有不可导出方法(non-exported methods)”）</li> <li>如果接口不可导出而方法可导出，在包外可以完成接口继承和类型转换但不能定义接口变量（只能向已经定义的变量或者函数传参）</li> <li>如果接口不可导出而方法不可导出，在包外不能完成接口继承和类型转换</li></ul> <h2 id="指针和值"><a href="#指针和值" class="header-anchor">#</a> 指针和值</h2> <p>你可以为指针接收者声明方法，定义方式如上文中的类型方法<code>my_struct.method1</code>。</p> <p>若使用值接收者，那么<code>method1</code>方法会对原始<code>my_struct</code>值的副本进行操作（对于函数的其它参数也是如此）。<code>method1</code>方法必须用指针接受者来更改 main 函数中声明的<code>my_variable</code>的值。</p> <p>指针接收者的方法可以修改接收者指向的值（就像 method1 在这做的）。由于方法经常需要修改它的接收者，指针接收者比值接收者更常用。</p> <h4 id="为什么要用指针接收者"><a href="#为什么要用指针接收者" class="header-anchor">#</a> 为什么要用指针接收者</h4> <p>首先，方法能够修改其接收者指向的值。</p> <p>其次，这样可以避免在每次调用方法时复制该值。若值的类型为大型结构体时，这样做会更加高效。</p> <h3 id="类和接口的指针"><a href="#类和接口的指针" class="header-anchor">#</a> 类和接口的指针</h3> <h4 id="不管类方法定义时是以指针还是值为接收者，调用时接收者都既能为值又能为指针，并且在方法内调用类方法和成员的方式相同"><a href="#不管类方法定义时是以指针还是值为接收者，调用时接收者都既能为值又能为指针，并且在方法内调用类方法和成员的方式相同" class="header-anchor">#</a> 不管类方法定义时是以指针还是值为接收者，调用时接收者都既能为值又能为指针，并且在方法内调用类方法和成员的方式相同</h4> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token comment">/*my_interface和my_struct定义同上*/</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> my_variable1 my_struct <span class="token operator">=</span> my_struct<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span>
+    my_variable1<span class="token punctuation">.</span><span class="token function">method1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//定义接收者是指针，调用时接收者为值</span>
+    my_variable1<span class="token punctuation">.</span><span class="token function">method2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//定义接收者是值，调用时接收者为值</span>
+
+    <span class="token keyword">var</span> my_variable2 <span class="token operator">*</span>my_struct <span class="token operator">=</span> <span class="token function">new</span><span class="token punctuation">(</span>my_struct<span class="token punctuation">)</span><span class="token comment">//用new</span>
+    my_variable2<span class="token punctuation">.</span><span class="token function">method1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//定义接收者是指针，调用时接收者为指针</span>
+    my_variable2<span class="token punctuation">.</span><span class="token function">method2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//定义接收者是值，调用时接收者为指针</span>
+
+    <span class="token keyword">var</span> my_variable3 <span class="token operator">*</span>my_struct <span class="token operator">=</span> <span class="token operator">&amp;</span>my_struct<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token comment">//或者直接赋值也行</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h4 id="但是接口方法就比较严格了，用值调用和指针调用必须严格"><a href="#但是接口方法就比较严格了，用值调用和指针调用必须严格" class="header-anchor">#</a> 但是接口方法就比较严格了，用值调用和指针调用必须严格</h4> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token comment">/*my_interface和my_struct定义同上*/</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> my_variable1 my_interface<span class="token comment">//接口实例</span>
+    my_variable1 <span class="token operator">=</span> my_struct<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span>
+    my_variable1<span class="token punctuation">.</span><span class="token function">method1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//my_variable1是接口实例的值类型</span>
+    my_variable1<span class="token punctuation">.</span><span class="token function">method2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//因此可以直接调用接口方法</span>
+
+    <span class="token keyword">var</span> my_variable2 <span class="token operator">*</span>my_interface<span class="token comment">//接口实例指针</span>
+    my_variable2 <span class="token operator">=</span> <span class="token operator">&amp;</span>my_variable1
+    <span class="token punctuation">(</span><span class="token operator">*</span>my_variable2<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">method1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//my_variable1是指向一个接口实例的指针类型</span>
+    <span class="token punctuation">(</span><span class="token operator">*</span>my_variable2<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">method2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//必须严格按照指针的规则来</span>
+    my_variable1<span class="token punctuation">.</span><span class="token function">method1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//报错</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h4 id="指针参数的函数必须接受一个指针，这是毫无疑问的"><a href="#指针参数的函数必须接受一个指针，这是毫无疑问的" class="header-anchor">#</a> 指针参数的函数必须接受一个指针，这是毫无疑问的</h4> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">func1</span><span class="token punctuation">(</span>变量名 <span class="token operator">*</span>my_struct<span class="token punctuation">,</span> 变量名 my_struct<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   my_struct
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">func1</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>my_variable<span class="token punctuation">,</span>my_variable<span class="token punctuation">)</span>
+    <span class="token function">func1</span><span class="token punctuation">(</span>my_variable<span class="token punctuation">,</span>my_variable<span class="token punctuation">)</span><span class="token comment">//报错</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h4 id="类指针不能进行类型转换"><a href="#类指针不能进行类型转换" class="header-anchor">#</a> 类指针不能进行类型转换</h4> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> A <span class="token keyword">interface</span><span class="token punctuation">{</span>
+   <span class="token function">Amethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> B <span class="token keyword">struct</span><span class="token punctuation">{</span>
+   V <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>b B<span class="token punctuation">)</span><span class="token function">Amethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//B类型实现了A接口</span>
+   fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;Amethod and B value %d&quot;</span><span class="token punctuation">,</span>V<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">var</span> a A<span class="token comment">//A类型的变量a</span>
+   <span class="token keyword">var</span> b B<span class="token comment">//B类型的变量b</span>
+   b <span class="token operator">=</span> B<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span>
+   a <span class="token operator">=</span> b<span class="token comment">//正确，可以进行值传递</span>
+
+   <span class="token keyword">var</span> pa <span class="token operator">*</span>A<span class="token comment">//指向A类型的指针pa</span>
+   <span class="token keyword">var</span> pb <span class="token operator">*</span>B<span class="token comment">//指向B类型的指针pb</span>
+   pa <span class="token operator">=</span> <span class="token operator">&amp;</span>a
+   pb <span class="token operator">=</span> <span class="token operator">&amp;</span>b
+   pa <span class="token operator">=</span> pb<span class="token comment">//错误，不可以进行指针传递</span>
+   pa <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>A<span class="token punctuation">)</span><span class="token punctuation">(</span>unsafe<span class="token punctuation">.</span><span class="token function">Pointer</span><span class="token punctuation">(</span>pb<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//这个是不安全的指针转换，它不会自己判断被转换指针的类型</span>
+   <span class="token comment">//并且这么玩一手还会调用出现函数调用错误，因为接口和类的同名函数的入口地址可能不一样</span>
+   <span class="token comment">//只有当类的内存分布尽在掌控时才能用</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h5 id="但是，如果我要把一个必须全局唯一的类实例传递给它的某个父类或者接口要怎么搞？"><a href="#但是，如果我要把一个必须全局唯一的类实例传递给它的某个父类或者接口要怎么搞？" class="header-anchor">#</a> 但是，如果我要把一个必须全局唯一的类实例传递给它的某个父类或者接口要怎么搞？</h5> <p>正常思路是，对于一个要全局唯一的类，传来传去的必须要是它的指针，但是go指针不能传父类或者接口。有一种解决方法是：把这个类的变量全部定义为指针类型。这样让类可以复制来复制去而里面的变量都是唯一的。这样是放弃类的全局唯一性，保证类变量的全局唯一性。</p> <p>比如在上面那个类和接口结构里面，要保证某个<code>B</code>类型变量的全局唯一性，就要用上面那个指针<code>pb</code>就会出现上面那个问题，尤其是在一些函数调用中，<code>*B</code>类型的实参也无法兼容为<code>*A</code>类型的形参：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">F</span><span class="token punctuation">(</span>a <span class="token operator">*</span>A<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token punctuation">(</span><span class="token operator">*</span>a<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Amethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">var</span> b <span class="token operator">*</span>B
+   b <span class="token operator">=</span> <span class="token operator">&amp;</span>B<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span>
+   <span class="token function">F</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token comment">//报错</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>这里可以改造，让<code>B</code>里面是一个指针值：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> B <span class="token keyword">struct</span><span class="token punctuation">{</span>
+   V <span class="token operator">*</span><span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">F</span><span class="token punctuation">(</span>a A<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   a<span class="token punctuation">.</span><span class="token function">Amethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>然后就可以：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">var</span> b B
+   b <span class="token operator">=</span> B<span class="token punctuation">{</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+   <span class="token operator">*</span>b<span class="token punctuation">.</span>V <span class="token operator">=</span> <span class="token number">1</span>
+   <span class="token function">F</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token comment">//报错</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>这样，虽然<code>b</code>被复制了，但是里面的指针指向的值还是一样的。这和用一个直接指向<code>b</code>的指针传参的效果差不多。</p></div> <footer class="page-edit" style="display:none;"><div class="edit-link"><a href="https://github.com/yindaheng98/Notebook/edit/master/学习笔记/编程语言/Go/go的面向对象.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">创建于: </span> <span class="time">2019-10-15 02:38:07</span></div> <br> <div class="last-updated"><span class="prefix">更新于: </span> <span class="time">2019-10-18 07:18:05</span></div></footer> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-44bd5a18 data-v-44bd5a18><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-44bd5a18><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-44bd5a18></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-44bd5a18></path></svg></div></div></div>
+    <script src="/assets/js/app.7446d6e9.js" defer></script><script src="/assets/js/3.bda2e11a.js" defer></script><script src="/assets/js/1.be3d2055.js" defer></script><script src="/assets/js/230.443545a4.js" defer></script>
+  </body>
+</html>
