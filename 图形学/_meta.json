@@ -1,0 +1,559 @@
+{
+    "MobileNeRF.md": {
+        "title": "【转载】MobileNeRF论文解析",
+        "created": "2024-03-22 23:24:23",
+        "updated": "2024-03-23 04:36:50",
+        "date": "2024-03-23 04:36:50",
+        "tags": [
+            "Nerf",
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/zhimg.com/v2-34e3186bc54db3eccd03b23ff671241d_1440w.png"
+    },
+    "双目相机.md": {
+        "title": "双目视觉模型和三角定位",
+        "created": "2023-11-14 23:54:51",
+        "updated": "2023-12-19 19:50:07",
+        "date": "2023-12-19 19:50:07",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/zhimg.com/v2-e30183f32a92f517970dad22c435100c_r.jpg"
+    },
+    "3D高斯泼溅文件压缩.md": {
+        "title": "【翻译转载】Making Gaussian Splats smaller - 3D Gaussian Splatting 文件压缩",
+        "created": "2023-12-28 01:29:24",
+        "updated": "2023-12-28 05:37:48",
+        "date": "2023-12-28 05:37:48",
+        "tags": [
+            "图形学",
+            "3D Gaussian Splatting"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/image-311.png"
+    },
+    "UnityGaussianSplatting.md": {
+        "title": "`aras-p/UnityGaussianSplatting` Runtime 源码浅析",
+        "created": "2025-04-24 11:51:09",
+        "updated": "2025-04-24 11:51:09",
+        "date": "2025-04-24 11:51:09",
+        "tags": [
+            "图形学",
+            "3D Gaussian Splatting"
+        ],
+        "categories": [
+            "图形学"
+        ]
+    },
+    "InstantNGP.md": {
+        "title": "Instant-NGP中的NeRF渲染核心代码解析",
+        "created": "2024-02-29 06:04:52",
+        "updated": "2024-03-04 01:45:20",
+        "date": "2024-03-04 01:45:20",
+        "tags": [
+            "Nerf",
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ]
+    },
+    "OpenVDB.md": {
+        "title": "【转载】OpenVDB简介",
+        "created": "2023-10-01 23:21:13",
+        "updated": "2023-10-01 23:21:13",
+        "date": "2023-10-01 23:21:13",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/47ee86932c3a340636b4d724ac7bcc1b.png"
+    },
+    "动态NeRF.md": {
+        "title": "让NeRF动起来",
+        "created": "2023-12-28 00:38:58",
+        "updated": "2023-12-28 01:08:19",
+        "date": "2023-12-28 01:08:19",
+        "tags": [
+            "Nerf",
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/20231227161059.png"
+    },
+    "DenseReconstruct.md": {
+        "title": "Dense Reconstruction in Multi View Stereo (MVS)",
+        "created": "2024-08-22 00:23:46",
+        "updated": "2024-08-26 22:49:17",
+        "date": "2024-08-26 22:49:17",
+        "tags": [
+            "图形学",
+            "3D重建"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/uz61k20i93.jpeg"
+    },
+    "LOD.md": {
+        "title": "【摘录】LoD(Level Of Details)",
+        "created": "2023-09-23 21:42:46",
+        "updated": "2023-09-23 21:42:46",
+        "date": "2023-09-23 21:42:46",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/ada19404-83ad-11ea-8557-827bb56bd060.gif"
+    },
+    "旋转矩阵.md": {
+        "title": "【转载】姿态与旋转矩阵",
+        "created": "2023-11-02 05:32:28",
+        "updated": "2023-11-02 05:32:28",
+        "date": "2023-11-02 05:32:28",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/zhimg.com/v2-5f4a7bd8a8f7ffba99d8f4b32b8d09e0_r.jpg"
+    },
+    "光线行进算法.md": {
+        "title": "【转载】体积云渲染实战：ray marching，体积云与体积云光照",
+        "created": "2023-09-13 23:39:51",
+        "updated": "2023-09-13 23:55:02",
+        "date": "2023-09-13 23:55:02",
+        "tags": [
+            "Nerf",
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/20210125020053678.png"
+    },
+    "3D高斯数学推导.md": {
+        "title": "【转载】3D Gaussian Splatting中的数学推导",
+        "created": "2023-12-20 01:41:11",
+        "updated": "2023-12-26 05:18:27",
+        "date": "2023-12-26 05:18:27",
+        "tags": [
+            "图形学",
+            "3D Gaussian Splatting"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/zhimg.com/v2-7cbe3b0c3b67ce80593fad0d73a814b5_r.jpg"
+    },
+    "相机对齐.md": {
+        "title": "相机对齐",
+        "created": "2025-03-26 20:16:05",
+        "updated": "2025-03-26 20:16:05",
+        "date": "2025-03-26 20:16:05",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ]
+    },
+    "3DGaussianSplatting.md": {
+        "title": "3D Gaussian Splatting",
+        "created": "2023-12-19 05:38:10",
+        "updated": "2023-12-30 06:36:34",
+        "date": "2023-12-30 06:36:34",
+        "tags": [
+            "图形学",
+            "3D Gaussian Splatting"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/20231218204732.png"
+    },
+    "RGBD重建综述.md": {
+        "title": "【转载】基于RGB-D相机的三维重建总览 包括静态与动态三维重建",
+        "created": "2024-08-26 23:44:19",
+        "updated": "2024-08-27 03:30:52",
+        "date": "2024-08-27 03:30:52",
+        "tags": [
+            "图形学",
+            "3D重建"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/20240826165538.png"
+    },
+    "可微渲染.md": {
+        "title": "【转载】一文快速了解可微渲染与神经渲染",
+        "created": "2023-09-14 20:31:14",
+        "updated": "2023-09-14 20:31:14",
+        "date": "2023-09-14 20:31:14",
+        "tags": [
+            "图形学",
+            "Nerf"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/zhimg.com/v2-5c8f4949f9bc3adc83670ee7c8bb59e9_r.jpg"
+    },
+    "alpha-blending.md": {
+        "title": "光栅化中的半透明物体：α-blending 透明度混合",
+        "created": "2023-12-25 00:31:56",
+        "updated": "2023-12-26 01:03:36",
+        "date": "2023-12-26 01:03:36",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/v2-ddb7d2e1cc719b6d39bf06996aa0b07a_r.jpg"
+    },
+    "InstantNGP-EncodingGrid.md": {
+        "title": "InstantNGP中的EncodingGrid核心代码",
+        "created": "2024-04-26 23:58:42",
+        "updated": "2024-04-26 23:58:42",
+        "date": "2024-04-26 23:58:42",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ]
+    },
+    "球谐系数.md": {
+        "title": "球谐系数与球面高斯",
+        "created": "2023-12-20 06:40:41",
+        "updated": "2023-12-20 18:38:08",
+        "date": "2023-12-20 18:38:08",
+        "tags": [
+            "图形学",
+            "3D Gaussian Splatting",
+            "Nerf"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/zhimg.com/v2-1ea9c5bac926b47e7410a4a73a91070a_r.jpg"
+    },
+    "NeRF系列工作总结.md": {
+        "title": "【转载】NeRF系列工作总结",
+        "created": "2023-10-23 00:50:19",
+        "updated": "2023-10-23 00:50:19",
+        "date": "2023-10-23 00:50:19",
+        "tags": [
+            "Nerf",
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/zhimg.com/v2-63f45a78a3ebcccc0f9def5bc610d8b3_r.jpg"
+    },
+    "3D高斯代码解析.md": {
+        "title": "详解3D Gaussian Splatting CUDA Kernel：前向传播",
+        "created": "2024-10-09 21:55:30",
+        "updated": "2024-11-24 18:43:09",
+        "date": "2024-11-24 18:43:09",
+        "tags": [
+            "图形学",
+            "3D Gaussian Splatting"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/zhimg.com/v2-7cbe3b0c3b67ce80593fad0d73a814b5_r.jpg"
+    },
+    "投影和光栅化.md": {
+        "title": "【GAMES101课程笔记】投影和光栅化",
+        "created": "2023-12-23 22:17:19",
+        "updated": "2024-12-07 07:26:59",
+        "date": "2024-12-07 07:26:59",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/tiger.png"
+    },
+    "空间哈希.md": {
+        "title": "【转载】Spatial Hash Function 空间哈希函数",
+        "created": "2023-09-29 17:49:50",
+        "updated": "2023-09-29 17:49:50",
+        "date": "2023-09-29 17:49:50",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/zhimg.com/v2-daae30915fd682d7f9d739d8455ff816_r.jpg"
+    },
+    "3D高斯反向传播代码解析.md": {
+        "title": "详解3D Gaussian Splatting CUDA Kernel：反向传播（一）`BACKWARD::render`",
+        "created": "2024-11-18 05:06:36",
+        "updated": "2025-03-03 19:05:20",
+        "date": "2025-03-03 19:05:20",
+        "tags": [
+            "图形学",
+            "3D Gaussian Splatting"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/zhimg.com/v2-7cbe3b0c3b67ce80593fad0d73a814b5_r.jpg"
+    },
+    "3DGaussianSplattingCode.md": {
+        "title": "3D Gaussian Splatting 代码寻踪",
+        "created": "2023-12-30 06:36:34",
+        "updated": "2023-12-30 06:36:34",
+        "date": "2023-12-30 06:36:34",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ]
+    },
+    "SDF.md": {
+        "title": "【摘录】SDF(Signed Distance Field)简介",
+        "created": "2023-09-22 05:46:40",
+        "updated": "2023-09-23 00:24:01",
+        "date": "2023-09-23 00:24:01",
+        "tags": [
+            "SDF",
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/NvidiaSDF.png"
+    },
+    "Nerf加速.md": {
+        "title": "体渲染、体素、位置编码——主流Nerf质量优化和计算加速方法学习",
+        "created": "2023-09-09 04:41:27",
+        "updated": "2023-12-21 04:26:06",
+        "date": "2023-12-21 04:26:06",
+        "tags": [
+            "SDF",
+            "Nerf",
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/InstantNGP.png"
+    },
+    "抗锯齿.md": {
+        "title": "【GAMES101课程笔记】反走样、抗锯齿(Antialiasing)",
+        "created": "2023-12-24 05:43:46",
+        "updated": "2023-12-24 22:48:40",
+        "date": "2023-12-24 22:48:40",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/antialiasing.png"
+    },
+    "Nerf原理解析.md": {
+        "title": "Nerf运行流程解析",
+        "created": "2023-09-11 00:15:20",
+        "updated": "2023-09-13 18:37:42",
+        "date": "2023-09-13 18:37:42",
+        "tags": [
+            "Nerf",
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/./i/2f54150145095c59f605941a1170f071.gif"
+    },
+    "体渲染.md": {
+        "title": "【摘抄】Nerf基础知识：体渲染",
+        "created": "2023-09-09 04:41:27",
+        "updated": "2023-09-17 05:19:48",
+        "date": "2023-09-17 05:19:48",
+        "tags": [
+            "Nerf",
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/NerfFlow.png"
+    },
+    "Draco.md": {
+        "title": "Draco简介和【转载】代码分析",
+        "created": "2023-12-28 23:44:04",
+        "updated": "2023-12-28 23:44:04",
+        "date": "2023-12-28 23:44:04",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/20170224140557254.jpg"
+    },
+    "矢量量化.md": {
+        "title": "可微矢量量化",
+        "created": "2024-04-23 04:57:40",
+        "updated": "2024-04-26 00:20:28",
+        "date": "2024-04-26 00:20:28",
+        "tags": [
+            "数学",
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/20240423163529.png"
+    },
+    "视差.md": {
+        "title": "【摘抄】视差图、深度图、点云",
+        "created": "2023-09-11 01:46:46",
+        "updated": "2023-09-13 23:55:02",
+        "date": "2023-09-13 23:55:02",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/v2-6d56f0513c46f1574f9aa0dd70369bb6_720w.webp"
+    },
+    "相机代码.md": {
+        "title": "【摘录】相机位姿估计相关代码解读",
+        "created": "2023-11-14 23:52:15",
+        "updated": "2024-08-25 01:18:37",
+        "date": "2024-08-25 01:18:37",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/20240821162820.png"
+    },
+    "无界场景.md": {
+        "title": "无界场景和NeRF中的资源分配问题学习",
+        "created": "2024-06-29 23:52:50",
+        "updated": "2024-06-29 23:52:50",
+        "date": "2024-06-29 23:52:50",
+        "tags": [
+            "图形学",
+            "Nerf"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/20240629154508.png"
+    },
+    "NeuralSDF.md": {
+        "title": "Neural SDF 学习",
+        "created": "2023-09-24 00:48:54",
+        "updated": "2023-09-27 04:42:15",
+        "date": "2023-09-27 04:42:15",
+        "tags": [
+            "Nerf",
+            "SDF",
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/zhimg.com/v2-a2d023b9c02479743b0b532cff2cca6c_b.jpg"
+    },
+    "相机参数与坐标系变换.md": {
+        "title": "【摘录】相机参数与坐标系变换",
+        "created": "2023-10-20 04:22:39",
+        "updated": "2024-08-21 23:56:36",
+        "date": "2024-08-21 23:56:36",
+        "tags": [
+            "图形学",
+            "Nerf"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/zhimg.com/v2-ff5969172410c94a252b09cb8516a2f0_r.jpg"
+    },
+    "动态场景3DGS.md": {
+        "title": "3D Gaussian Splatting 用于动态场景表示",
+        "created": "2024-06-07 04:05:11",
+        "updated": "2024-06-07 04:19:54",
+        "date": "2024-06-07 04:19:54",
+        "tags": [
+            "图形学",
+            "3D Gaussian Splatting"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/20240606211903.png"
+    },
+    "3D高斯反向传播代码解析2.md": {
+        "title": "详解3D Gaussian Splatting CUDA Kernel：反向传播（二）`BACKWARD::preprocess`",
+        "created": "2024-11-20 00:45:11",
+        "updated": "2025-03-03 19:05:20",
+        "date": "2025-03-03 19:05:20",
+        "tags": [
+            "图形学",
+            "3D Gaussian Splatting"
+        ],
+        "categories": [
+            "图形学"
+        ]
+    },
+    "全局光照.md": {
+        "title": "【转载】全局光照:光线追踪、路径追踪与GI技术进化编年史",
+        "created": "2023-09-29 23:58:19",
+        "updated": "2023-09-30 00:25:00",
+        "date": "2023-09-30 00:25:00",
+        "tags": [
+            "图形学"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/zhimg.com/v2-74d945b02830ffea1cfa66eb07c4f297_r.jpg"
+    },
+    "GenerativeDynamics.md": {
+        "title": "【摘录】Generative Dynamics/生成式动力学",
+        "created": "2024-09-11 03:48:45",
+        "updated": "2024-09-20 18:47:58",
+        "date": "2024-09-20 18:47:58",
+        "tags": [
+            "图形学",
+            "物理引擎",
+            "AIGC"
+        ],
+        "categories": [
+            "图形学"
+        ],
+        "cover": "/图形学/i/v2-ee684a114e7dde2d012e3656d25d9ff4_b.webp"
+    }
+}

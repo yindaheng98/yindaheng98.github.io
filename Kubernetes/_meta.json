@@ -1,0 +1,119 @@
+{
+    "K8S微服务性.md": {
+        "title": "为什么Kubernetes天然适合微服务？",
+        "created": "2021-01-06 16:46:54",
+        "updated": "2021-01-06 16:46:54",
+        "date": "2021-01-06 16:46:54",
+        "tags": [
+            "Kubernetes",
+            "容器编排",
+            "微服务"
+        ],
+        "categories": [
+            "Kubernetes"
+        ],
+        "cover": "/Kubernetes/i/K8S微服务/0.png"
+    },
+    "Kubernetes使用.md": {
+        "title": "Kubernetes(k8s)的安装和基本使用",
+        "created": "2019-09-23 07:37:12",
+        "updated": "2020-07-29 13:00:23",
+        "date": "2020-07-29 13:00:23",
+        "tags": [
+            "Kubernetes"
+        ],
+        "categories": [
+            "Kubernetes"
+        ]
+    },
+    "Kubernetes介绍.md": {
+        "title": "Kubernetes(k8s)介绍",
+        "created": "2019-09-23 07:37:12",
+        "updated": "2020-07-29 13:00:23",
+        "date": "2020-07-29 13:00:23",
+        "tags": [
+            "Kubernetes"
+        ],
+        "categories": [
+            "Kubernetes"
+        ],
+        "cover": "/Kubernetes/i/module_01_cluster.png"
+    },
+    "CNI插件相关知识简介.md": {
+        "title": "CNI插件相关知识简介",
+        "created": "2020-12-13 15:04:47",
+        "updated": "2020-12-14 07:37:56",
+        "date": "2020-12-14 07:37:56",
+        "tags": [
+            "Kubernetes"
+        ],
+        "categories": [
+            "Kubernetes"
+        ]
+    },
+    "边缘Kubernetes问题.md": {
+        "title": "kubernetes管理边缘设备需要解决什么样的问题",
+        "created": "2021-10-11 08:42:35",
+        "updated": "2021-10-11 08:42:35",
+        "date": "2021-10-11 08:42:35",
+        "tags": [
+            "Kubernetes",
+            "边缘计算"
+        ],
+        "categories": [
+            "Kubernetes"
+        ]
+    },
+    "Kubernetes-NFV.md": {
+        "title": "K8S NFV 资料收集",
+        "created": "2021-11-27 12:31:35",
+        "updated": "2021-11-27 12:31:35",
+        "date": "2021-11-27 12:31:35",
+        "tags": [
+            "Kubernetes",
+            "容器编排",
+            "NFV"
+        ],
+        "categories": [
+            "Kubernetes"
+        ]
+    },
+    "跨网.md": {
+        "title": "网易云对虚拟机/容器混用场景的网络配置方案",
+        "created": "2021-01-04 16:49:42",
+        "updated": "2021-01-04 16:49:42",
+        "date": "2021-01-04 16:49:42",
+        "tags": [
+            "Kubernetes"
+        ],
+        "categories": [
+            "Kubernetes"
+        ],
+        "cover": "/Kubernetes/i/NeteaseN1.webp"
+    },
+    "Kubernetes结构.md": {
+        "title": "Kubernetes(k8s)的结构",
+        "created": "2019-11-21 05:43:22",
+        "updated": "2020-12-13 16:30:47",
+        "date": "2020-12-13 16:30:47",
+        "tags": [
+            "Kubernetes"
+        ],
+        "categories": [
+            "Kubernetes"
+        ],
+        "cover": "/Kubernetes/i/K8s.png"
+    },
+    "CSI插件相关知识简介.md": {
+        "title": "CSI插件相关知识简介",
+        "created": "2020-12-14 07:37:56",
+        "updated": "2020-12-14 07:37:56",
+        "date": "2020-12-14 07:37:56",
+        "tags": [
+            "Kubernetes"
+        ],
+        "categories": [
+            "Kubernetes"
+        ]
+    }
+}

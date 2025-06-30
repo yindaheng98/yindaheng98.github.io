@@ -1,0 +1,269 @@
+{
+    "2022顶会笔记.md": {
+        "title": "(Infocom2022) CASVA: Configuration-Adaptive Streaming for Live Video Analytics",
+        "created": "2023-03-23 03:06:39",
+        "updated": "2023-03-23 03:06:39",
+        "date": "2023-03-23 03:06:39",
+        "tags": [
+            "论文笔记",
+            "Infocom2022"
+        ],
+        "categories": [
+            "论文笔记"
+        ],
+        "cover": "/论文笔记/./i/CASVA.png"
+    },
+    "2021顶会笔记.md": {
+        "title": "2021顶会论文阅读笔记",
+        "created": "2021-03-27 14:44:27",
+        "updated": "2021-04-07 10:42:40",
+        "date": "2021-04-07 10:42:40",
+        "tags": [
+            "论文笔记"
+        ],
+        "categories": [
+            "论文笔记"
+        ]
+    },
+    "SPINNSynergisticProgressiveInference2020.md": {
+        "title": "SPINN: Synergistic Progressive Inference of Neural Networks over Device and Cloud",
+        "created": "2021-01-31 14:30:33",
+        "updated": "2021-03-28 14:40:25",
+        "date": "2021-03-28 14:40:25",
+        "tags": [
+            "论文笔记"
+        ],
+        "categories": [
+            "论文笔记"
+        ],
+        "cover": "/论文笔记/i/SPINN-Intro.png"
+    },
+    "BranchyNetFastInferenceEarly2017.md": {
+        "title": "BranchyNet：Fast Inference via Early Exiting from Deep Neural Networks",
+        "created": "2020-10-17 15:20:27",
+        "updated": "2020-10-24 15:27:59",
+        "date": "2020-10-24 15:27:59",
+        "tags": [
+            "论文笔记",
+            "边缘计算"
+        ],
+        "categories": [
+            "论文笔记"
+        ]
+    },
+    "CooperativeServiceCaching2020.md": {
+        "title": "Cooperative Service Caching and Workload Scheduling in Mobile Edge Computing",
+        "created": "2020-10-04 15:43:02",
+        "updated": "2020-10-17 02:55:40",
+        "date": "2020-10-17 02:55:40",
+        "tags": [
+            "论文笔记",
+            "凸优化",
+            "边缘计算"
+        ],
+        "categories": [
+            "论文笔记"
+        ]
+    },
+    "2020顶会笔记.md": {
+        "title": "2020顶会论文阅读笔记",
+        "created": "2021-01-31 13:36:07",
+        "updated": "2021-08-02 13:07:21",
+        "date": "2021-08-02 13:07:21",
+        "tags": [
+            "论文笔记"
+        ],
+        "categories": [
+            "论文笔记"
+        ],
+        "cover": "/论文笔记/./i/JointDNN1-1.png"
+    },
+    "DeepUnfoldingNetworkImage2020.md": {
+        "title": "Deep Unfolding Network for Image Super-Resolution",
+        "created": "2021-05-15 04:19:44",
+        "updated": "2021-05-15 08:22:56",
+        "date": "2021-05-15 08:22:56",
+        "tags": [
+            "论文笔记",
+            "超分辨率"
+        ],
+        "categories": [
+            "论文笔记"
+        ],
+        "cover": "/论文笔记/i/DeepUnfolding.png"
+    },
+    "ElfAccelerateHighresolutionMobile2021.md": {
+        "title": "Elf: accelerate high-resolution mobile deep vision with content-aware parallel offloading",
+        "created": "2021-03-28 13:54:38",
+        "updated": "2021-03-28 13:54:38",
+        "date": "2021-03-28 13:54:38",
+        "tags": [
+            "论文笔记",
+            "目标跟踪",
+            "Region Proposal"
+        ],
+        "categories": [
+            "论文笔记"
+        ],
+        "cover": "/论文笔记/./i/ELF-LSTM.png"
+    },
+    "ServerDrivenVideoStreamingDeep2020.md": {
+        "title": "Server-Driven Video Streaming for Deep Learning Inference",
+        "created": "2021-03-27 14:44:27",
+        "updated": "2021-03-27 14:44:27",
+        "date": "2021-03-27 14:44:27",
+        "tags": [
+            "论文笔记",
+            "目标跟踪",
+            "云计算"
+        ],
+        "categories": [
+            "论文笔记"
+        ],
+        "cover": "/论文笔记/i/DDS.png"
+    },
+    "ClassSR2020.md": {
+        "title": "ClassSR: A General Framework to Accelerate Super-Resolution Networks by Data Characteristic",
+        "created": "2021-05-15 15:39:41",
+        "updated": "2021-05-15 15:39:41",
+        "date": "2021-05-15 15:39:41",
+        "tags": [
+            "论文笔记",
+            "超分辨率"
+        ],
+        "categories": [
+            "论文笔记"
+        ],
+        "cover": "/论文笔记/i/ClassSR1.png"
+    },
+    "杂记2020.md": {
+        "title": "没看懂的论文杂记2020",
+        "created": "2021-05-12 07:15:03",
+        "updated": "2021-05-12 07:15:03",
+        "date": "2021-05-12 07:15:03",
+        "tags": [
+            "论文笔记"
+        ],
+        "categories": [
+            "论文笔记"
+        ],
+        "cover": "/论文笔记/i/JSI-GAN.png"
+    },
+    "SystemHierarchyBraininspiredComputing2020-1.md": {
+        "title": "《A system hierarchy for brain-inspired computing》笔记二(未完成)",
+        "created": "2021-03-03 12:10:27",
+        "updated": "2021-03-03 12:10:27",
+        "date": "2021-03-03 12:10:27",
+        "tags": [
+            "论文笔记",
+            "计算理论",
+            "类脑计算",
+            "人工智能"
+        ],
+        "categories": [
+            "论文笔记"
+        ],
+        "cover": "/论文笔记/./i/ANA.png"
+    },
+    "DelayOptimalDistributedEdge2020.md": {
+        "title": "Delay-Optimal Distributed Edge Computing in Wireless Edge Networks",
+        "created": "2020-10-07 07:22:41",
+        "updated": "2021-01-17 06:14:18",
+        "date": "2021-01-17 06:14:18",
+        "tags": [
+            "论文笔记",
+            "边缘计算",
+            "分布式计算",
+            "贪心算法"
+        ],
+        "categories": [
+            "论文笔记"
+        ]
+    },
+    "CollaborateSeparateDistributed2020.md": {
+        "title": "Collaborate or Separate? Distributed Service Caching in Mobile Edge Clouds",
+        "created": "2020-10-02 14:41:07",
+        "updated": "2020-10-02 14:41:07",
+        "date": "2020-10-02 14:41:07",
+        "tags": [
+            "论文笔记",
+            "边缘计算",
+            "博弈论",
+            "凸优化"
+        ],
+        "categories": [
+            "论文笔记"
+        ]
+    },
+    "杂记2021.md": {
+        "title": "没看懂的论文杂记2021",
+        "created": "2021-05-09 13:35:41",
+        "updated": "2021-05-15 08:23:52",
+        "date": "2021-05-15 08:23:52",
+        "tags": [
+            "论文笔记"
+        ],
+        "categories": [
+            "论文笔记"
+        ],
+        "cover": "/论文笔记/i/Cross-MPI.png"
+    },
+    "LapSRN.md": {
+        "title": "LapSRN",
+        "created": "2021-05-14 07:50:03",
+        "updated": "2021-05-14 07:50:03",
+        "date": "2021-05-14 07:50:03",
+        "tags": [
+            "论文笔记",
+            "超分辨率"
+        ],
+        "categories": [
+            "论文笔记"
+        ],
+        "cover": "/论文笔记/i/LapSRN.png"
+    },
+    "VSR2021.md": {
+        "title": "VSR实现方案总结",
+        "created": "2021-12-29 14:12:10",
+        "updated": "2022-03-08 08:54:58",
+        "date": "2022-03-08 08:54:58",
+        "tags": [
+            "论文笔记"
+        ],
+        "categories": [
+            "论文笔记"
+        ],
+        "cover": "/论文笔记/./i/VSR/RSDN1.png"
+    },
+    "SystemHierarchyBraininspiredComputing2020.md": {
+        "title": "《A system hierarchy for brain-inspired computing》笔记一：类脑计算完备性和POG",
+        "created": "2020-12-15 14:43:00",
+        "updated": "2020-12-19 09:59:15",
+        "date": "2020-12-19 09:59:15",
+        "tags": [
+            "论文笔记",
+            "计算理论",
+            "类脑计算",
+            "人工智能"
+        ],
+        "categories": [
+            "论文笔记"
+        ],
+        "cover": "/论文笔记/./i/POG.png"
+    },
+    "AdderNet.md": {
+        "title": "来自华为的AdderNet及其在超分辨率领域的应用",
+        "created": "2021-05-05 13:06:30",
+        "updated": "2021-05-05 16:42:15",
+        "date": "2021-05-05 16:42:15",
+        "tags": [
+            "论文笔记",
+            "人工智能",
+            "AdderNet"
+        ],
+        "categories": [
+            "论文笔记"
+        ],
+        "cover": "/论文笔记/i/AdderNet0.png"
+    }
+}

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ION的基本架构 | Yin的笔记本</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css">
+    <meta name="description" content="Yin的笔记本">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.2d94763a.css" as="style"><link rel="preload" href="/assets/js/app.1c89d7eb.js" as="script"><link rel="preload" href="/assets/js/3.63b8c0eb.js" as="script"><link rel="preload" href="/assets/js/1.be3d2055.js" as="script"><link rel="preload" href="/assets/js/45.c5e657d2.js" as="script"><link rel="prefetch" href="/assets/js/10.7997888a.js"><link rel="prefetch" href="/assets/js/100.2278e289.js"><link rel="prefetch" href="/assets/js/101.12c66a26.js"><link rel="prefetch" href="/assets/js/102.6468aee3.js"><link rel="prefetch" href="/assets/js/103.d1dd7048.js"><link rel="prefetch" href="/assets/js/104.f4890013.js"><link rel="prefetch" href="/assets/js/105.a97deef5.js"><link rel="prefetch" href="/assets/js/106.c1bcc835.js"><link rel="prefetch" href="/assets/js/107.03ab02e9.js"><link rel="prefetch" href="/assets/js/108.ce9a9508.js"><link rel="prefetch" href="/assets/js/109.d03fd13e.js"><link rel="prefetch" href="/assets/js/11.f5bd6d01.js"><link rel="prefetch" href="/assets/js/110.13c311a4.js"><link rel="prefetch" href="/assets/js/111.6f30518f.js"><link rel="prefetch" href="/assets/js/112.ca951fb9.js"><link rel="prefetch" href="/assets/js/113.9c5c0582.js"><link rel="prefetch" href="/assets/js/114.eb24eb1a.js"><link rel="prefetch" href="/assets/js/115.de265fa2.js"><link rel="prefetch" href="/assets/js/116.24745fa4.js"><link rel="prefetch" href="/assets/js/117.86d4e841.js"><link rel="prefetch" href="/assets/js/118.9dbd6211.js"><link rel="prefetch" href="/assets/js/119.d8ec6ee3.js"><link rel="prefetch" href="/assets/js/12.770bcdd1.js"><link rel="prefetch" href="/assets/js/120.21b9b7e4.js"><link rel="prefetch" href="/assets/js/121.69c915c7.js"><link rel="prefetch" href="/assets/js/122.ddedddba.js"><link rel="prefetch" href="/assets/js/123.5a80347b.js"><link rel="prefetch" href="/assets/js/124.71bff2da.js"><link rel="prefetch" href="/assets/js/125.21830b23.js"><link rel="prefetch" href="/assets/js/126.f30185cf.js"><link rel="prefetch" href="/assets/js/127.3aeb1f53.js"><link rel="prefetch" href="/assets/js/128.6c296bf9.js"><link rel="prefetch" href="/assets/js/129.fda4528b.js"><link rel="prefetch" href="/assets/js/13.070330f5.js"><link rel="prefetch" href="/assets/js/130.9e6b67b0.js"><link rel="prefetch" href="/assets/js/131.20b0e822.js"><link rel="prefetch" href="/assets/js/132.a35815d1.js"><link rel="prefetch" href="/assets/js/133.bfa0daa0.js"><link rel="prefetch" href="/assets/js/134.eaea7aba.js"><link rel="prefetch" href="/assets/js/135.3a5c98a8.js"><link rel="prefetch" href="/assets/js/136.01223e0d.js"><link rel="prefetch" href="/assets/js/137.7cce857f.js"><link rel="prefetch" href="/assets/js/138.7a586d88.js"><link rel="prefetch" href="/assets/js/139.3f8891f1.js"><link rel="prefetch" href="/assets/js/14.760d4ae9.js"><link rel="prefetch" href="/assets/js/140.7d36bb0c.js"><link rel="prefetch" href="/assets/js/141.b2a3eaa6.js"><link rel="prefetch" href="/assets/js/142.8765938e.js"><link rel="prefetch" href="/assets/js/143.877037ca.js"><link rel="prefetch" href="/assets/js/144.0c63859f.js"><link rel="prefetch" href="/assets/js/145.0826322f.js"><link rel="prefetch" href="/assets/js/146.0c7793ea.js"><link rel="prefetch" href="/assets/js/147.208c0c3d.js"><link rel="prefetch" href="/assets/js/148.e7e56ea0.js"><link rel="prefetch" href="/assets/js/149.269f672b.js"><link rel="prefetch" href="/assets/js/15.6dd745f8.js"><link rel="prefetch" href="/assets/js/150.5b335113.js"><link rel="prefetch" href="/assets/js/151.98e0c301.js"><link rel="prefetch" href="/assets/js/152.b8f48d96.js"><link rel="prefetch" href="/assets/js/153.bfeb3233.js"><link rel="prefetch" href="/assets/js/154.60508725.js"><link rel="prefetch" href="/assets/js/155.b8a1e762.js"><link rel="prefetch" href="/assets/js/156.a002dc45.js"><link rel="prefetch" href="/assets/js/157.5e547455.js"><link rel="prefetch" href="/assets/js/158.d2f2e77b.js"><link rel="prefetch" href="/assets/js/159.200ec9a4.js"><link rel="prefetch" href="/assets/js/16.6860f890.js"><link rel="prefetch" href="/assets/js/160.c842c71c.js"><link rel="prefetch" href="/assets/js/161.b69b41de.js"><link rel="prefetch" href="/assets/js/162.abaa0820.js"><link rel="prefetch" href="/assets/js/163.781d45a1.js"><link rel="prefetch" href="/assets/js/164.489c9172.js"><link rel="prefetch" href="/assets/js/165.4001e6a3.js"><link rel="prefetch" href="/assets/js/166.f605c3b7.js"><link rel="prefetch" href="/assets/js/167.187f7fef.js"><link rel="prefetch" href="/assets/js/168.8e751948.js"><link rel="prefetch" href="/assets/js/169.5c50b84f.js"><link rel="prefetch" href="/assets/js/17.96a61fae.js"><link rel="prefetch" href="/assets/js/170.c145b06c.js"><link rel="prefetch" href="/assets/js/171.1ff621e6.js"><link rel="prefetch" href="/assets/js/172.b5012bca.js"><link rel="prefetch" href="/assets/js/173.5bfa26a7.js"><link rel="prefetch" href="/assets/js/174.09fa2f55.js"><link rel="prefetch" href="/assets/js/175.d9227914.js"><link rel="prefetch" href="/assets/js/176.00adae9b.js"><link rel="prefetch" href="/assets/js/177.919b9f47.js"><link rel="prefetch" href="/assets/js/178.7e815bb2.js"><link rel="prefetch" href="/assets/js/179.7abd2d00.js"><link rel="prefetch" href="/assets/js/18.e9d7c71b.js"><link rel="prefetch" href="/assets/js/180.655d5d4a.js"><link rel="prefetch" href="/assets/js/181.b46b1de0.js"><link rel="prefetch" href="/assets/js/182.2e8f1a2a.js"><link rel="prefetch" href="/assets/js/183.22265de0.js"><link rel="prefetch" href="/assets/js/184.74507e51.js"><link rel="prefetch" href="/assets/js/185.bfa1144d.js"><link rel="prefetch" href="/assets/js/186.823452a1.js"><link rel="prefetch" href="/assets/js/187.4d75455f.js"><link rel="prefetch" href="/assets/js/188.916ab9d4.js"><link rel="prefetch" href="/assets/js/189.add9f2bf.js"><link rel="prefetch" href="/assets/js/19.f46a344f.js"><link rel="prefetch" href="/assets/js/190.193af7ee.js"><link rel="prefetch" href="/assets/js/191.30e19787.js"><link rel="prefetch" href="/assets/js/192.485b0912.js"><link rel="prefetch" href="/assets/js/193.ec31135d.js"><link rel="prefetch" href="/assets/js/194.b6f1ea36.js"><link rel="prefetch" href="/assets/js/195.f41818b6.js"><link rel="prefetch" href="/assets/js/196.3997fb55.js"><link rel="prefetch" href="/assets/js/197.9316466e.js"><link rel="prefetch" href="/assets/js/198.d6eaf8d5.js"><link rel="prefetch" href="/assets/js/199.7833a5cf.js"><link rel="prefetch" href="/assets/js/20.3e59b7db.js"><link rel="prefetch" href="/assets/js/200.09ac4b4c.js"><link rel="prefetch" href="/assets/js/201.c181d266.js"><link rel="prefetch" href="/assets/js/202.0c17f434.js"><link rel="prefetch" href="/assets/js/203.f325f13a.js"><link rel="prefetch" href="/assets/js/204.cc6ab889.js"><link rel="prefetch" href="/assets/js/205.5dea103e.js"><link rel="prefetch" href="/assets/js/206.d4bed4f0.js"><link rel="prefetch" href="/assets/js/207.570e9c30.js"><link rel="prefetch" href="/assets/js/208.15c57dde.js"><link rel="prefetch" href="/assets/js/209.052fb626.js"><link rel="prefetch" href="/assets/js/21.0d860ace.js"><link rel="prefetch" href="/assets/js/210.17da69e7.js"><link rel="prefetch" href="/assets/js/211.0437b47a.js"><link rel="prefetch" href="/assets/js/212.6d3516a5.js"><link rel="prefetch" href="/assets/js/213.2016ed1e.js"><link rel="prefetch" href="/assets/js/214.8d375069.js"><link rel="prefetch" href="/assets/js/215.6895df63.js"><link rel="prefetch" href="/assets/js/216.c044b620.js"><link rel="prefetch" href="/assets/js/217.1ff7a370.js"><link rel="prefetch" href="/assets/js/218.2b5c6610.js"><link rel="prefetch" href="/assets/js/219.3d1b7c68.js"><link rel="prefetch" href="/assets/js/22.395f0662.js"><link rel="prefetch" href="/assets/js/220.2f7d0eb4.js"><link rel="prefetch" href="/assets/js/221.0d5c483a.js"><link rel="prefetch" href="/assets/js/222.b4e8edd9.js"><link rel="prefetch" href="/assets/js/223.ed8cd7c5.js"><link rel="prefetch" href="/assets/js/224.70f8536d.js"><link rel="prefetch" href="/assets/js/225.877f00f4.js"><link rel="prefetch" href="/assets/js/226.e6433587.js"><link rel="prefetch" href="/assets/js/227.57bea06d.js"><link rel="prefetch" href="/assets/js/228.46f056e8.js"><link rel="prefetch" href="/assets/js/229.e075c130.js"><link rel="prefetch" href="/assets/js/23.918096ae.js"><link rel="prefetch" href="/assets/js/230.513baab1.js"><link rel="prefetch" href="/assets/js/231.107ef86e.js"><link rel="prefetch" href="/assets/js/232.498787e8.js"><link rel="prefetch" href="/assets/js/233.c9c37e3d.js"><link rel="prefetch" href="/assets/js/234.3205c614.js"><link rel="prefetch" href="/assets/js/235.6e73d096.js"><link rel="prefetch" href="/assets/js/236.1cd1beda.js"><link rel="prefetch" href="/assets/js/237.4708c31e.js"><link rel="prefetch" href="/assets/js/238.8e5fe2c7.js"><link rel="prefetch" href="/assets/js/239.d6960886.js"><link rel="prefetch" href="/assets/js/24.191c578f.js"><link rel="prefetch" href="/assets/js/240.ac10844d.js"><link rel="prefetch" href="/assets/js/241.d176cd12.js"><link rel="prefetch" href="/assets/js/242.05602258.js"><link rel="prefetch" href="/assets/js/243.04d4eea2.js"><link rel="prefetch" href="/assets/js/244.666552a4.js"><link rel="prefetch" href="/assets/js/245.391a0ebb.js"><link rel="prefetch" href="/assets/js/246.bbc73f23.js"><link rel="prefetch" href="/assets/js/247.2fb1308f.js"><link rel="prefetch" href="/assets/js/248.cb32facb.js"><link rel="prefetch" href="/assets/js/249.8f2c20c3.js"><link rel="prefetch" href="/assets/js/25.9fa7a0f1.js"><link rel="prefetch" href="/assets/js/250.aee82d40.js"><link rel="prefetch" href="/assets/js/251.b27f9949.js"><link rel="prefetch" href="/assets/js/252.0d3a1c08.js"><link rel="prefetch" href="/assets/js/253.dbac77db.js"><link rel="prefetch" href="/assets/js/254.daeb0894.js"><link rel="prefetch" href="/assets/js/255.9ae341b8.js"><link rel="prefetch" href="/assets/js/256.0914df92.js"><link rel="prefetch" href="/assets/js/257.17692151.js"><link rel="prefetch" href="/assets/js/258.6a51affa.js"><link rel="prefetch" href="/assets/js/259.cfa1b7e2.js"><link rel="prefetch" href="/assets/js/26.977b91ed.js"><link rel="prefetch" href="/assets/js/260.01a0a834.js"><link rel="prefetch" href="/assets/js/261.7c6786a8.js"><link rel="prefetch" href="/assets/js/262.40aa6ec8.js"><link rel="prefetch" href="/assets/js/263.9b768341.js"><link rel="prefetch" href="/assets/js/264.3516b6ee.js"><link rel="prefetch" href="/assets/js/265.24ebac38.js"><link rel="prefetch" href="/assets/js/266.d0f18960.js"><link rel="prefetch" href="/assets/js/267.cb67bfa7.js"><link rel="prefetch" href="/assets/js/268.49a739ea.js"><link rel="prefetch" href="/assets/js/269.319f9495.js"><link rel="prefetch" href="/assets/js/27.cbf02bc2.js"><link rel="prefetch" href="/assets/js/270.0ab89f8c.js"><link rel="prefetch" href="/assets/js/271.5ebfdaad.js"><link rel="prefetch" href="/assets/js/272.d978c09e.js"><link rel="prefetch" href="/assets/js/273.c2ca9559.js"><link rel="prefetch" href="/assets/js/274.ef3c0b4e.js"><link rel="prefetch" href="/assets/js/275.0cb280a9.js"><link rel="prefetch" href="/assets/js/276.f01bb24d.js"><link rel="prefetch" href="/assets/js/277.4336236b.js"><link rel="prefetch" href="/assets/js/278.91b80a10.js"><link rel="prefetch" href="/assets/js/279.a3dba48a.js"><link rel="prefetch" href="/assets/js/28.ea6f85eb.js"><link rel="prefetch" href="/assets/js/280.28c7e56d.js"><link rel="prefetch" href="/assets/js/281.b40bcb2f.js"><link rel="prefetch" href="/assets/js/282.8b95f9c1.js"><link rel="prefetch" href="/assets/js/283.112bae13.js"><link rel="prefetch" href="/assets/js/284.32679d92.js"><link rel="prefetch" href="/assets/js/285.5d940ba6.js"><link rel="prefetch" href="/assets/js/286.7644400d.js"><link rel="prefetch" href="/assets/js/287.3e55ea4a.js"><link rel="prefetch" href="/assets/js/288.e008719f.js"><link rel="prefetch" href="/assets/js/289.288c8559.js"><link rel="prefetch" href="/assets/js/29.09e2943e.js"><link rel="prefetch" href="/assets/js/290.5e886e4a.js"><link rel="prefetch" href="/assets/js/291.317a7f21.js"><link rel="prefetch" href="/assets/js/292.8e9221de.js"><link rel="prefetch" href="/assets/js/293.d2e72c3b.js"><link rel="prefetch" href="/assets/js/294.b08bb0a5.js"><link rel="prefetch" href="/assets/js/295.0ff3e8b8.js"><link rel="prefetch" href="/assets/js/296.8db2437f.js"><link rel="prefetch" href="/assets/js/297.df969d5b.js"><link rel="prefetch" href="/assets/js/298.5e04335e.js"><link rel="prefetch" href="/assets/js/299.30af4295.js"><link rel="prefetch" href="/assets/js/30.8ce7bb1c.js"><link rel="prefetch" href="/assets/js/300.bbee17de.js"><link rel="prefetch" href="/assets/js/301.658e30a9.js"><link rel="prefetch" href="/assets/js/302.83a48594.js"><link rel="prefetch" href="/assets/js/303.25b5c5d0.js"><link rel="prefetch" href="/assets/js/304.d1cda2a7.js"><link rel="prefetch" href="/assets/js/305.ec45274c.js"><link rel="prefetch" href="/assets/js/306.f5481c32.js"><link rel="prefetch" href="/assets/js/307.477c6cfe.js"><link rel="prefetch" href="/assets/js/308.2fc60e29.js"><link rel="prefetch" href="/assets/js/309.d3153724.js"><link rel="prefetch" href="/assets/js/31.9a171aa4.js"><link rel="prefetch" href="/assets/js/310.cd447685.js"><link rel="prefetch" href="/assets/js/311.aa55b174.js"><link rel="prefetch" href="/assets/js/312.975cb9f5.js"><link rel="prefetch" href="/assets/js/313.ff1ed35d.js"><link rel="prefetch" href="/assets/js/314.0f909559.js"><link rel="prefetch" href="/assets/js/315.db32db01.js"><link rel="prefetch" href="/assets/js/32.947f503d.js"><link rel="prefetch" href="/assets/js/33.59e6f3ca.js"><link rel="prefetch" href="/assets/js/34.d611cc6b.js"><link rel="prefetch" href="/assets/js/35.1bcf17ab.js"><link rel="prefetch" href="/assets/js/36.4ce4f82a.js"><link rel="prefetch" href="/assets/js/37.0054f8c4.js"><link rel="prefetch" href="/assets/js/38.b4bdef00.js"><link rel="prefetch" href="/assets/js/39.436a4cf2.js"><link rel="prefetch" href="/assets/js/4.71970d79.js"><link rel="prefetch" href="/assets/js/40.3c0f9211.js"><link rel="prefetch" href="/assets/js/41.db84a37b.js"><link rel="prefetch" href="/assets/js/42.d490b527.js"><link rel="prefetch" href="/assets/js/43.53ff8034.js"><link rel="prefetch" href="/assets/js/44.6ac3003e.js"><link rel="prefetch" href="/assets/js/46.9c37bbc9.js"><link rel="prefetch" href="/assets/js/47.8cc0235f.js"><link rel="prefetch" href="/assets/js/48.46917f1a.js"><link rel="prefetch" href="/assets/js/49.4956c196.js"><link rel="prefetch" href="/assets/js/5.b5c477bb.js"><link rel="prefetch" href="/assets/js/50.c350ef1e.js"><link rel="prefetch" href="/assets/js/51.228f9fb4.js"><link rel="prefetch" href="/assets/js/52.d0ea8325.js"><link rel="prefetch" href="/assets/js/53.bcf8531d.js"><link rel="prefetch" href="/assets/js/54.823cdd86.js"><link rel="prefetch" href="/assets/js/55.dd739e97.js"><link rel="prefetch" href="/assets/js/56.0a6fa41e.js"><link rel="prefetch" href="/assets/js/57.e8c7ac20.js"><link rel="prefetch" href="/assets/js/58.9a6ccc24.js"><link rel="prefetch" href="/assets/js/59.a3e64ba9.js"><link rel="prefetch" href="/assets/js/6.8d75c7c7.js"><link rel="prefetch" href="/assets/js/60.4ef57d04.js"><link rel="prefetch" href="/assets/js/61.b2221af0.js"><link rel="prefetch" href="/assets/js/62.d5e651a6.js"><link rel="prefetch" href="/assets/js/63.7cf7bbf5.js"><link rel="prefetch" href="/assets/js/64.a1b2ab5f.js"><link rel="prefetch" href="/assets/js/65.795f8ce1.js"><link rel="prefetch" href="/assets/js/66.766bae3c.js"><link rel="prefetch" href="/assets/js/67.33fffa58.js"><link rel="prefetch" href="/assets/js/68.34cad213.js"><link rel="prefetch" href="/assets/js/69.44ab1539.js"><link rel="prefetch" href="/assets/js/7.c826a528.js"><link rel="prefetch" href="/assets/js/70.0b157f44.js"><link rel="prefetch" href="/assets/js/71.dda3257f.js"><link rel="prefetch" href="/assets/js/72.e4fd59e4.js"><link rel="prefetch" href="/assets/js/73.5bfac475.js"><link rel="prefetch" href="/assets/js/74.106dce7c.js"><link rel="prefetch" href="/assets/js/75.febe432a.js"><link rel="prefetch" href="/assets/js/76.9d7b680c.js"><link rel="prefetch" href="/assets/js/77.53d02bdd.js"><link rel="prefetch" href="/assets/js/78.78f8bd3e.js"><link rel="prefetch" href="/assets/js/79.765020db.js"><link rel="prefetch" href="/assets/js/8.94c271b3.js"><link rel="prefetch" href="/assets/js/80.58708562.js"><link rel="prefetch" href="/assets/js/81.b496be82.js"><link rel="prefetch" href="/assets/js/82.e7fb031b.js"><link rel="prefetch" href="/assets/js/83.9a97b3c4.js"><link rel="prefetch" href="/assets/js/84.46388e53.js"><link rel="prefetch" href="/assets/js/85.273a246a.js"><link rel="prefetch" href="/assets/js/86.0f1a102d.js"><link rel="prefetch" href="/assets/js/87.0340887c.js"><link rel="prefetch" href="/assets/js/88.2464434e.js"><link rel="prefetch" href="/assets/js/89.9c7259c6.js"><link rel="prefetch" href="/assets/js/9.13823324.js"><link rel="prefetch" href="/assets/js/90.fc961b8c.js"><link rel="prefetch" href="/assets/js/91.05ce823e.js"><link rel="prefetch" href="/assets/js/92.6f598c32.js"><link rel="prefetch" href="/assets/js/93.9b4a4e9b.js"><link rel="prefetch" href="/assets/js/94.e181fada.js"><link rel="prefetch" href="/assets/js/95.1f019ce8.js"><link rel="prefetch" href="/assets/js/96.c5fdf710.js"><link rel="prefetch" href="/assets/js/97.64f5f96a.js"><link rel="prefetch" href="/assets/js/98.e761ab9f.js"><link rel="prefetch" href="/assets/js/99.b19b68c9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2d94763a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-42dd5e05><div data-v-42dd5e05><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-42dd5e05 data-v-42dd5e05><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-95c9a4e8 data-v-42dd5e05 data-v-42dd5e05><h3 class="title" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8>Yin的笔记本</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><input type="password" value="" data-v-95c9a4e8> <span data-v-95c9a4e8>Konck! Knock!</span> <button data-v-95c9a4e8>OK</button></label> <div class="footer" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><span data-v-95c9a4e8><i class="iconfont reco-theme" data-v-95c9a4e8></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-95c9a4e8>vuePress-theme-reco</a></span> <span data-v-95c9a4e8><i class="iconfont reco-copyright" data-v-95c9a4e8></i> <a data-v-95c9a4e8><span data-v-95c9a4e8>Howard Yin</span>
+            
+          <span data-v-95c9a4e8>2021 - </span>
+          2025
+        </a></span></div></div> <div class="hide" data-v-42dd5e05><header class="navbar" data-v-42dd5e05><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Yin的笔记本" class="logo"> <span class="site-name">Yin的笔记本</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CNCF/" class="nav-link"><i class="iconfont undefined"></i>
+  CNCF
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="iconfont undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/namespaces/" class="nav-link"><i class="iconfont undefined"></i>
+  namespaces
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes对象/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes对象
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="iconfont undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MyIdeas/" class="nav-link"><i class="iconfont undefined"></i>
+  MyIdeas
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Revolution/" class="nav-link"><i class="iconfont undefined"></i>
+  Revolution
+</a></li><li class="dropdown-item"><!----> <a href="/categories/WebRTC/" class="nav-link"><i class="iconfont undefined"></i>
+  WebRTC
+</a></li><li class="dropdown-item"><!----> <a href="/categories/云计算/" class="nav-link"><i class="iconfont undefined"></i>
+  云计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/人工智能/" class="nav-link"><i class="iconfont undefined"></i>
+  人工智能
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="iconfont undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/图像处理/" class="nav-link"><i class="iconfont undefined"></i>
+  图像处理
+</a></li><li class="dropdown-item"><!----> <a href="/categories/图形学/" class="nav-link"><i class="iconfont undefined"></i>
+  图形学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="iconfont undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数学/" class="nav-link"><i class="iconfont undefined"></i>
+  数学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/OJ笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  OJ笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博弈论/" class="nav-link"><i class="iconfont undefined"></i>
+  博弈论
+</a></li><li class="dropdown-item"><!----> <a href="/categories/形式语言与自动机/" class="nav-link"><i class="iconfont undefined"></i>
+  形式语言与自动机
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器运维/" class="nav-link"><i class="iconfont undefined"></i>
+  服务器运维
+</a></li><li class="dropdown-item"><!----> <a href="/categories/编程语言/" class="nav-link"><i class="iconfont undefined"></i>
+  编程语言
+</a></li><li class="dropdown-item"><!----> <a href="/categories/C/" class="nav-link"><i class="iconfont undefined"></i>
+  C
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Go/" class="nav-link"><i class="iconfont undefined"></i>
+  Go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="iconfont undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nvidia/" class="nav-link"><i class="iconfont undefined"></i>
+  Nvidia
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Shell/" class="nav-link"><i class="iconfont undefined"></i>
+  Shell
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Tex/" class="nav-link"><i class="iconfont undefined"></i>
+  Tex
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Rust/" class="nav-link"><i class="iconfont undefined"></i>
+  Rust
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/视频编解码/" class="nav-link"><i class="iconfont undefined"></i>
+  视频编解码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计算机网络/" class="nav-link"><i class="iconfont undefined"></i>
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SDN/" class="nav-link"><i class="iconfont undefined"></i>
+  SDN
+</a></li><li class="dropdown-item"><!----> <a href="/categories/论文笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  论文笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/讨论/" class="nav-link"><i class="iconfont undefined"></i>
+  讨论
+</a></li><li class="dropdown-item"><!----> <a href="/categories/边缘计算/" class="nav-link"><i class="iconfont undefined"></i>
+  边缘计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/量子信息技术/" class="nav-link"><i class="iconfont undefined"></i>
+  量子信息技术
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="http://profile.yindaheng98.top" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-account"></i>
+  About
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/yindaheng98/Notebook/tree/master/学习笔记" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-查看源码"></i>
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask" data-v-42dd5e05></div> <aside class="sidebar" data-v-42dd5e05><div class="personal-info-wrapper" data-v-0ac41e2e><img src="/avatar.svg" alt="author-avatar" class="personal-img" data-v-0ac41e2e> <h3 class="name" data-v-0ac41e2e>
+    Howard Yin
+  </h3> <div class="num" data-v-0ac41e2e><div data-v-0ac41e2e><h3 data-v-0ac41e2e>304</h3> <h6 data-v-0ac41e2e>Article</h6></div> <div data-v-0ac41e2e><h3 data-v-0ac41e2e>153</h3> <h6 data-v-0ac41e2e>Tag</h6></div></div> <hr data-v-0ac41e2e></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CNCF/" class="nav-link"><i class="iconfont undefined"></i>
+  CNCF
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="iconfont undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/namespaces/" class="nav-link"><i class="iconfont undefined"></i>
+  namespaces
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes对象/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes对象
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="iconfont undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MyIdeas/" class="nav-link"><i class="iconfont undefined"></i>
+  MyIdeas
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Revolution/" class="nav-link"><i class="iconfont undefined"></i>
+  Revolution
+</a></li><li class="dropdown-item"><!----> <a href="/categories/WebRTC/" class="nav-link"><i class="iconfont undefined"></i>
+  WebRTC
+</a></li><li class="dropdown-item"><!----> <a href="/categories/云计算/" class="nav-link"><i class="iconfont undefined"></i>
+  云计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/人工智能/" class="nav-link"><i class="iconfont undefined"></i>
+  人工智能
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="iconfont undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/图像处理/" class="nav-link"><i class="iconfont undefined"></i>
+  图像处理
+</a></li><li class="dropdown-item"><!----> <a href="/categories/图形学/" class="nav-link"><i class="iconfont undefined"></i>
+  图形学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="iconfont undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数学/" class="nav-link"><i class="iconfont undefined"></i>
+  数学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/OJ笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  OJ笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博弈论/" class="nav-link"><i class="iconfont undefined"></i>
+  博弈论
+</a></li><li class="dropdown-item"><!----> <a href="/categories/形式语言与自动机/" class="nav-link"><i class="iconfont undefined"></i>
+  形式语言与自动机
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器运维/" class="nav-link"><i class="iconfont undefined"></i>
+  服务器运维
+</a></li><li class="dropdown-item"><!----> <a href="/categories/编程语言/" class="nav-link"><i class="iconfont undefined"></i>
+  编程语言
+</a></li><li class="dropdown-item"><!----> <a href="/categories/C/" class="nav-link"><i class="iconfont undefined"></i>
+  C
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Go/" class="nav-link"><i class="iconfont undefined"></i>
+  Go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="iconfont undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nvidia/" class="nav-link"><i class="iconfont undefined"></i>
+  Nvidia
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Shell/" class="nav-link"><i class="iconfont undefined"></i>
+  Shell
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Tex/" class="nav-link"><i class="iconfont undefined"></i>
+  Tex
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Rust/" class="nav-link"><i class="iconfont undefined"></i>
+  Rust
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/视频编解码/" class="nav-link"><i class="iconfont undefined"></i>
+  视频编解码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计算机网络/" class="nav-link"><i class="iconfont undefined"></i>
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SDN/" class="nav-link"><i class="iconfont undefined"></i>
+  SDN
+</a></li><li class="dropdown-item"><!----> <a href="/categories/论文笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  论文笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/讨论/" class="nav-link"><i class="iconfont undefined"></i>
+  讨论
+</a></li><li class="dropdown-item"><!----> <a href="/categories/边缘计算/" class="nav-link"><i class="iconfont undefined"></i>
+  边缘计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/量子信息技术/" class="nav-link"><i class="iconfont undefined"></i>
+  量子信息技术
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="http://profile.yindaheng98.top" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-account"></i>
+  About
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/yindaheng98/Notebook/tree/master/学习笔记" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-查看源码"></i>
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>ION的基本架构</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/WebRTC/ION-Arch.html#启动" class="sidebar-link">启动</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WebRTC/ION-Arch.html#sfu" class="sidebar-link">SFU</a></li><li class="sidebar-sub-header"><a href="/WebRTC/ION-Arch.html#islb" class="sidebar-link">islb</a></li><li class="sidebar-sub-header"><a href="/WebRTC/ION-Arch.html#signal" class="sidebar-link">Signal</a></li></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-95c9a4e8 data-v-42dd5e05><h3 class="title" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8>ION的基本架构</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><input type="password" value="" data-v-95c9a4e8> <span data-v-95c9a4e8>Konck! Knock!</span> <button data-v-95c9a4e8>OK</button></label> <div class="footer" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><span data-v-95c9a4e8><i class="iconfont reco-theme" data-v-95c9a4e8></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-95c9a4e8>vuePress-theme-reco</a></span> <span data-v-95c9a4e8><i class="iconfont reco-copyright" data-v-95c9a4e8></i> <a data-v-95c9a4e8><span data-v-95c9a4e8>Howard Yin</span>
+            
+          <span data-v-95c9a4e8>2021 - </span>
+          2025
+        </a></span></div></div> <div data-v-42dd5e05><main class="page"><div class="page-title" style="display:none;"><h1>ION的基本架构</h1> <hr> <div data-v-3d9cec6e><i class="iconfont reco-account" data-v-3d9cec6e><span data-v-3d9cec6e>Howard Yin</span></i> <i class="iconfont reco-date" data-v-3d9cec6e><span data-v-3d9cec6e>2022-04-15 10:57:03</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3d9cec6e><span class="tag-item" data-v-3d9cec6e>WebRTC</span><span class="tag-item" data-v-3d9cec6e>编程框架</span><span class="tag-item" data-v-3d9cec6e>pion</span><span class="tag-item" data-v-3d9cec6e>概念</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><table><thead><tr><th>服务名称</th> <th>功能</th></tr></thead> <tbody><tr><td>ISLB</td> <td>节点发现与负载均衡</td></tr> <tr><td>Signal</td> <td>传递信令</td></tr> <tr><td>Room</td> <td>主要业务逻辑，包括聊天室、用户验证等</td></tr> <tr><td>SFU</td> <td>WebRTC SFU，用于视频流的转发</td></tr></tbody></table> <table><thead><tr><th>用到的独立软件</th> <th>功能</th></tr></thead> <tbody><tr><td>Redis</td> <td>缓存数据库。给ISLB存储节点列表等数据；给Room存储业务逻辑数据</td></tr> <tr><td>nats</td> <td>分布式消息队列。用于各服务间的消息传递</td></tr></tbody></table> <blockquote><p>Software applications and services need to exchange data. NATS is an infrastructure that allows such data exchange, segmented in the form of messages. We call this a &quot;message oriented middleware&quot;.</p></blockquote> <p><img src="/assets/img/ION-Arch.b4a7cddd.png" alt=""></p> <p>在连接建立过程中，各组件之间的关系如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>SDK&lt;---grpc---&gt;signal&lt;---nats---&gt;Room/ISLB&lt;---nats---&gt;signal&lt;---grpc---&gt;SDK
+                                    ||
+                                  [Redis]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>在视频流传输中，各组件之间的关系如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>SDK&lt;----webrtc----&gt;SFU&lt;----webrtc----&gt;SDK
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="启动"><a href="#启动" class="header-anchor">#</a> 启动</h2> <h3 id="sfu"><a href="#sfu" class="header-anchor">#</a> SFU</h3> <p>在官网教程中，单独启动SFU的指令如下：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>docker pull nats
+docker run -p <span class="token number">4222</span>:4222 -p <span class="token number">6222</span>:6222 -p <span class="token number">8222</span>:8222 nats
+docker run -p <span class="token number">5000</span>:5000/udp --network <span class="token function">host</span> -v <span class="token environment constant">$PWD</span>/configs/sfu.toml:/configs/sfu.toml pionwebrtc/ion:latest-sfu
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>可以看出，SFU需要有nats的存在才可运行。</p> <p><code>$PWD/configs/sfu.toml</code>似乎是配置文件。找到<a href="https://github.com/pion/ion-sfu/blob/68545cc25230220435ee028d5a0af6e768a0a79a/config.toml" target="_blank" rel="noopener noreferrer"><code>pion/ion-sfu</code>中配置文件的位置<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，可以看到这文件长这样：</p> <div class="language-toml line-numbers-mode"><pre class="language-toml"><code><span class="token punctuation">[</span><span class="token table class-name">sfu</span><span class="token punctuation">]</span>
+<span class="token comment"># Ballast size in MiB, will allocate memory to reduce the GC trigger upto 2x the</span>
+<span class="token comment"># size of ballast. Be aware that the ballast should be less than the half of memory</span>
+<span class="token comment"># available.</span>
+<span class="token key property">ballast</span> <span class="token punctuation">=</span> <span class="token number">0</span>
+<span class="token comment"># enable prometheus sfu statistics</span>
+<span class="token key property">withstats</span> <span class="token punctuation">=</span> <span class="token boolean">false</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">router</span><span class="token punctuation">]</span>
+<span class="token comment"># Limit the remb bandwidth in kbps</span>
+<span class="token comment"># zero means no limits</span>
+<span class="token key property">maxbandwidth</span> <span class="token punctuation">=</span> <span class="token number">1500</span>
+<span class="token comment"># max number of video tracks packets the SFU will keep track</span>
+<span class="token key property">maxpackettrack</span> <span class="token punctuation">=</span> <span class="token number">500</span>
+<span class="token comment"># Sets the audio level volume threshold.</span>
+<span class="token comment"># Values from [0-127] where 0 is the loudest.</span>
+<span class="token comment"># Audio levels are read from rtp extension header according to:</span>
+<span class="token comment"># https://tools.ietf.org/html/rfc6464</span>
+<span class="token key property">audiolevelthreshold</span> <span class="token punctuation">=</span> <span class="token number">40</span>
+<span class="token comment"># Sets the interval in which the SFU will check the audio level</span>
+<span class="token comment"># in [ms]. If the active speaker has changed, the sfu will</span>
+<span class="token comment"># emit an event to clients.</span>
+<span class="token key property">audiolevelinterval</span><span class="token punctuation">=</span><span class="token number">1000</span>
+<span class="token comment"># Sets minimum percentage of events required to fire an audio level</span>
+<span class="token comment"># according to the expected events from the audiolevelinterval,</span>
+<span class="token comment"># calculated as audiolevelinterval/packetization time (20ms for 8kHz)</span>
+<span class="token comment"># Values from [0-100]</span>
+<span class="token key property">audiolevelfilter</span> <span class="token punctuation">=</span> <span class="token number">20</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">router.simulcast</span><span class="token punctuation">]</span>
+<span class="token comment"># Prefer best quality initially</span>
+<span class="token key property">bestqualityfirst</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token comment"># EXPERIMENTAL enable temporal layer change is currently an experimental feature,</span>
+<span class="token comment"># enable only for testing.</span>
+<span class="token key property">enabletemporallayer</span> <span class="token punctuation">=</span> <span class="token boolean">false</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">webrtc</span><span class="token punctuation">]</span>
+<span class="token comment"># Single port, portrange will not work if you enable this</span>
+<span class="token comment"># singleport = 5000</span>
+
+<span class="token comment"># Range of ports that ion accepts WebRTC traffic on</span>
+<span class="token comment"># Format: [min, max]   and max - min &gt;= 100</span>
+<span class="token key property">portrange</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token number">5000</span><span class="token punctuation">,</span> <span class="token number">5200</span><span class="token punctuation">]</span>
+<span class="token comment"># if sfu behind nat, set iceserver</span>
+<span class="token comment"># [[webrtc.iceserver]]</span>
+<span class="token comment"># urls = [&quot;stun:stun.stunprotocol.org:3478&quot;]</span>
+<span class="token comment"># [[webrtc.iceserver]]</span>
+<span class="token comment"># urls = [&quot;turn:turn.awsome.org:3478&quot;]</span>
+<span class="token comment"># username = &quot;awsome&quot;</span>
+<span class="token comment"># credential = &quot;awsome&quot;</span>
+
+<span class="token comment"># sdp semantics:</span>
+<span class="token comment"># &quot;unified-plan&quot;</span>
+<span class="token comment"># &quot;plan-b&quot;</span>
+<span class="token comment"># &quot;unified-plan-with-fallback&quot;</span>
+<span class="token key property">sdpsemantics</span> <span class="token punctuation">=</span> <span class="token string">&quot;unified-plan&quot;</span>
+<span class="token comment"># toggle multicast dns support: https://tools.ietf.org/html/draft-mdns-ice-candidates-00</span>
+<span class="token key property">mdns</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">webrtc.candidates</span><span class="token punctuation">]</span>
+<span class="token comment"># In case you're deploying ion-sfu on a server which is configured with</span>
+<span class="token comment"># a 1:1 NAT (e.g., Amazon EC2), you might want to also specify the public</span>
+<span class="token comment"># address of the machine using the setting below. This will result in</span>
+<span class="token comment"># all host candidates (which normally have a private IP address) to</span>
+<span class="token comment"># be rewritten with the public address provided in the settings. As</span>
+<span class="token comment"># such, use the option with caution and only if you know what you're doing.</span>
+<span class="token comment"># Multiple public IP addresses can be specified as a comma separated list</span>
+<span class="token comment"># if the sfu is deployed in a DMZ between two 1-1 NAT for internal and</span>
+<span class="token comment"># external users.</span>
+<span class="token comment"># nat1to1 = [&quot;1.2.3.4&quot;]</span>
+<span class="token comment"># icelite = true</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">webrtc.timeouts</span><span class="token punctuation">]</span>
+<span class="token comment"># The duration in [sec] without network activity before a ICE Agent is considered disconnected</span>
+<span class="token key property">disconnected</span> <span class="token punctuation">=</span> <span class="token number">5</span>
+<span class="token comment"># The duration in [sec] without network activity before a ICE Agent is considered failed after disconnected</span>
+<span class="token key property">failed</span> <span class="token punctuation">=</span> <span class="token number">25</span>
+<span class="token comment"># How often in [sec] the ICE Agent sends extra traffic if there is no activity, if media is flowing no traffic will be sent</span>
+<span class="token key property">keepalive</span> <span class="token punctuation">=</span> <span class="token number">2</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">turn</span><span class="token punctuation">]</span>
+<span class="token comment"># Enables embeded turn server</span>
+<span class="token key property">enabled</span> <span class="token punctuation">=</span> <span class="token boolean">false</span>
+<span class="token comment"># Sets the realm for turn server</span>
+<span class="token key property">realm</span> <span class="token punctuation">=</span> <span class="token string">&quot;ion&quot;</span>
+<span class="token comment"># The address the TURN server will listen on.</span>
+<span class="token key property">address</span> <span class="token punctuation">=</span> <span class="token string">&quot;0.0.0.0:3478&quot;</span>
+<span class="token comment"># Certs path to config tls/dtls</span>
+<span class="token comment"># cert=&quot;path/to/cert.pem&quot;</span>
+<span class="token comment"># key=&quot;path/to/key.pem&quot;</span>
+<span class="token comment"># Port range that turn relays to SFU</span>
+<span class="token comment"># WARNING: It shouldn't overlap webrtc.portrange</span>
+<span class="token comment"># Format: [min, max]</span>
+<span class="token comment"># portrange = [5201, 5400]</span>
+<span class="token punctuation">[</span><span class="token table class-name">turn.auth</span><span class="token punctuation">]</span>
+<span class="token comment"># Use an auth secret to generate long-term credentials defined in RFC5389-10.2</span>
+<span class="token comment"># NOTE: This takes precedence over `credentials` if defined.</span>
+<span class="token comment"># secret = &quot;secret&quot;</span>
+<span class="token comment"># Sets the credentials pairs</span>
+<span class="token key property">credentials</span> <span class="token punctuation">=</span> <span class="token string">&quot;pion=ion,pion2=ion2&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">log</span><span class="token punctuation">]</span>
+<span class="token comment"># 0 - INFO 1 - DEBUG 2 - TRACE</span>
+<span class="token key property">v</span> <span class="token punctuation">=</span> <span class="token number">1</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br></div></div><p>可以看到设置还是比较丰富的，比如有<code>maxbandwidth</code>这种带宽设置、WebRTC监听端口范围设置<code>portrange</code>、给内网端口映射环境部署时用的<code>nat1to1</code>、内置turn服务器设置<code>[turn]</code>等。</p> <p>但是并没看到有nats相关的配置？这个SFU是怎么知道如何连接nats的？在仔细找找，发现这个<code>pion/ion-sfu</code>并不是直接放进容器里，而是在<a href="https://github.com/pion/ion/tree/65dbd12eaad0f0e0a019b4d8ee80742930bcdc28/pkg/node/sfu" target="_blank" rel="noopener noreferrer"><code>github.com/pion/ion/pkg/node/sfu</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>里面做了一层封装，然后在<a href="https://github.com/pion/ion/blob/65dbd12eaad0f0e0a019b4d8ee80742930bcdc28/cmd/sfu/main.go" target="_blank" rel="noopener noreferrer"><code>cmd/sfu/main.go</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>里面调用成为一个可执行文件的。</p> <p>进一步，进到<a href="https://github.com/pion/ion/blob/65dbd12eaad0f0e0a019b4d8ee80742930bcdc28/pkg/node/sfu/sfu.go" target="_blank" rel="noopener noreferrer">pkg/node/sfu/sfu.go<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>中，找到最主要的配置项：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token comment">// Config for sfu node</span>
+<span class="token keyword">type</span> Config <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	Global global   <span class="token string">`mapstructure:&quot;global&quot;`</span>
+	Log    logConf  <span class="token string">`mapstructure:&quot;log&quot;`</span>
+	Nats   natsConf <span class="token string">`mapstructure:&quot;nats&quot;`</span>
+	isfu<span class="token punctuation">.</span>Config
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>可以看到，SFU中的配置项实际上是几个配置项拼起来的，其中就包含<code>pion/ion-sfu</code>中配置项<code>isfu.Config</code>。</p> <p>再找到从这个配置项生成的<a href="https://github.com/pion/ion/blob/65dbd12eaad0f0e0a019b4d8ee80742930bcdc28/configs/sfu.toml" target="_blank" rel="noopener noreferrer"><code>pion/ion</code>中关于SFU的配置文件<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>：</p> <div class="language-toml line-numbers-mode"><pre class="language-toml"><code><span class="token punctuation">[</span><span class="token table class-name">global</span><span class="token punctuation">]</span>
+<span class="token comment"># data center id</span>
+<span class="token key property">dc</span> <span class="token punctuation">=</span> <span class="token string">&quot;dc1&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">nats</span><span class="token punctuation">]</span>
+<span class="token key property">url</span> <span class="token punctuation">=</span> <span class="token string">&quot;nats://127.0.0.1:4222&quot;</span>
+
+
+<span class="token punctuation">[</span><span class="token table class-name">sfu</span><span class="token punctuation">]</span>
+<span class="token comment"># ......以下配置和上面那个配置文件差不多，省略</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>可以看到这就是<a href="https://github.com/pion/ion-sfu/blob/68545cc25230220435ee028d5a0af6e768a0a79a/config.toml" target="_blank" rel="noopener noreferrer"><code>pion/ion-sfu</code>中配置文件<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>加了几个配置项而已。其中就有nats的配置项，比如地址和数据库名称啥的。</p> <p>具体原理的解析，且看<a href="/WebRTC/sfu-in-ion.html">《ION中的SFU服务》</a>。</p> <h3 id="islb"><a href="#islb" class="header-anchor">#</a> islb</h3> <p>在官网教程中，单独启动islb的指令如下：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>docker pull nats
+docker run -p <span class="token number">4222</span>:4222 -p <span class="token number">6222</span>:6222 -p <span class="token number">8222</span>:8222 nats
+docker pull redis
+docker run -p <span class="token number">6379</span>:6379 redis
+docker run --network <span class="token function">host</span> -v <span class="token environment constant">$PWD</span>/configs/islb.toml:/configs/islb.toml pionwebrtc/ion:latest-islb
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>可以看出，islb不仅需要有nats，还需要有Redis的存在才可运行。毕竟是负载均衡，肯定要存一下有哪些个节点可供负载均衡。</p> <p><code>$PWD/configs/islb.toml</code>应该就是配置文件。和上面一样，直接找到对应的<a href="https://github.com/pion/ion/blob/65dbd12eaad0f0e0a019b4d8ee80742930bcdc28/configs/islb.toml" target="_blank" rel="noopener noreferrer">配置文件<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>：</p> <div class="language-toml line-numbers-mode"><pre class="language-toml"><code><span class="token punctuation">[</span><span class="token table class-name">global</span><span class="token punctuation">]</span>
+<span class="token comment"># data center id</span>
+<span class="token key property">dc</span> <span class="token punctuation">=</span> <span class="token string">&quot;dc1&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">log</span><span class="token punctuation">]</span>
+<span class="token key property">level</span> <span class="token punctuation">=</span> <span class="token string">&quot;info&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">nats</span><span class="token punctuation">]</span>
+<span class="token key property">url</span> <span class="token punctuation">=</span> <span class="token string">&quot;nats://127.0.0.1:4222&quot;</span>
+
+
+<span class="token punctuation">[</span><span class="token table class-name">redis</span><span class="token punctuation">]</span>
+<span class="token key property">addrs</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">&quot;:6379&quot;</span><span class="token punctuation">]</span>
+<span class="token key property">password</span> <span class="token punctuation">=</span> <span class="token string">&quot;&quot;</span>
+<span class="token key property">db</span> <span class="token punctuation">=</span> <span class="token number">0</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>未免也过于简单了，完全就只有连数据库的配置，没有一点自己的运行逻辑方面配置？</p> <p>从代码结构上看，在pion项目中，这个islb没有单独的包，主要的逻辑都在<a href="https://github.com/pion/ion/tree/65dbd12eaad0f0e0a019b4d8ee80742930bcdc28/pkg/node/islb" target="_blank" rel="noopener noreferrer"><code>github.com/pion/ion/pkg/node/islb</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>这个包里面，然后在<a href="https://github.com/pion/ion/blob/65dbd12eaad0f0e0a019b4d8ee80742930bcdc28/cmd/islb/main.go" target="_blank" rel="noopener noreferrer">cmd/islb/main.go<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>里面做成可执行文件。找代码里的配置项也很好找得到：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token comment">// Config for islb node</span>
+<span class="token keyword">type</span> Config <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	Global  global    <span class="token string">`mapstructure:&quot;global&quot;`</span>
+	Log     logConf   <span class="token string">`mapstructure:&quot;log&quot;`</span>
+	Nats    natsConf  <span class="token string">`mapstructure:&quot;nats&quot;`</span>
+	Redis   db<span class="token punctuation">.</span>Config <span class="token string">`mapstructure:&quot;redis&quot;`</span>
+	CfgFile <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>这里面确实没有islb相关的配置项。这就怪了，这islb是什么运行逻辑，怎么都没配置的？好歹还是个“负载均衡”来着。</p> <p>这个问题比较复杂，详见<a href="/WebRTC/ion-islb.html">《ION中的islb服务》</a>。总的来说，islb实际上就是一个服务注册中心，并没有所谓的负载均衡功能，存储和查询流信息的功能不知道被移到哪去了。推测这个模块后面应该会改个名字，比如改成“Registry”啥的，更符合它现在的功能。</p> <h3 id="signal"><a href="#signal" class="header-anchor">#</a> Signal</h3> <p>从<a href="/WebRTC/sfu-in-ion.html">《ION中的SFU服务》</a>中我们可以看出，信令服务都在SFU里面写好了，那这个Signal是干嘛用的？</p> <p>先看启动过程。在官网教程中，单独启动Signal的指令如下：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>docker pull nats
+docker run -p <span class="token number">4222</span>:4222 -p <span class="token number">6222</span>:6222 -p <span class="token number">8222</span>:8222 nats
+docker run -p <span class="token number">5551</span>:5551/tcp --network <span class="token function">host</span> -v <span class="token environment constant">$PWD</span>/configs/signal.toml:/configs/signal.toml pionwebrtc/ion:latest-signal
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>可以看出，Signal的启动只需要有nats就行了</p> <p>这个配置文件是这样：</p> <div class="language-toml line-numbers-mode"><pre class="language-toml"><code><span class="token punctuation">[</span><span class="token table class-name">global</span><span class="token punctuation">]</span>
+<span class="token comment"># data center id</span>
+<span class="token key property">dc</span> <span class="token punctuation">=</span> <span class="token string">&quot;dc1&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">log</span><span class="token punctuation">]</span>
+<span class="token key property">level</span> <span class="token punctuation">=</span> <span class="token string">&quot;info&quot;</span>
+<span class="token comment"># level = &quot;debug&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">nats</span><span class="token punctuation">]</span>
+<span class="token key property">url</span> <span class="token punctuation">=</span> <span class="token string">&quot;nats://127.0.0.1:4222&quot;</span>
+
+
+<span class="token punctuation">[</span><span class="token table class-name">signal.grpc</span><span class="token punctuation">]</span>
+<span class="token comment">#listen ip port</span>
+<span class="token key property">host</span> <span class="token punctuation">=</span> <span class="token string">&quot;0.0.0.0&quot;</span>
+<span class="token key property">port</span> <span class="token punctuation">=</span> <span class="token string">&quot;5551&quot;</span>
+<span class="token key property">allow_all_origins</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token comment"># cert= &quot;configs/certs/cert.pem&quot;</span>
+<span class="token comment"># key= &quot;configs/certs/key.pem&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">signal.jwt</span><span class="token punctuation">]</span>
+<span class="token key property">enabled</span> <span class="token punctuation">=</span> <span class="token boolean">false</span> 
+<span class="token key property">key_type</span> <span class="token punctuation">=</span> <span class="token string">&quot;HMAC&quot;</span>
+<span class="token key property">key</span> <span class="token punctuation">=</span> <span class="token string">&quot;1q2dGu5pzikcrECJgW3ADfXX3EsmoD99SYvSVCpDsJrAqxou5tUNbHPvkEFI4bTS&quot;</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">signal.svc</span><span class="token punctuation">]</span>
+<span class="token key property">services</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">&quot;rtc&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;room&quot;</span><span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>前面都没啥特殊的。</p> <p>这个<code>signal.grpc</code>应该是指明Signal服务的对外接口；<code>signal.jwt</code>应该是验证功能；<code>signal.svc</code>这是什么，看着像是什么服务名，不知道有什么用？</p> <p>打开<a href="https://github.com/pion/ion/blob/65dbd12eaad0f0e0a019b4d8ee80742930bcdc28/cmd/signal/main.go" target="_blank" rel="noopener noreferrer">Signal的主函数<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>看一眼，服务注册之类的代码都和前面介绍的一样，最重要的代码应该就是这段：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code>	srv <span class="token operator">:=</span> grpc<span class="token punctuation">.</span><span class="token function">NewServer</span><span class="token punctuation">(</span>
+		grpc<span class="token punctuation">.</span><span class="token function">CustomCodec</span><span class="token punctuation">(</span>nrpc<span class="token punctuation">.</span><span class="token function">Codec</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// nolint:staticcheck</span>
+		grpc<span class="token punctuation">.</span><span class="token function">UnknownServiceHandler</span><span class="token punctuation">(</span>nproxy<span class="token punctuation">.</span><span class="token function">TransparentLongConnectionHandler</span><span class="token punctuation">(</span>sig<span class="token punctuation">.</span>Director<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+	s <span class="token operator">:=</span> util<span class="token punctuation">.</span><span class="token function">NewWrapperedGRPCWebServer</span><span class="token punctuation">(</span>util<span class="token punctuation">.</span><span class="token function">NewWrapperedServerOptions</span><span class="token punctuation">(</span>
+		addr<span class="token punctuation">,</span> conf<span class="token punctuation">.</span>Signal<span class="token punctuation">.</span>GRPC<span class="token punctuation">.</span>Cert<span class="token punctuation">,</span> conf<span class="token punctuation">.</span>Signal<span class="token punctuation">.</span>GRPC<span class="token punctuation">.</span>Key<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">,</span> srv<span class="token punctuation">)</span>
+
+	<span class="token keyword">if</span> err <span class="token operator">:=</span> s<span class="token punctuation">.</span><span class="token function">Serve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Panicf</span><span class="token punctuation">(</span><span class="token string">&quot;failed to serve: %v&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">select</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>滴滴🤯！！捕捉到关键词<code>proxy</code>！看这样子Signal应该是个GRPC代理，把外面来的标准GRPC请求转换为<code>nats-grpc</code>的请求。</p> <p>进一步解析详见<a href="/WebRTC/ion-signal.html">《ION中的Signal服务》</a>。</p></div> <footer class="page-edit" style="display:none;"><div class="edit-link"><a href="https://github.com/yindaheng98/Notebook/edit/master/学习笔记/WebRTC/ION-Arch.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">创建于: </span> <span class="time">2022-04-09 12:33:17</span></div> <br> <div class="last-updated"><span class="prefix">更新于: </span> <span class="time">2022-04-15 10:57:33</span></div></footer> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-44bd5a18 data-v-44bd5a18><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-44bd5a18><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-44bd5a18></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-44bd5a18></path></svg></div></div></div>
+    <script src="/assets/js/app.1c89d7eb.js" defer></script><script src="/assets/js/3.63b8c0eb.js" defer></script><script src="/assets/js/1.be3d2055.js" defer></script><script src="/assets/js/45.c5e657d2.js" defer></script>
+  </body>
+</html>

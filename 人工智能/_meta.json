@@ -1,0 +1,421 @@
+{
+    "LSTM.md": {
+        "title": "【纯转载】《Understanding LSTM Networks》翻译",
+        "created": "2021-03-22 07:56:22",
+        "updated": "2021-03-22 10:44:48",
+        "date": "2021-03-22 10:44:48",
+        "tags": [
+            "人工智能",
+            "LSTM",
+            "神经网络"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/img/RNN-rolled.png"
+    },
+    "自组织映射.md": {
+        "title": "自组织的数据可视化和降维方法：SOM、SSM、FLAS",
+        "created": "2024-04-26 23:58:42",
+        "updated": "2024-04-29 04:09:23",
+        "date": "2024-04-29 04:09:23",
+        "tags": [
+            "人工智能",
+            "神经网络",
+            "可视化"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/i/SOM6.webp"
+    },
+    "ResNet.md": {
+        "title": "ResNet",
+        "created": "2021-05-05 03:09:44",
+        "updated": "2021-05-05 03:09:44",
+        "date": "2021-05-05 03:09:44",
+        "tags": [
+            "人工智能",
+            "ResNet"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/i/Res.jpg"
+    },
+    "transformer.md": {
+        "title": "Transformer结构",
+        "created": "2021-11-23 11:43:15",
+        "updated": "2022-06-08 14:04:06",
+        "date": "2022-06-08 14:04:06",
+        "tags": [
+            "人工智能",
+            "Transformer",
+            "神经网络",
+            "注意力机制"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/./i/Transformer-official.png"
+    },
+    "扩散模型.md": {
+        "title": "扩散模型",
+        "created": "2023-09-13 03:40:58",
+        "updated": "2024-09-21 22:36:27",
+        "date": "2024-09-21 22:36:27",
+        "tags": [
+            "人工智能",
+            "生成模型",
+            "扩散模型"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/i/video_ldm_pipeline.png"
+    },
+    "document-ai.md": {
+        "title": "【转载】加速 Document AI (文档智能) 发展",
+        "created": "2024-08-17 04:48:39",
+        "updated": "2024-08-17 04:48:39",
+        "date": "2024-08-17 04:48:39",
+        "tags": [
+            "人工智能",
+            "大模型",
+            "RAG",
+            "NLP"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/112_document-ai/ocr.png"
+    },
+    "GraphRAG源码解读.md": {
+        "title": "【转载】微软GraphRAG框架源码解读",
+        "created": "2024-08-14 18:12:38",
+        "updated": "2024-08-14 18:14:02",
+        "date": "2024-08-14 18:14:02",
+        "tags": [
+            "人工智能",
+            "大模型",
+            "RAG",
+            "NLP"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/zhimg.com/v2-5bdaa087a521b3a4b03b65625111c60d_r.jpg"
+    },
+    "SwinTransformer.md": {
+        "title": "Swin Transformer解析",
+        "created": "2022-06-12 07:36:34",
+        "updated": "2022-06-12 12:22:21",
+        "date": "2022-06-12 12:22:21",
+        "tags": [
+            "人工智能",
+            "Transformer",
+            "SwinTransformer",
+            "神经网络",
+            "注意力机制"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/i/SwinTransformer.png"
+    },
+    "vae.md": {
+        "title": "【转载】机器学习理论—优雅的模型（一）：变分自编码器（VAE）",
+        "created": "2022-07-06 09:40:09",
+        "updated": "2022-07-12 12:29:04",
+        "date": "2022-07-12 12:29:04",
+        "tags": [
+            "人工智能",
+            "VAE",
+            "生成模型",
+            "GAN"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/zhimg.com/v2-012c9ea0f8b3e93079fb77cd39f7e88f_r.jpg"
+    },
+    "位置编码.md": {
+        "title": "【纯转载】Transformer 中的 positional embedding",
+        "created": "2022-07-12 12:15:47",
+        "updated": "2022-07-12 12:27:25",
+        "date": "2022-07-12 12:27:25",
+        "tags": [
+            "人工智能",
+            "Transformer",
+            "位置编码"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/zhimg.com/v2-60139de208db5f7b81babfa0eaae99b0_r.jpg"
+    },
+    "重参数化.md": {
+        "title": "重参数化 Re-parameterization",
+        "created": "2022-07-05 13:00:45",
+        "updated": "2022-07-05 13:00:45",
+        "date": "2022-07-05 13:00:45",
+        "tags": [
+            "人工智能",
+            "重参数化"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/./i/Re-parameterization.png"
+    },
+    "MAE.md": {
+        "title": "【纯转载】一文看尽MAE最新进展！恺明的MAE已经提出大半年，目前发展如何？",
+        "created": "2022-06-13 14:24:14",
+        "updated": "2022-06-14 02:00:13",
+        "date": "2022-06-14 02:00:13",
+        "tags": [
+            "人工智能",
+            "MAE",
+            "生成模型",
+            "半监督学习",
+            "Transformer"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/qpic/Psho9dm7oDEZQYfMbu7bYc0Vrfia7yJ9Vt42Mic6FNIc8uzMTy5TdxDhOGC0uicvrWUWA1vwGPFhhocdjGoYPQGQQ.png"
+    },
+    "PromptTuning.md": {
+        "title": "【摘录】Prompt Tuning",
+        "created": "2024-05-30 06:52:17",
+        "updated": "2024-05-30 06:52:17",
+        "date": "2024-05-30 06:52:17",
+        "tags": [
+            "人工智能",
+            "训练方法",
+            "大模型"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/i/v2-5ceed3c3f887e7d38c3b3534d89d2c7e_1440w.webp"
+    },
+    "quant-for-begin.md": {
+        "title": "【纯转载】神经网络量化入门--量化感知训练",
+        "created": "2022-08-28 08:24:55",
+        "updated": "2022-08-28 08:24:55",
+        "date": "2022-08-28 08:24:55",
+        "tags": [
+            "人工智能",
+            "量化",
+            "量化感知训练"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/zhimg.com/v2-d3ad7130bfa530d5f7bafa57e0446266_b.jpg"
+    },
+    "AI.md": {
+        "title": "人工智能课程总结",
+        "created": "2021-03-28 07:15:04",
+        "updated": "2021-03-28 07:15:04",
+        "date": "2021-03-28 07:15:04",
+        "tags": [
+            "人工智能"
+        ],
+        "categories": [
+            "人工智能"
+        ]
+    },
+    "相对位置编码.md": {
+        "title": "相对位置编码",
+        "created": "2022-07-13 03:46:50",
+        "updated": "2022-07-26 09:43:11",
+        "date": "2022-07-26 09:43:11",
+        "tags": [
+            "人工智能",
+            "位置编码"
+        ],
+        "categories": [
+            "人工智能"
+        ]
+    },
+    "STE.md": {
+        "title": "【纯转载】量化训练之补偿STE：DSQ和QuantNoise",
+        "created": "2022-08-28 09:04:54",
+        "updated": "2022-08-28 09:04:54",
+        "date": "2022-08-28 09:04:54",
+        "tags": [
+            "人工智能",
+            "量化",
+            "量化感知训练"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/zhimg.com/v2-9e990fc8e271cf11576c2de5d416df8d_b.jpg"
+    },
+    "quant.md": {
+        "title": "一些常见的模型量化方法",
+        "created": "2022-08-24 08:55:37",
+        "updated": "2024-05-07 03:13:05",
+        "date": "2024-05-07 03:13:05",
+        "tags": [
+            "人工智能",
+            "量化"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/i/log_quant.png"
+    },
+    "TheoreticalImpedimentstoMachineLearning.md": {
+        "title": "NIPS2017 Theoretical impediments to machine learning：无人问津的图灵奖得主",
+        "created": "2021-05-04 14:59:25",
+        "updated": "2021-05-04 15:03:22",
+        "date": "2021-05-04 15:03:22",
+        "tags": [
+            "人工智能",
+            "思想"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/i/Alchemy.jpg"
+    },
+    "LoRA.md": {
+        "title": "【摘录】LoRA（Low-Rank Adaptation）和PEFT （Parameter-Efficient Fine-Tuning）",
+        "created": "2024-05-30 06:52:17",
+        "updated": "2024-06-07 04:05:11",
+        "date": "2024-06-07 04:05:11",
+        "tags": [
+            "人工智能",
+            "训练方法",
+            "大模型"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/i/v2-bafe467a7ec7be6c3190b8ac19a79c03_1440w.webp"
+    },
+    "图解SwinTransformer.md": {
+        "title": "【纯转载】图解Swin Transformer",
+        "created": "2022-06-12 08:02:17",
+        "updated": "2022-07-16 11:50:59",
+        "date": "2022-07-16 11:50:59",
+        "tags": [
+            "人工智能",
+            "Transformer",
+            "SwinTransformer",
+            "神经网络",
+            "注意力机制"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/zhimg/v2-74c856e61d60781c89c3813367289462_r.jpg"
+    },
+    "KnowledgeDistillation.md": {
+        "title": "【纯转载】【经典简读】知识蒸馏(Knowledge Distillation) 经典之作",
+        "created": "2021-05-04 13:08:11",
+        "updated": "2021-05-04 13:08:11",
+        "date": "2021-05-04 13:08:11",
+        "tags": [
+            "人工智能",
+            "神经网络",
+            "训练方法"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/i/KD1.jpg"
+    },
+    "BERT.md": {
+        "title": "【纯转载】什么是BERT？",
+        "created": "2022-06-08 12:12:43",
+        "updated": "2022-06-12 12:19:40",
+        "date": "2022-06-12 12:19:40",
+        "tags": [
+            "人工智能"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/zhimg/v2-2f4e0469fbb15ab3791888e5eba66cb4_r.jpg"
+    },
+    "RAG.md": {
+        "title": "RAG - Retrieval Augmented Generation",
+        "created": "2024-04-21 00:35:41",
+        "updated": "2024-04-21 04:53:14",
+        "date": "2024-04-21 04:53:14",
+        "tags": [
+            "人工智能",
+            "大模型",
+            "RAG",
+            "NLP"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/i/chat_use_case-eb8a4883931d726e9f23628a0d22e315.png"
+    },
+    "Attention.md": {
+        "title": "机器学习中的Attention机制",
+        "created": "2021-03-24 08:14:29",
+        "updated": "2024-04-20 23:52:20",
+        "date": "2024-04-20 23:52:20",
+        "tags": [
+            "人工智能",
+            "LSTM",
+            "Transformer",
+            "神经网络",
+            "注意力机制"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/img/LSTM3-focus-f.png"
+    },
+    "quant-survey.md": {
+        "title": "【纯转载】模型量化进展长文综述（三）-映射",
+        "created": "2022-12-08 14:46:46",
+        "updated": "2022-12-08 14:46:46",
+        "date": "2022-12-08 14:46:46",
+        "tags": [
+            "人工智能",
+            "量化"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/zhimg.com/v2-71d107fd21ece078cbef3c3a3efcf0e8_r.jpg"
+    },
+    "姿态估计.md": {
+        "title": "AI时代的姿态估计",
+        "created": "2024-09-22 06:16:14",
+        "updated": "2024-09-22 06:16:14",
+        "date": "2024-09-22 06:16:14",
+        "tags": [
+            "人工智能",
+            "Pose Esitmation",
+            "大模型"
+        ],
+        "categories": [
+            "人工智能"
+        ],
+        "cover": "/人工智能/i/20240921222730.png"
+    },
+    "torch-pruning.md": {
+        "title": "[Torch-Pruning](https://github.com/VainF/Torch-Pruning)解析",
+        "created": "2023-03-09 03:43:43",
+        "updated": "2023-03-10 13:52:23",
+        "date": "2023-03-10 13:52:23",
+        "tags": [
+            "人工智能",
+            "计算加速"
+        ],
+        "categories": [
+            "人工智能"
+        ]
+    }
+}

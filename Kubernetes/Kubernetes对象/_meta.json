@@ -1,0 +1,231 @@
+{
+    "Volume.md": {
+        "title": "Volume - 挂载数据盘",
+        "date": "2020-08-08 12:15:08",
+        "tags": [
+            "Kubernetes",
+            "存储",
+            "概念",
+            "实操",
+            "Kubernetes对象"
+        ],
+        "categories": [
+            "Kubernetes",
+            "Kubernetes对象"
+        ],
+        "created": "2020-08-07 13:14:03",
+        "updated": "2020-08-08 12:15:08",
+        "cover": "/Kubernetes/Kubernetes对象/./i/CSI.png"
+    },
+    "ConfigMap.md": {
+        "title": "ConfigMap - 按照配置文件在容器中生成环境变量",
+        "created": "2020-08-07 13:14:03",
+        "updated": "2020-08-08 06:07:14",
+        "date": "2020-08-08 06:07:14",
+        "tags": [
+            "Kubernetes",
+            "原理",
+            "概念",
+            "实操",
+            "服务器运维",
+            "Kubernetes对象"
+        ],
+        "categories": [
+            "Kubernetes",
+            "Kubernetes对象"
+        ]
+    },
+    "PersistentVolume.md": {
+        "title": "PersistentVolume和PersistentVolumeClaim - K8S持久卷的定义和使用",
+        "created": "2020-08-09 03:24:40",
+        "updated": "2020-08-11 11:32:41",
+        "date": "2020-08-11 11:32:41",
+        "tags": [
+            "Kubernetes",
+            "概念",
+            "实操",
+            "存储",
+            "Kubernetes对象"
+        ],
+        "categories": [
+            "Kubernetes",
+            "Kubernetes对象"
+        ],
+        "cover": "/Kubernetes/Kubernetes对象/./i/PV-PVC.png"
+    },
+    "downwardAPI.md": {
+        "title": "downwardAPI - 让容器了解自己的情况",
+        "created": "2020-08-08 11:35:26",
+        "updated": "2020-08-08 11:35:26",
+        "date": "2020-08-08 11:35:26",
+        "tags": [
+            "Kubernetes",
+            "概念",
+            "实操",
+            "存储",
+            "Kubernetes对象"
+        ],
+        "categories": [
+            "Kubernetes",
+            "Kubernetes对象"
+        ]
+    },
+    "Service.md": {
+        "title": "Service - K8S流量路由",
+        "date": "2020-12-15 07:56:14",
+        "tags": [
+            "Kubernetes",
+            "容器编排",
+            "原理",
+            "概念",
+            "实操",
+            "Kubernetes对象"
+        ],
+        "categories": [
+            "Kubernetes",
+            "Kubernetes对象"
+        ],
+        "created": "2020-08-06 09:25:44",
+        "updated": "2020-12-15 07:56:14",
+        "cover": "/Kubernetes/Kubernetes对象/./i/ClusterIP.png"
+    },
+    "Ingress.md": {
+        "title": "(未完成)Ingress",
+        "created": "2020-08-13 08:10:59",
+        "updated": "2020-08-13 08:10:59",
+        "date": "2020-08-13 08:10:59",
+        "tags": [
+            "Kubernetes",
+            "未完成",
+            "Kubernetes对象"
+        ],
+        "categories": [
+            "Kubernetes",
+            "Kubernetes对象"
+        ]
+    },
+    "Pod容忍与Node污点.md": {
+        "title": "Node污点与Pod容忍调度",
+        "created": "2020-08-05 05:55:31",
+        "updated": "2020-08-05 05:55:31",
+        "date": "2020-08-05 05:55:31",
+        "tags": [
+            "Kubernetes",
+            "原理",
+            "Pod",
+            "容器编排",
+            "容器调度",
+            "概念",
+            "Kubernetes对象"
+        ],
+        "categories": [
+            "Kubernetes",
+            "Kubernetes对象"
+        ]
+    },
+    "Deployment.vs.StatefulSet.md": {
+        "title": "Deployment vs StatefulSet",
+        "created": "2021-01-06 16:46:54",
+        "updated": "2021-01-06 16:46:54",
+        "date": "2021-01-06 16:46:54",
+        "tags": [
+            "Kubernetes",
+            "Kubernetes对象",
+            "概念"
+        ],
+        "categories": [
+            "Kubernetes",
+            "Kubernetes对象"
+        ]
+    },
+    "Secret.md": {
+        "title": "(未完成)Secret - 保存敏感信息",
+        "created": "2020-08-08 11:35:26",
+        "updated": "2020-08-08 11:35:26",
+        "date": "2020-08-08 11:35:26",
+        "tags": [
+            "Kubernetes",
+            "未完成",
+            "Kubernetes对象"
+        ],
+        "categories": [
+            "Kubernetes",
+            "Kubernetes对象"
+        ]
+    },
+    "Kubernetes对象.md": {
+        "title": "Kubernetes(k8s)对象",
+        "date": "2020-07-29 13:00:23",
+        "tags": [
+            "Kubernetes",
+            "设计思路",
+            "概念",
+            "容器编排",
+            "Kubernetes对象"
+        ],
+        "categories": [
+            "Kubernetes",
+            "Kubernetes对象"
+        ],
+        "cover": "/Kubernetes/i/module_03_pods.png",
+        "created": "2020-07-29 13:00:23",
+        "updated": "2020-07-29 13:00:23"
+    },
+    "Namespace.md": {
+        "title": "Namespaces - K8S虚拟集群单元",
+        "date": "2020-08-06 09:25:44",
+        "tags": [
+            "Kubernetes",
+            "原理",
+            "概念",
+            "实操",
+            "容器编排",
+            "Kubernetes对象"
+        ],
+        "categories": [
+            "Kubernetes",
+            "Kubernetes对象"
+        ],
+        "created": "2020-07-29 13:00:23",
+        "updated": "2020-08-06 09:25:44"
+    },
+    "Pod.md": {
+        "title": "Pod - K8S最小管理单位",
+        "date": "2020-08-11 11:32:41",
+        "tags": [
+            "Kubernetes",
+            "概念",
+            "Pod",
+            "实操",
+            "容器编排",
+            "Kubernetes对象"
+        ],
+        "categories": [
+            "Kubernetes",
+            "Kubernetes对象"
+        ],
+        "cover": "/Kubernetes/Kubernetes对象/i/module_03_pods.png",
+        "created": "2020-07-29 13:00:23",
+        "updated": "2020-08-11 11:32:41"
+    },
+    "Pod亲和性调度.md": {
+        "title": "Pod的亲和性调度",
+        "created": "2020-08-03 10:18:43",
+        "updated": "2020-11-25 08:25:46",
+        "date": "2020-11-25 08:25:46",
+        "tags": [
+            "Kubernetes",
+            "原理",
+            "Pod",
+            "容器编排",
+            "容器调度",
+            "概念",
+            "Kubernetes对象"
+        ],
+        "categories": [
+            "Kubernetes",
+            "Kubernetes对象"
+        ],
+        "cover": "/Kubernetes/Kubernetes对象/./i/RequiredDuringExecution.png"
+    }
+}

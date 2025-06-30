@@ -1,0 +1,88 @@
+{
+    "Tex历史.md": {
+        "title": "TEX历史",
+        "created": "2020-03-31 06:51:24",
+        "updated": "2020-04-01 11:44:31",
+        "date": "2020-04-01 11:44:31",
+        "tags": [
+            "Tex",
+            "Literate Programming",
+            "编程语言",
+            "编程思想",
+            "历史"
+        ],
+        "categories": [
+            "编程语言",
+            "Tex"
+        ]
+    },
+    "文学编程.md": {
+        "title": "文学编程（Literate Programming）",
+        "date": "2020-04-01 12:43:23",
+        "tags": [
+            "Tex",
+            "Literate Programming",
+            "编程语言",
+            "编程思想",
+            "概念",
+            "设计思路"
+        ],
+        "categories": [
+            "编程语言",
+            "Tex"
+        ],
+        "created": "2020-03-30 07:21:46",
+        "updated": "2020-04-01 12:43:23"
+    },
+    "TeX基础.md": {
+        "title": "TEX基础",
+        "date": "2020-04-01 11:44:31",
+        "tags": [
+            "Tex",
+            "Literate Programming",
+            "实操",
+            "概念",
+            "设计思路",
+            "编程语言"
+        ],
+        "categories": [
+            "编程语言",
+            "Tex"
+        ],
+        "cover": "/编程语言/Tex/i/TeXif1.png",
+        "created": "2020-04-01 11:44:31",
+        "updated": "2020-04-01 11:44:31"
+    },
+    "TeX公式Tips.md": {
+        "title": "TEX公式知识点拾遗",
+        "date": "2020-04-01 11:44:31",
+        "tags": [
+            "编程语言",
+            "Tex",
+            "实操"
+        ],
+        "categories": [
+            "编程语言",
+            "Tex"
+        ],
+        "created": "2020-04-01 11:44:31",
+        "updated": "2020-04-01 11:44:31"
+    },
+    "LaTeX基础.md": {
+        "title": "LaTeX基础",
+        "date": "2020-04-02 06:01:49",
+        "tags": [
+            "Tex",
+            "实操",
+            "概念",
+            "设计思路",
+            "编程语言"
+        ],
+        "categories": [
+            "编程语言",
+            "Tex"
+        ],
+        "created": "2020-04-01 15:40:02",
+        "updated": "2020-04-02 06:01:49"
+    }
+}
