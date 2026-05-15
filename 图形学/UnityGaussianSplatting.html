@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>`aras-p/UnityGaussianSplatting` Runtime 源码浅析 | Yin的笔记本</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css">
+    <meta name="description" content="Yin的笔记本">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.2d94763a.css" as="style"><link rel="preload" href="/assets/js/app.14d1c0f2.js" as="script"><link rel="preload" href="/assets/js/3.83ed42a4.js" as="script"><link rel="preload" href="/assets/js/1.5e69c820.js" as="script"><link rel="preload" href="/assets/js/186.fa134f8a.js" as="script"><link rel="prefetch" href="/assets/js/10.47ba42ea.js"><link rel="prefetch" href="/assets/js/100.3a461587.js"><link rel="prefetch" href="/assets/js/101.22b1543f.js"><link rel="prefetch" href="/assets/js/102.d6f2887b.js"><link rel="prefetch" href="/assets/js/103.84815388.js"><link rel="prefetch" href="/assets/js/104.43dd798d.js"><link rel="prefetch" href="/assets/js/105.dbefc541.js"><link rel="prefetch" href="/assets/js/106.fed2df39.js"><link rel="prefetch" href="/assets/js/107.447aade0.js"><link rel="prefetch" href="/assets/js/108.b17e95b4.js"><link rel="prefetch" href="/assets/js/109.454af4e8.js"><link rel="prefetch" href="/assets/js/11.11bef5bb.js"><link rel="prefetch" href="/assets/js/110.143f6e1a.js"><link rel="prefetch" href="/assets/js/111.6a62b67b.js"><link rel="prefetch" href="/assets/js/112.a3b84cdc.js"><link rel="prefetch" href="/assets/js/113.03722d0b.js"><link rel="prefetch" href="/assets/js/114.012db2dc.js"><link rel="prefetch" href="/assets/js/115.c9d1ffe5.js"><link rel="prefetch" href="/assets/js/116.52a6d152.js"><link rel="prefetch" href="/assets/js/117.acbafbb0.js"><link rel="prefetch" href="/assets/js/118.929876bb.js"><link rel="prefetch" href="/assets/js/119.c26c8a53.js"><link rel="prefetch" href="/assets/js/12.bbd94ad2.js"><link rel="prefetch" href="/assets/js/120.f5d54853.js"><link rel="prefetch" href="/assets/js/121.c20f5cb5.js"><link rel="prefetch" href="/assets/js/122.1e223035.js"><link rel="prefetch" href="/assets/js/123.e2ef4dd5.js"><link rel="prefetch" href="/assets/js/124.bf796f88.js"><link rel="prefetch" href="/assets/js/125.fa0d5d50.js"><link rel="prefetch" href="/assets/js/126.86c1ffb7.js"><link rel="prefetch" href="/assets/js/127.b158c7f4.js"><link rel="prefetch" href="/assets/js/128.82b5aff5.js"><link rel="prefetch" href="/assets/js/129.d325fbed.js"><link rel="prefetch" href="/assets/js/13.f032b6ae.js"><link rel="prefetch" href="/assets/js/130.4fd25f6c.js"><link rel="prefetch" href="/assets/js/131.cff5b522.js"><link rel="prefetch" href="/assets/js/132.d1f75d75.js"><link rel="prefetch" href="/assets/js/133.6839a84f.js"><link rel="prefetch" href="/assets/js/134.a73947b0.js"><link rel="prefetch" href="/assets/js/135.728d8455.js"><link rel="prefetch" href="/assets/js/136.03e9ab3f.js"><link rel="prefetch" href="/assets/js/137.c6db8879.js"><link rel="prefetch" href="/assets/js/138.ac6a0c02.js"><link rel="prefetch" href="/assets/js/139.3ee3bf7a.js"><link rel="prefetch" href="/assets/js/14.6eadcd17.js"><link rel="prefetch" href="/assets/js/140.314cf2a9.js"><link rel="prefetch" href="/assets/js/141.a5993900.js"><link rel="prefetch" href="/assets/js/142.f47145e7.js"><link rel="prefetch" href="/assets/js/143.cdd55950.js"><link rel="prefetch" href="/assets/js/144.7f0cbcd8.js"><link rel="prefetch" href="/assets/js/145.f9ef26fc.js"><link rel="prefetch" href="/assets/js/146.8aa3e88d.js"><link rel="prefetch" href="/assets/js/147.29bac677.js"><link rel="prefetch" href="/assets/js/148.782b0fc1.js"><link rel="prefetch" href="/assets/js/149.f5e40289.js"><link rel="prefetch" href="/assets/js/15.f474ff35.js"><link rel="prefetch" href="/assets/js/150.cdecc1e0.js"><link rel="prefetch" href="/assets/js/151.c5a7dd29.js"><link rel="prefetch" href="/assets/js/152.1e7c8783.js"><link rel="prefetch" href="/assets/js/153.256a2389.js"><link rel="prefetch" href="/assets/js/154.b79c60dc.js"><link rel="prefetch" href="/assets/js/155.44f9073c.js"><link rel="prefetch" href="/assets/js/156.564ee8af.js"><link rel="prefetch" href="/assets/js/157.2090d195.js"><link rel="prefetch" href="/assets/js/158.5ac8b087.js"><link rel="prefetch" href="/assets/js/159.3be62b8f.js"><link rel="prefetch" href="/assets/js/16.e92ae3ad.js"><link rel="prefetch" href="/assets/js/160.1202b644.js"><link rel="prefetch" href="/assets/js/161.2bc66a65.js"><link rel="prefetch" href="/assets/js/162.cfe90823.js"><link rel="prefetch" href="/assets/js/163.155855da.js"><link rel="prefetch" href="/assets/js/164.9a2d9131.js"><link rel="prefetch" href="/assets/js/165.db95d1ed.js"><link rel="prefetch" href="/assets/js/166.ad8d09b3.js"><link rel="prefetch" href="/assets/js/167.5f763d09.js"><link rel="prefetch" href="/assets/js/168.e12e9014.js"><link rel="prefetch" href="/assets/js/169.80992b05.js"><link rel="prefetch" href="/assets/js/17.74f448f9.js"><link rel="prefetch" href="/assets/js/170.351397cf.js"><link rel="prefetch" href="/assets/js/171.f5c1c0ca.js"><link rel="prefetch" href="/assets/js/172.01f5667f.js"><link rel="prefetch" href="/assets/js/173.f2fc9c15.js"><link rel="prefetch" href="/assets/js/174.318a43b0.js"><link rel="prefetch" href="/assets/js/175.2991b216.js"><link rel="prefetch" href="/assets/js/176.eae34cc5.js"><link rel="prefetch" href="/assets/js/177.04676485.js"><link rel="prefetch" href="/assets/js/178.ab0ea307.js"><link rel="prefetch" href="/assets/js/179.33c59ee5.js"><link rel="prefetch" href="/assets/js/18.8ab68269.js"><link rel="prefetch" href="/assets/js/180.9e51e865.js"><link rel="prefetch" href="/assets/js/181.d649f04c.js"><link rel="prefetch" href="/assets/js/182.4c003a81.js"><link rel="prefetch" href="/assets/js/183.d7e0a30f.js"><link rel="prefetch" href="/assets/js/184.2bf68b07.js"><link rel="prefetch" href="/assets/js/185.4527910e.js"><link rel="prefetch" href="/assets/js/187.a9bc5642.js"><link rel="prefetch" href="/assets/js/188.61379de5.js"><link rel="prefetch" href="/assets/js/189.c24abe12.js"><link rel="prefetch" href="/assets/js/19.8b41c87f.js"><link rel="prefetch" href="/assets/js/190.3bd7c0eb.js"><link rel="prefetch" href="/assets/js/191.4e554ca5.js"><link rel="prefetch" href="/assets/js/192.05e39ce6.js"><link rel="prefetch" href="/assets/js/193.836038fc.js"><link rel="prefetch" href="/assets/js/194.45fbd249.js"><link rel="prefetch" href="/assets/js/195.8c723157.js"><link rel="prefetch" href="/assets/js/196.8658368f.js"><link rel="prefetch" href="/assets/js/197.dc4ec943.js"><link rel="prefetch" href="/assets/js/198.d8886c84.js"><link rel="prefetch" href="/assets/js/199.c8b3251e.js"><link rel="prefetch" href="/assets/js/20.64b159c3.js"><link rel="prefetch" href="/assets/js/200.de14ef47.js"><link rel="prefetch" href="/assets/js/201.a2cdea12.js"><link rel="prefetch" href="/assets/js/202.d30b2105.js"><link rel="prefetch" href="/assets/js/203.84e0a294.js"><link rel="prefetch" href="/assets/js/204.447079d3.js"><link rel="prefetch" href="/assets/js/205.b96136f1.js"><link rel="prefetch" href="/assets/js/206.f91f1d8e.js"><link rel="prefetch" href="/assets/js/207.0f5b4995.js"><link rel="prefetch" href="/assets/js/208.98e9a03e.js"><link rel="prefetch" href="/assets/js/209.e742c11b.js"><link rel="prefetch" href="/assets/js/21.979f3b00.js"><link rel="prefetch" href="/assets/js/210.f826b085.js"><link rel="prefetch" href="/assets/js/211.136add82.js"><link rel="prefetch" href="/assets/js/212.904d05ad.js"><link rel="prefetch" href="/assets/js/213.745703bd.js"><link rel="prefetch" href="/assets/js/214.4437df51.js"><link rel="prefetch" href="/assets/js/215.f5758a9f.js"><link rel="prefetch" href="/assets/js/216.7664c4f1.js"><link rel="prefetch" href="/assets/js/217.f0cc937a.js"><link rel="prefetch" href="/assets/js/218.cdabafca.js"><link rel="prefetch" href="/assets/js/219.7cc3912e.js"><link rel="prefetch" href="/assets/js/22.6eb1a6b3.js"><link rel="prefetch" href="/assets/js/220.ea7777ce.js"><link rel="prefetch" href="/assets/js/221.64f586fa.js"><link rel="prefetch" href="/assets/js/222.d6515247.js"><link rel="prefetch" href="/assets/js/223.10c8d4e1.js"><link rel="prefetch" href="/assets/js/224.bf42e517.js"><link rel="prefetch" href="/assets/js/225.f03ab85b.js"><link rel="prefetch" href="/assets/js/226.a50f57a1.js"><link rel="prefetch" href="/assets/js/227.4244fd33.js"><link rel="prefetch" href="/assets/js/228.3eee57c0.js"><link rel="prefetch" href="/assets/js/229.b93811f4.js"><link rel="prefetch" href="/assets/js/23.e6bd8873.js"><link rel="prefetch" href="/assets/js/230.f6394907.js"><link rel="prefetch" href="/assets/js/231.549e060c.js"><link rel="prefetch" href="/assets/js/232.ecaeb9bf.js"><link rel="prefetch" href="/assets/js/233.3eaee28e.js"><link rel="prefetch" href="/assets/js/234.d681ab5a.js"><link rel="prefetch" href="/assets/js/235.83f5f362.js"><link rel="prefetch" href="/assets/js/236.ae97b03d.js"><link rel="prefetch" href="/assets/js/237.6d21b852.js"><link rel="prefetch" href="/assets/js/238.fb8bf1ce.js"><link rel="prefetch" href="/assets/js/239.5eb9db6d.js"><link rel="prefetch" href="/assets/js/24.d08f8451.js"><link rel="prefetch" href="/assets/js/240.6d5dd592.js"><link rel="prefetch" href="/assets/js/241.05f46eb9.js"><link rel="prefetch" href="/assets/js/242.9ca4b325.js"><link rel="prefetch" href="/assets/js/243.27311f9e.js"><link rel="prefetch" href="/assets/js/244.cdf70f43.js"><link rel="prefetch" href="/assets/js/245.3f739540.js"><link rel="prefetch" href="/assets/js/246.a6a18331.js"><link rel="prefetch" href="/assets/js/247.1b83a8c6.js"><link rel="prefetch" href="/assets/js/248.0f601573.js"><link rel="prefetch" href="/assets/js/249.2f2f2d46.js"><link rel="prefetch" href="/assets/js/25.1b8f333c.js"><link rel="prefetch" href="/assets/js/250.1c75eae6.js"><link rel="prefetch" href="/assets/js/251.b4e8f41d.js"><link rel="prefetch" href="/assets/js/252.7604784d.js"><link rel="prefetch" href="/assets/js/253.aed7eb5c.js"><link rel="prefetch" href="/assets/js/254.69715f04.js"><link rel="prefetch" href="/assets/js/255.0aa55c59.js"><link rel="prefetch" href="/assets/js/256.72a7696f.js"><link rel="prefetch" href="/assets/js/257.aac0832f.js"><link rel="prefetch" href="/assets/js/258.b073151e.js"><link rel="prefetch" href="/assets/js/259.4ebb18df.js"><link rel="prefetch" href="/assets/js/26.14337da8.js"><link rel="prefetch" href="/assets/js/260.47fef972.js"><link rel="prefetch" href="/assets/js/261.dec107d1.js"><link rel="prefetch" href="/assets/js/262.fcbf6bf7.js"><link rel="prefetch" href="/assets/js/263.5c94ee7f.js"><link rel="prefetch" href="/assets/js/264.d6544c8c.js"><link rel="prefetch" href="/assets/js/265.f6fc6039.js"><link rel="prefetch" href="/assets/js/266.bc3294f4.js"><link rel="prefetch" href="/assets/js/267.2d1357d5.js"><link rel="prefetch" href="/assets/js/268.6da47e9c.js"><link rel="prefetch" href="/assets/js/269.8ef3164b.js"><link rel="prefetch" href="/assets/js/27.c9f544d2.js"><link rel="prefetch" href="/assets/js/270.e21f3c54.js"><link rel="prefetch" href="/assets/js/271.0b640ba6.js"><link rel="prefetch" href="/assets/js/272.c8d78d3c.js"><link rel="prefetch" href="/assets/js/273.f436cc72.js"><link rel="prefetch" href="/assets/js/274.1f374ecb.js"><link rel="prefetch" href="/assets/js/275.4f5dd2e9.js"><link rel="prefetch" href="/assets/js/276.95a68c71.js"><link rel="prefetch" href="/assets/js/277.cbb3a46d.js"><link rel="prefetch" href="/assets/js/278.a75bbe80.js"><link rel="prefetch" href="/assets/js/279.521445a6.js"><link rel="prefetch" href="/assets/js/28.3262a901.js"><link rel="prefetch" href="/assets/js/280.6387abe3.js"><link rel="prefetch" href="/assets/js/281.582fb93a.js"><link rel="prefetch" href="/assets/js/282.bdf5a0f3.js"><link rel="prefetch" href="/assets/js/283.4afdbbb9.js"><link rel="prefetch" href="/assets/js/284.f0f42db0.js"><link rel="prefetch" href="/assets/js/285.99e60800.js"><link rel="prefetch" href="/assets/js/286.1a6a73a9.js"><link rel="prefetch" href="/assets/js/287.74ec69e0.js"><link rel="prefetch" href="/assets/js/288.82d8f1f2.js"><link rel="prefetch" href="/assets/js/289.ac7bbdd3.js"><link rel="prefetch" href="/assets/js/29.20bc32f9.js"><link rel="prefetch" href="/assets/js/290.da919d4a.js"><link rel="prefetch" href="/assets/js/291.a8bc6508.js"><link rel="prefetch" href="/assets/js/292.0288b29b.js"><link rel="prefetch" href="/assets/js/293.aa7a2bee.js"><link rel="prefetch" href="/assets/js/294.45a3ee99.js"><link rel="prefetch" href="/assets/js/295.379c35d0.js"><link rel="prefetch" href="/assets/js/296.ad6276bf.js"><link rel="prefetch" href="/assets/js/297.a17a1e21.js"><link rel="prefetch" href="/assets/js/298.1914a7c3.js"><link rel="prefetch" href="/assets/js/299.935a90f1.js"><link rel="prefetch" href="/assets/js/30.790c9ba0.js"><link rel="prefetch" href="/assets/js/300.789303c4.js"><link rel="prefetch" href="/assets/js/301.f3ab7800.js"><link rel="prefetch" href="/assets/js/302.1510c4e4.js"><link rel="prefetch" href="/assets/js/303.43b4bfdc.js"><link rel="prefetch" href="/assets/js/304.7851d532.js"><link rel="prefetch" href="/assets/js/305.f1735b1c.js"><link rel="prefetch" href="/assets/js/306.ab7ef0a1.js"><link rel="prefetch" href="/assets/js/307.63aba6ef.js"><link rel="prefetch" href="/assets/js/308.1f13c83f.js"><link rel="prefetch" href="/assets/js/309.f2a00330.js"><link rel="prefetch" href="/assets/js/31.a3b6623b.js"><link rel="prefetch" href="/assets/js/310.f527f0bb.js"><link rel="prefetch" href="/assets/js/311.fe62b073.js"><link rel="prefetch" href="/assets/js/312.7d5f8044.js"><link rel="prefetch" href="/assets/js/313.d65724d4.js"><link rel="prefetch" href="/assets/js/314.dd932b63.js"><link rel="prefetch" href="/assets/js/315.54f729f2.js"><link rel="prefetch" href="/assets/js/316.1f3abb28.js"><link rel="prefetch" href="/assets/js/317.3be80a21.js"><link rel="prefetch" href="/assets/js/318.86a33a5f.js"><link rel="prefetch" href="/assets/js/319.d329ea3c.js"><link rel="prefetch" href="/assets/js/32.812accc8.js"><link rel="prefetch" href="/assets/js/320.ada19313.js"><link rel="prefetch" href="/assets/js/33.26535082.js"><link rel="prefetch" href="/assets/js/34.ef78742c.js"><link rel="prefetch" href="/assets/js/35.ab5f6e11.js"><link rel="prefetch" href="/assets/js/36.ab5c9aaa.js"><link rel="prefetch" href="/assets/js/37.639d179a.js"><link rel="prefetch" href="/assets/js/38.b9f640c2.js"><link rel="prefetch" href="/assets/js/39.5f603349.js"><link rel="prefetch" href="/assets/js/4.c72b1d91.js"><link rel="prefetch" href="/assets/js/40.b0d32378.js"><link rel="prefetch" href="/assets/js/41.56697e45.js"><link rel="prefetch" href="/assets/js/42.ba2cc4fa.js"><link rel="prefetch" href="/assets/js/43.09ee0774.js"><link rel="prefetch" href="/assets/js/44.c07ecda9.js"><link rel="prefetch" href="/assets/js/45.13a180de.js"><link rel="prefetch" href="/assets/js/46.57ab80a1.js"><link rel="prefetch" href="/assets/js/47.6c898ef7.js"><link rel="prefetch" href="/assets/js/48.ceca49a7.js"><link rel="prefetch" href="/assets/js/49.9b59f639.js"><link rel="prefetch" href="/assets/js/5.1a02c42d.js"><link rel="prefetch" href="/assets/js/50.2c2e7af9.js"><link rel="prefetch" href="/assets/js/51.78429b5d.js"><link rel="prefetch" href="/assets/js/52.b5f2eadd.js"><link rel="prefetch" href="/assets/js/53.c79104a8.js"><link rel="prefetch" href="/assets/js/54.6ab6c2a4.js"><link rel="prefetch" href="/assets/js/55.62d0f60d.js"><link rel="prefetch" href="/assets/js/56.734dd387.js"><link rel="prefetch" href="/assets/js/57.d9629e1d.js"><link rel="prefetch" href="/assets/js/58.9712d675.js"><link rel="prefetch" href="/assets/js/59.05143e4f.js"><link rel="prefetch" href="/assets/js/6.233d84ef.js"><link rel="prefetch" href="/assets/js/60.92a5c889.js"><link rel="prefetch" href="/assets/js/61.6699dce7.js"><link rel="prefetch" href="/assets/js/62.3c2d9594.js"><link rel="prefetch" href="/assets/js/63.96821251.js"><link rel="prefetch" href="/assets/js/64.3ad63a56.js"><link rel="prefetch" href="/assets/js/65.89305246.js"><link rel="prefetch" href="/assets/js/66.3b01340c.js"><link rel="prefetch" href="/assets/js/67.1d20cfe1.js"><link rel="prefetch" href="/assets/js/68.49af501a.js"><link rel="prefetch" href="/assets/js/69.c12a102f.js"><link rel="prefetch" href="/assets/js/7.a828e8ad.js"><link rel="prefetch" href="/assets/js/70.328ea3e1.js"><link rel="prefetch" href="/assets/js/71.0e279dfb.js"><link rel="prefetch" href="/assets/js/72.270995b6.js"><link rel="prefetch" href="/assets/js/73.39aff7dd.js"><link rel="prefetch" href="/assets/js/74.88eddd58.js"><link rel="prefetch" href="/assets/js/75.660eef43.js"><link rel="prefetch" href="/assets/js/76.27da39db.js"><link rel="prefetch" href="/assets/js/77.0ad9fb77.js"><link rel="prefetch" href="/assets/js/78.11c38c5f.js"><link rel="prefetch" href="/assets/js/79.bd7dc731.js"><link rel="prefetch" href="/assets/js/8.7384ba61.js"><link rel="prefetch" href="/assets/js/80.ef14a310.js"><link rel="prefetch" href="/assets/js/81.8e5dc246.js"><link rel="prefetch" href="/assets/js/82.a9dc423d.js"><link rel="prefetch" href="/assets/js/83.d499c43a.js"><link rel="prefetch" href="/assets/js/84.caba1e1e.js"><link rel="prefetch" href="/assets/js/85.4f7465aa.js"><link rel="prefetch" href="/assets/js/86.f148a14e.js"><link rel="prefetch" href="/assets/js/87.242911f4.js"><link rel="prefetch" href="/assets/js/88.41a5396c.js"><link rel="prefetch" href="/assets/js/89.ce85ecc5.js"><link rel="prefetch" href="/assets/js/9.21b4ba77.js"><link rel="prefetch" href="/assets/js/90.b70b1c7f.js"><link rel="prefetch" href="/assets/js/91.7895caee.js"><link rel="prefetch" href="/assets/js/92.15209d08.js"><link rel="prefetch" href="/assets/js/93.7dd60db8.js"><link rel="prefetch" href="/assets/js/94.6a7e1329.js"><link rel="prefetch" href="/assets/js/95.e0e227f5.js"><link rel="prefetch" href="/assets/js/96.3bde1303.js"><link rel="prefetch" href="/assets/js/97.ff178c77.js"><link rel="prefetch" href="/assets/js/98.af33ef67.js"><link rel="prefetch" href="/assets/js/99.900d0c0b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2d94763a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-42dd5e05><div data-v-42dd5e05><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-42dd5e05 data-v-42dd5e05><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-95c9a4e8 data-v-42dd5e05 data-v-42dd5e05><h3 class="title" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8>Yin的笔记本</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><input type="password" value="" data-v-95c9a4e8> <span data-v-95c9a4e8>Konck! Knock!</span> <button data-v-95c9a4e8>OK</button></label> <div class="footer" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><span data-v-95c9a4e8><i class="iconfont reco-theme" data-v-95c9a4e8></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-95c9a4e8>vuePress-theme-reco</a></span> <span data-v-95c9a4e8><i class="iconfont reco-copyright" data-v-95c9a4e8></i> <a data-v-95c9a4e8><span data-v-95c9a4e8>Howard Yin</span>
+            
+          <span data-v-95c9a4e8>2021 - </span>
+          2026
+        </a></span></div></div> <div class="hide" data-v-42dd5e05><header class="navbar" data-v-42dd5e05><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Yin的笔记本" class="logo"> <span class="site-name">Yin的笔记本</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CNCF/" class="nav-link"><i class="iconfont undefined"></i>
+  CNCF
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="iconfont undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/namespaces/" class="nav-link"><i class="iconfont undefined"></i>
+  namespaces
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes对象/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes对象
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="iconfont undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MyIdeas/" class="nav-link"><i class="iconfont undefined"></i>
+  MyIdeas
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Revolution/" class="nav-link"><i class="iconfont undefined"></i>
+  Revolution
+</a></li><li class="dropdown-item"><!----> <a href="/categories/WebRTC/" class="nav-link"><i class="iconfont undefined"></i>
+  WebRTC
+</a></li><li class="dropdown-item"><!----> <a href="/categories/云计算/" class="nav-link"><i class="iconfont undefined"></i>
+  云计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/人工智能/" class="nav-link"><i class="iconfont undefined"></i>
+  人工智能
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="iconfont undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/图像处理/" class="nav-link"><i class="iconfont undefined"></i>
+  图像处理
+</a></li><li class="dropdown-item"><!----> <a href="/categories/图形学/" class="nav-link"><i class="iconfont undefined"></i>
+  图形学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="iconfont undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数学/" class="nav-link"><i class="iconfont undefined"></i>
+  数学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/OJ笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  OJ笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博弈论/" class="nav-link"><i class="iconfont undefined"></i>
+  博弈论
+</a></li><li class="dropdown-item"><!----> <a href="/categories/形式语言与自动机/" class="nav-link"><i class="iconfont undefined"></i>
+  形式语言与自动机
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器运维/" class="nav-link"><i class="iconfont undefined"></i>
+  服务器运维
+</a></li><li class="dropdown-item"><!----> <a href="/categories/编程语言/" class="nav-link"><i class="iconfont undefined"></i>
+  编程语言
+</a></li><li class="dropdown-item"><!----> <a href="/categories/C/" class="nav-link"><i class="iconfont undefined"></i>
+  C
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Go/" class="nav-link"><i class="iconfont undefined"></i>
+  Go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="iconfont undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nvidia/" class="nav-link"><i class="iconfont undefined"></i>
+  Nvidia
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Shell/" class="nav-link"><i class="iconfont undefined"></i>
+  Shell
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Rust/" class="nav-link"><i class="iconfont undefined"></i>
+  Rust
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Tex/" class="nav-link"><i class="iconfont undefined"></i>
+  Tex
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/视频编解码/" class="nav-link"><i class="iconfont undefined"></i>
+  视频编解码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计算机网络/" class="nav-link"><i class="iconfont undefined"></i>
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SDN/" class="nav-link"><i class="iconfont undefined"></i>
+  SDN
+</a></li><li class="dropdown-item"><!----> <a href="/categories/论文笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  论文笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/讨论/" class="nav-link"><i class="iconfont undefined"></i>
+  讨论
+</a></li><li class="dropdown-item"><!----> <a href="/categories/边缘计算/" class="nav-link"><i class="iconfont undefined"></i>
+  边缘计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/量子信息技术/" class="nav-link"><i class="iconfont undefined"></i>
+  量子信息技术
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="http://profile.yindaheng98.top" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-account"></i>
+  About
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/yindaheng98/Notebook/tree/master/学习笔记" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-查看源码"></i>
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask" data-v-42dd5e05></div> <aside class="sidebar" data-v-42dd5e05><div class="personal-info-wrapper" data-v-0ac41e2e><img src="/avatar.svg" alt="author-avatar" class="personal-img" data-v-0ac41e2e> <h3 class="name" data-v-0ac41e2e>
+    Howard Yin
+  </h3> <div class="num" data-v-0ac41e2e><div data-v-0ac41e2e><h3 data-v-0ac41e2e>309</h3> <h6 data-v-0ac41e2e>Article</h6></div> <div data-v-0ac41e2e><h3 data-v-0ac41e2e>157</h3> <h6 data-v-0ac41e2e>Tag</h6></div></div> <hr data-v-0ac41e2e></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CNCF/" class="nav-link"><i class="iconfont undefined"></i>
+  CNCF
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="iconfont undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/namespaces/" class="nav-link"><i class="iconfont undefined"></i>
+  namespaces
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Kubernetes对象/" class="nav-link"><i class="iconfont undefined"></i>
+  Kubernetes对象
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="iconfont undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/MyIdeas/" class="nav-link"><i class="iconfont undefined"></i>
+  MyIdeas
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Revolution/" class="nav-link"><i class="iconfont undefined"></i>
+  Revolution
+</a></li><li class="dropdown-item"><!----> <a href="/categories/WebRTC/" class="nav-link"><i class="iconfont undefined"></i>
+  WebRTC
+</a></li><li class="dropdown-item"><!----> <a href="/categories/云计算/" class="nav-link"><i class="iconfont undefined"></i>
+  云计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/人工智能/" class="nav-link"><i class="iconfont undefined"></i>
+  人工智能
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="iconfont undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/图像处理/" class="nav-link"><i class="iconfont undefined"></i>
+  图像处理
+</a></li><li class="dropdown-item"><!----> <a href="/categories/图形学/" class="nav-link"><i class="iconfont undefined"></i>
+  图形学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="iconfont undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数学/" class="nav-link"><i class="iconfont undefined"></i>
+  数学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/OJ笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  OJ笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博弈论/" class="nav-link"><i class="iconfont undefined"></i>
+  博弈论
+</a></li><li class="dropdown-item"><!----> <a href="/categories/形式语言与自动机/" class="nav-link"><i class="iconfont undefined"></i>
+  形式语言与自动机
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器运维/" class="nav-link"><i class="iconfont undefined"></i>
+  服务器运维
+</a></li><li class="dropdown-item"><!----> <a href="/categories/编程语言/" class="nav-link"><i class="iconfont undefined"></i>
+  编程语言
+</a></li><li class="dropdown-item"><!----> <a href="/categories/C/" class="nav-link"><i class="iconfont undefined"></i>
+  C
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Go/" class="nav-link"><i class="iconfont undefined"></i>
+  Go
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JavaScript/" class="nav-link"><i class="iconfont undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nvidia/" class="nav-link"><i class="iconfont undefined"></i>
+  Nvidia
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Shell/" class="nav-link"><i class="iconfont undefined"></i>
+  Shell
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Rust/" class="nav-link"><i class="iconfont undefined"></i>
+  Rust
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Tex/" class="nav-link"><i class="iconfont undefined"></i>
+  Tex
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/视频编解码/" class="nav-link"><i class="iconfont undefined"></i>
+  视频编解码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计算机网络/" class="nav-link"><i class="iconfont undefined"></i>
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SDN/" class="nav-link"><i class="iconfont undefined"></i>
+  SDN
+</a></li><li class="dropdown-item"><!----> <a href="/categories/论文笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  论文笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/讨论/" class="nav-link"><i class="iconfont undefined"></i>
+  讨论
+</a></li><li class="dropdown-item"><!----> <a href="/categories/边缘计算/" class="nav-link"><i class="iconfont undefined"></i>
+  边缘计算
+</a></li><li class="dropdown-item"><!----> <a href="/categories/量子信息技术/" class="nav-link"><i class="iconfont undefined"></i>
+  量子信息技术
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="http://profile.yindaheng98.top" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-account"></i>
+  About
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/yindaheng98/Notebook/tree/master/学习笔记" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-查看源码"></i>
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>aras-p/UnityGaussianSplatting Runtime 源码浅析</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/%E5%9B%BE%E5%BD%A2%E5%AD%A6/UnityGaussianSplatting.html#gaussiansplatrenderer-onenable-中的初始化过程" class="sidebar-link">GaussianSplatRenderer.OnEnable 中的初始化过程</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/%E5%9B%BE%E5%BD%A2%E5%AD%A6/UnityGaussianSplatting.html#gaussiansplatrenderer-ensuresorterandregister" class="sidebar-link">GaussianSplatRenderer.EnsureSorterAndRegister</a></li><li class="sidebar-sub-header"><a href="/%E5%9B%BE%E5%BD%A2%E5%AD%A6/UnityGaussianSplatting.html#gaussiansplatrendersystem-registersplat" class="sidebar-link">GaussianSplatRenderSystem.RegisterSplat</a></li><li class="sidebar-sub-header"><a href="/%E5%9B%BE%E5%BD%A2%E5%AD%A6/UnityGaussianSplatting.html#gaussiansplatrenderer-createresourcesforasset" class="sidebar-link">GaussianSplatRenderer.CreateResourcesForAsset</a></li></ul></li><li><a href="/%E5%9B%BE%E5%BD%A2%E5%AD%A6/UnityGaussianSplatting.html#gaussiansplatrendersystem-onprecullcamera-中的渲染主程序" class="sidebar-link">GaussianSplatRenderSystem.OnPreCullCamera 中的渲染主程序</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/%E5%9B%BE%E5%BD%A2%E5%AD%A6/UnityGaussianSplatting.html#gaussiansplatrendersystem-gathersplatsforcamera" class="sidebar-link">GaussianSplatRenderSystem.GatherSplatsForCamera</a></li><li class="sidebar-sub-header"><a href="/%E5%9B%BE%E5%BD%A2%E5%AD%A6/UnityGaussianSplatting.html#gaussiansplatrendersystem-initialclearcmdbuffer" class="sidebar-link">GaussianSplatRenderSystem.InitialClearCmdBuffer</a></li><li class="sidebar-sub-header"><a href="/%E5%9B%BE%E5%BD%A2%E5%AD%A6/UnityGaussianSplatting.html#gaussiansplatrendersystem-onprecullcamera-剩余部分" class="sidebar-link">GaussianSplatRenderSystem.OnPreCullCamera 剩余部分</a></li></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-95c9a4e8 data-v-42dd5e05><h3 class="title" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8>`aras-p/UnityGaussianSplatting` Runtime 源码浅析</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><input type="password" value="" data-v-95c9a4e8> <span data-v-95c9a4e8>Konck! Knock!</span> <button data-v-95c9a4e8>OK</button></label> <div class="footer" style="display:none;" data-v-95c9a4e8 data-v-95c9a4e8><span data-v-95c9a4e8><i class="iconfont reco-theme" data-v-95c9a4e8></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-95c9a4e8>vuePress-theme-reco</a></span> <span data-v-95c9a4e8><i class="iconfont reco-copyright" data-v-95c9a4e8></i> <a data-v-95c9a4e8><span data-v-95c9a4e8>Howard Yin</span>
+            
+          <span data-v-95c9a4e8>2021 - </span>
+          2026
+        </a></span></div></div> <div data-v-42dd5e05><main class="page"><div class="page-title" style="display:none;"><h1>aras-p/UnityGaussianSplatting Runtime 源码浅析</h1> <hr> <div data-v-3d9cec6e><i class="iconfont reco-account" data-v-3d9cec6e><span data-v-3d9cec6e>Howard Yin</span></i> <i class="iconfont reco-date" data-v-3d9cec6e><span data-v-3d9cec6e>2025-04-25 00:06:02</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3d9cec6e><span class="tag-item" data-v-3d9cec6e>图形学</span><span class="tag-item" data-v-3d9cec6e>3D Gaussian Splatting</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><blockquote><p>In the game object that has a <code>GaussianSplatRenderer</code> script, <strong>point the Asset field to</strong> one of your created assets.</p></blockquote> <p>按照 README 所述，主要调用逻辑位于 <a href="https://github.com/aras-p/UnityGaussianSplatting/blob/2f371e121db7c56159be634545d5bf9c5b2ce55b/package/Runtime/GaussianSplatRenderer.cs" target="_blank" rel="noopener noreferrer">package/Runtime/GaussianSplatRenderer.cs<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 中，将 <code>GaussianSplatRenderer.cs</code> 脚本绑定到任意 Game Object 上并且将3DGS文件设置为其 Assert 即可实现3DGS渲染。</p> <p><a href="https://github.com/aras-p/UnityGaussianSplatting/blob/2f371e121db7c56159be634545d5bf9c5b2ce55b/package/Runtime/GaussianSplatRenderer.cs" target="_blank" rel="noopener noreferrer">package/Runtime/GaussianSplatRenderer.cs<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 有两个类：<code>GaussianSplatRenderSystem</code> 类和其内部的 <code>GaussianSplatRenderer</code> 类。
+其中，<code>GaussianSplatRenderSystem</code> 类为单例类，全局唯一，通过 <code>GaussianSplatRenderSystem.instance</code> 进行调用；而每个3DGS对象上都会绑定一个 <code>GaussianSplatRenderer</code> 类，<code>GaussianSplatRenderer</code> 类通过调用全局唯一的 <code>GaussianSplatRenderSystem</code> 单例类的类方法执行渲染操作，从而实现所有3DGS对象中的Gaussians统统合并到一起进行渲染。</p> <h2 id="gaussiansplatrenderer-onenable-中的初始化过程"><a href="#gaussiansplatrenderer-onenable-中的初始化过程" class="header-anchor">#</a> <code>GaussianSplatRenderer.OnEnable</code> 中的初始化过程</h2> <p>3DGS渲染初始化过程位于 <code>GaussianSplatRenderer.OnEnable</code> 中：</p> <div class="language-c# line-numbers-mode"><pre class="language-text"><code>public void OnEnable()
+{
+    m_FrameCounter = 0;
+    if (!resourcesAreSetUp)
+        return;
+
+    EnsureMaterials();
+    EnsureSorterAndRegister();
+
+    CreateResourcesForAsset();
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>可见其包含三项步骤：<code>EnsureMaterials</code> 初始化材质、<code>EnsureSorterAndRegister</code> 注册 Gaussians 并初始化排序 <code>CreateResourcesForAsset</code> 创建渲染时要用到的相关资源。</p> <p><code>EnsureMaterials</code> 初始化了一批材质：</p> <div class="language-c# line-numbers-mode"><pre class="language-text"><code>public void EnsureMaterials()
+{
+    if (m_MatSplats == null &amp;&amp; resourcesAreSetUp)
+    {
+        m_MatSplats = new Material(m_ShaderSplats) {name = &quot;GaussianSplats&quot;};
+        m_MatComposite = new Material(m_ShaderComposite) {name = &quot;GaussianClearDstAlpha&quot;};
+        m_MatDebugPoints = new Material(m_ShaderDebugPoints) {name = &quot;GaussianDebugPoints&quot;};
+        m_MatDebugBoxes = new Material(m_ShaderDebugBoxes) {name = &quot;GaussianDebugBoxes&quot;};
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="gaussiansplatrenderer-ensuresorterandregister"><a href="#gaussiansplatrenderer-ensuresorterandregister" class="header-anchor">#</a> <code>GaussianSplatRenderer.EnsureSorterAndRegister</code></h3> <p><code>EnsureSorterAndRegister</code> 初始化了排序用的类并在全局 <code>GaussianSplatRenderSystem</code> 单例中注册了3DGS对象：</p> <div class="language-c# line-numbers-mode"><pre class="language-text"><code>    public void EnsureSorterAndRegister()
+    {
+        if (m_Sorter == null &amp;&amp; resourcesAreSetUp)
+        {
+            m_Sorter = new GpuSorting(m_CSSplatUtilities);
+        }
+
+        if (!m_Registered &amp;&amp; resourcesAreSetUp)
+        {
+            GaussianSplatRenderSystem.instance.RegisterSplat(this);
+            m_Registered = true;
+        }
+    }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>其中，<code>GpuSorting</code> 是用于GPU排序的类，定义于 <a href="https://github.com/aras-p/UnityGaussianSplatting/blob/2f371e121db7c56159be634545d5bf9c5b2ce55b/package/Runtime/GpuSorting.cs" target="_blank" rel="noopener noreferrer">package/Runtime/GpuSorting.cs<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 中，包含排序时用到的变量和方法，其底层是调用 <a href="https://github.com/aras-p/UnityGaussianSplatting/blob/2f371e121db7c56159be634545d5bf9c5b2ce55b/package/Shaders/DeviceRadixSort.hlsl" target="_blank" rel="noopener noreferrer">package/Shaders/DeviceRadixSort.hlsl<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 中定义的几个 Kernel实现GPU并行排序；</p> <h3 id="gaussiansplatrendersystem-registersplat"><a href="#gaussiansplatrendersystem-registersplat" class="header-anchor">#</a> <code>GaussianSplatRenderSystem.RegisterSplat</code></h3> <p><code>RegisterSplat</code> 是 <code>GaussianSplatRenderSystem</code> 中用于注册3DGS对象的方法，具体来说是将 <code>GaussianSplatRenderSystem.OnPreCullCamera</code> 方法绑定在 <code>Camera.onPreCull</code> 事件中，并在<code>m_Splats</code>中为当前的 <code>GaussianSplatRenderer</code> 新建一块 <code>MaterialPropertyBlock</code>：</p> <div class="language-c# line-numbers-mode"><pre class="language-text"><code>public void RegisterSplat(GaussianSplatRenderer r)
+{
+    if (m_Splats.Count == 0)
+    {
+        if (GraphicsSettings.currentRenderPipeline == null)
+            Camera.onPreCull += OnPreCullCamera;
+    }
+
+    m_Splats.Add(r, new MaterialPropertyBlock());
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>这个 <code>OnPreCullCamera</code> 函数就是3DGS渲染的主程序，绑定到 <code>Camera.onPreCull</code> 将令其在摄像机开始裁剪阶段之前被触发，这里的判断条件保证了 <code>OnPreCullCamera</code> 只被绑定一次；<code>MaterialPropertyBlock</code> 是Unity提供的一种轻量级容器，用于存储材质属性的覆盖值。它允许开发者为单个Renderer实例设置特定的材质属性值，同时保持原始材质的共享引用，维护GPU批处理的优势；<code>m_Splats</code> 是 <code>GaussianSplatRenderSystem</code> 一个以<code>GaussianSplatRenderer</code> 为key，<code>MaterialPropertyBlock</code> 为value的<code>Dictionary</code>，它通过 <code>RegisterSplat</code> 记录了场景中的所有3DGS对象。</p> <h3 id="gaussiansplatrenderer-createresourcesforasset"><a href="#gaussiansplatrenderer-createresourcesforasset" class="header-anchor">#</a> <code>GaussianSplatRenderer.CreateResourcesForAsset</code></h3> <p><code>CreateResourcesForAsset</code> 根据Gaussians的数量 <code>m_SplatCount = asset.splatCount</code> 初始化了几个GPU Buffer <code>m_GpuPosData</code>、<code>m_GpuOtherData</code>、<code>m_GpuSHData</code>、<code>m_GpuColorData</code>、<code>m_GpuChunks</code>，<code>m_GpuIndexBuffer</code>，调用从<code>asset.xxXX.GetData</code> 读取数据并用 <code>GetData</code> 给这些GPU Buffer设置了数据，最后调用 <code>InitSortBuffers</code> 初始化了GPU排序用到的各种Buffers：</p> <div class="language-c# line-numbers-mode"><pre class="language-text"><code>void CreateResourcesForAsset()
+{
+    if (!HasValidAsset)
+        return;
+
+    m_SplatCount = asset.splatCount;
+    m_GpuPosData = new GraphicsBuffer(GraphicsBuffer.Target.Raw | GraphicsBuffer.Target.CopySource, (int) (asset.posData.dataSize / 4), 4) { name = &quot;GaussianPosData&quot; };
+    m_GpuPosData.SetData(asset.posData.GetData&lt;uint&gt;());
+    m_GpuOtherData = new GraphicsBuffer(GraphicsBuffer.Target.Raw | GraphicsBuffer.Target.CopySource, (int) (asset.otherData.dataSize / 4), 4) { name = &quot;GaussianOtherData&quot; };
+    m_GpuOtherData.SetData(asset.otherData.GetData&lt;uint&gt;());
+    m_GpuSHData = new GraphicsBuffer(GraphicsBuffer.Target.Raw, (int) (asset.shData.dataSize / 4), 4) { name = &quot;GaussianSHData&quot; };
+    m_GpuSHData.SetData(asset.shData.GetData&lt;uint&gt;());
+    var (texWidth, texHeight) = GaussianSplatAsset.CalcTextureSize(asset.splatCount);
+    var texFormat = GaussianSplatAsset.ColorFormatToGraphics(asset.colorFormat);
+    var tex = new Texture2D(texWidth, texHeight, texFormat, TextureCreationFlags.DontInitializePixels | TextureCreationFlags.IgnoreMipmapLimit | TextureCreationFlags.DontUploadUponCreate) { name = &quot;GaussianColorData&quot; };
+    tex.SetPixelData(asset.colorData.GetData&lt;byte&gt;(), 0);
+    tex.Apply(false, true);
+    m_GpuColorData = tex;
+    if (asset.chunkData != null &amp;&amp; asset.chunkData.dataSize != 0)
+    {
+        m_GpuChunks = new GraphicsBuffer(GraphicsBuffer.Target.Structured,
+            (int) (asset.chunkData.dataSize / UnsafeUtility.SizeOf&lt;GaussianSplatAsset.ChunkInfo&gt;()),
+            UnsafeUtility.SizeOf&lt;GaussianSplatAsset.ChunkInfo&gt;()) {name = &quot;GaussianChunkData&quot;};
+        m_GpuChunks.SetData(asset.chunkData.GetData&lt;GaussianSplatAsset.ChunkInfo&gt;());
+        m_GpuChunksValid = true;
+    }
+    else
+    {
+        // just a dummy chunk buffer
+        m_GpuChunks = new GraphicsBuffer(GraphicsBuffer.Target.Structured, 1,
+            UnsafeUtility.SizeOf&lt;GaussianSplatAsset.ChunkInfo&gt;()) {name = &quot;GaussianChunkData&quot;};
+        m_GpuChunksValid = false;
+    }
+
+    m_GpuView = new GraphicsBuffer(GraphicsBuffer.Target.Structured, m_Asset.splatCount, kGpuViewDataSize);
+    m_GpuIndexBuffer = new GraphicsBuffer(GraphicsBuffer.Target.Index, 36, 2);
+    // cube indices, most often we use only the first quad
+    m_GpuIndexBuffer.SetData(new ushort[]
+    {
+        0, 1, 2, 1, 3, 2,
+        4, 6, 5, 5, 6, 7,
+        0, 2, 4, 4, 2, 6,
+        1, 5, 3, 5, 7, 3,
+        0, 4, 1, 4, 5, 1,
+        2, 3, 6, 3, 7, 6
+    });
+
+    InitSortBuffers(splatCount);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br></div></div><p>其中用到的<code>asset</code> 变量为 <code>GaussianSplatAsset</code> 类，<code>GaussianSplatAsset</code> 定义于<a href="https://github.com/aras-p/UnityGaussianSplatting/blob/2f371e121db7c56159be634545d5bf9c5b2ce55b/package/Runtime/GaussianSplatAsset.cs" target="_blank" rel="noopener noreferrer">package/Runtime/GaussianSplatAsset.cs<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，继承于 <code>ScriptableObject</code>。</p> <blockquote><p><code>ScriptableObject</code> 是 Unity 提供的一个数据配置存储基类，是一个可以用来保存大量数据的数据容器，我们可以将它保存为自定义的数据资源文件。
+<code>ScriptableObject</code> 类的实例会被保存成资源文件（<code>.asset</code>文件），和预制体，材质球，音频文件等类似，都是一种资源文件，存放在 <code>Assets</code> 文件夹下，创建出来的实例也是唯一存在的。</p></blockquote> <h2 id="gaussiansplatrendersystem-onprecullcamera-中的渲染主程序"><a href="#gaussiansplatrendersystem-onprecullcamera-中的渲染主程序" class="header-anchor">#</a> <code>GaussianSplatRenderSystem.OnPreCullCamera</code> 中的渲染主程序</h2> <p>在 <code>OnEnable</code> 中绑定的 <code>OnPreCullCamera</code> 函数为3DGS渲染的主程序，核心思想就是使用 Unity 中提供的<code>CommandBuffer</code> 对渲染管线进行扩展，在渲染过程中插入3DGS的渲染逻辑：</p> <div class="language-c# line-numbers-mode"><pre class="language-text"><code>void OnPreCullCamera(Camera cam)
+{
+    if (!GatherSplatsForCamera(cam))
+        return;
+
+    InitialClearCmdBuffer(cam);
+
+    m_CommandBuffer.GetTemporaryRT(GaussianSplatRenderer.Props.GaussianSplatRT, -1, -1, 0, FilterMode.Point, GraphicsFormat.R16G16B16A16_SFloat);
+    m_CommandBuffer.SetRenderTarget(GaussianSplatRenderer.Props.GaussianSplatRT, BuiltinRenderTextureType.CurrentActive);
+    m_CommandBuffer.ClearRenderTarget(RTClearFlags.Color, new Color(0, 0, 0, 0), 0, 0);
+
+    // We only need this to determine whether we're rendering into backbuffer or not. However, detection this
+    // way only works in BiRP so only do it here.
+    m_CommandBuffer.SetGlobalTexture(GaussianSplatRenderer.Props.CameraTargetTexture, BuiltinRenderTextureType.CameraTarget);
+
+    // add sorting, view calc and drawing commands for each splat object
+    Material matComposite = SortAndRenderSplats(cam, m_CommandBuffer);
+
+    // compose
+    m_CommandBuffer.BeginSample(s_ProfCompose);
+    m_CommandBuffer.SetRenderTarget(BuiltinRenderTextureType.CameraTarget);
+    m_CommandBuffer.DrawProcedural(Matrix4x4.identity, matComposite, 0, MeshTopology.Triangles, 3, 1);
+    m_CommandBuffer.EndSample(s_ProfCompose);
+    m_CommandBuffer.ReleaseTemporaryRT(GaussianSplatRenderer.Props.GaussianSplatRT);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h3 id="gaussiansplatrendersystem-gathersplatsforcamera"><a href="#gaussiansplatrendersystem-gathersplatsforcamera" class="header-anchor">#</a> <code>GaussianSplatRenderSystem.GatherSplatsForCamera</code></h3> <p><code>GatherSplatsForCamera</code> 从 <code>m_Splats</code> 中取出所有需要渲染的3DGS对象放入 <code>m_ActiveSplats</code> 并对其按 <code>m_RenderOrder</code> 或其距离相机的远近进行排序：</p> <div class="language-c# line-numbers-mode"><pre class="language-text"><code>public bool GatherSplatsForCamera(Camera cam)
+{
+    if (cam.cameraType == CameraType.Preview)
+        return false;
+    // gather all active &amp; valid splat objects
+    m_ActiveSplats.Clear();
+    foreach (var kvp in m_Splats)
+    {
+        var gs = kvp.Key;
+        if (gs == null || !gs.isActiveAndEnabled || !gs.HasValidAsset || !gs.HasValidRenderSetup)
+            continue;
+        m_ActiveSplats.Add((kvp.Key, kvp.Value));
+    }
+    if (m_ActiveSplats.Count == 0)
+        return false;
+
+    // sort them by order and depth from camera
+    var camTr = cam.transform;
+    m_ActiveSplats.Sort((a, b) =&gt;
+    {
+        var orderA = a.Item1.m_RenderOrder;
+        var orderB = b.Item1.m_RenderOrder;
+        if (orderA != orderB)
+            return orderB.CompareTo(orderA);
+        var trA = a.Item1.transform;
+        var trB = b.Item1.transform;
+        var posA = camTr.InverseTransformPoint(trA.position);
+        var posB = camTr.InverseTransformPoint(trB.position);
+        return posA.z.CompareTo(posB.z);
+    });
+
+    return true;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><p>这里的 <code>m_RenderOrder</code> 是3DGS对象上的一个可调变量，用于手动控制多个3DGS对象的渲染顺序：</p> <div class="language-c# line-numbers-mode"><pre class="language-text"><code>public int m_RenderOrder;
+[Range(0.1f, 2.0f)] [Tooltip(&quot;Additional scaling factor for the splats&quot;)]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="gaussiansplatrendersystem-initialclearcmdbuffer"><a href="#gaussiansplatrendersystem-initialclearcmdbuffer" class="header-anchor">#</a> <code>GaussianSplatRenderSystem.InitialClearCmdBuffer</code></h3> <p><code>InitialClearCmdBuffer</code> 创建了一个 <code>CommandBuffer</code> 对象并将其绑定到相机的 <code>CameraEvent.BeforeForwardAlpha</code> 事件上，并通过判断条件保证每个相机只绑定一次：</p> <div class="language-c# line-numbers-mode"><pre class="language-text"><code>public CommandBuffer InitialClearCmdBuffer(Camera cam)
+{
+    m_CommandBuffer ??= new CommandBuffer {name = &quot;RenderGaussianSplats&quot;};
+    if (GraphicsSettings.currentRenderPipeline == null &amp;&amp; cam != null &amp;&amp; !m_CameraCommandBuffersDone.Contains(cam))
+    {
+        cam.AddCommandBuffer(CameraEvent.BeforeForwardAlpha, m_CommandBuffer);
+        m_CameraCommandBuffersDone.Add(cam);
+    }
+
+    // get render target for all splats
+    m_CommandBuffer.Clear();
+    return m_CommandBuffer;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>其中，<code>CommandBuffer</code> ‌是Unity提供的GPU渲染命令列表，可以延迟提交渲染指令，减少CPU/GPU负担，批量执行DrawCall，避免CPU过度调用API，它支持插入自定义渲染指令，如深度处理、后处理效果，并且可以脱离GameObject直接控制渲染，如画辅助线、调试网格等；<code>CameraEvent.BeforeForwardAlpha</code> 是在Unity中用于指定摄像机渲染事件的一个枚举值，它表示在渲染透明对象之前执行的操作。</p> <blockquote><p>在Unity渲染管线中，前向渲染路径通常包括以下几个主要阶段：‌不透明物体渲染 ‌-&gt; ‌透明物体渲染‌ -&gt; 后期效果处理‌。<code>CameraEvent.BeforeForwardAlpha</code>‌ 允许你在透明物体渲染之前插入自定义的渲染命令或效果。这可以用于在透明物体渲染之前执行一些特殊的处理，比如添加额外的光照效果、修改场景的某些部分等‌。</p></blockquote> <h3 id="gaussiansplatrendersystem-onprecullcamera-剩余部分"><a href="#gaussiansplatrendersystem-onprecullcamera-剩余部分" class="header-anchor">#</a> <code>GaussianSplatRenderSystem.OnPreCullCamera</code> 剩余部分</h3> <p>渲染纹理 (Render Texture) 是一种 Unity 在运行时创建和更新的纹理。你可以在其上绘制，然后像使用其它纹理一样使用。渲染纹理的一个典型应用是镜面的渲染，例如汽车的后视镜就可以贴一个Render Texture，它是从这个镜子所对应视角的摄像机渲染而来。
+而3DGS对象的渲染过程就是使用 Render Texture 实现的。</p> <h4 id="设置渲染纹理"><a href="#设置渲染纹理" class="header-anchor">#</a> 设置渲染纹理</h4> <div class="language-c# line-numbers-mode"><pre class="language-text"><code>    m_CommandBuffer.GetTemporaryRT(GaussianSplatRenderer.Props.GaussianSplatRT, -1, -1, 0, FilterMode.Point, GraphicsFormat.R16G16B16A16_SFloat);
+    m_CommandBuffer.SetRenderTarget(GaussianSplatRenderer.Props.GaussianSplatRT, BuiltinRenderTextureType.CurrentActive);
+    m_CommandBuffer.ClearRenderTarget(RTClearFlags.Color, new Color(0, 0, 0, 0), 0, 0);
+
+    // We only need this to determine whether we're rendering into backbuffer or not. However, detection this
+    // way only works in BiRP so only do it here.
+    m_CommandBuffer.SetGlobalTexture(GaussianSplatRenderer.Props.CameraTargetTexture, BuiltinRenderTextureType.CameraTarget);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>这里调用的 <code>GetTemporaryRT</code> 就是分配一段 Render Texture 内存空间用于渲染 Render Texture。
+查阅 Unity 文档中关于 <code>GetTemporaryRT</code> 的部分可以知道这里输入的几个参数的含义：</p> <ol><li><code>nameID</code> 为这个 Render Texture 的 ID，<code>GetTemporaryRT</code>对相同的 <code>nameID</code> 会返回同一段 Render Texture 内存空间，避免重复申请和销毁</li> <li><code>width</code> 和 <code>height</code> 是这个 Render Texture 的长宽，这里设置为 <code>-1</code> 表示使用 <code>CommandBuffer</code> 所绑定的相机的长宽；</li> <li><code>depthBuffer</code> 设置为 <code>0</code> 表示这个 Render Texture 没有深度信息；</li> <li><code>filter</code> 是纹理采样模式，设置为 <code>FilterMode.Point</code> 表示点采样模式，在这种模式下，屏幕上的像素会寻找最近的贴图像素点作为输出，这种采样方式比较生硬，但性能较好，由于直接使用了相机的长宽，这个 Render Texture 的像素和输出图像的像素一一对应，不需要考虑采样问题，所以用最快的采样方法；</li> <li><code>format</code> 设置为 <code>GraphicsFormat.R16G16B16A16_SFloat</code> 表示 Render Texture 的像素RGBA均为16位浮点数。</li></ol> <p>接下来的 <code>SetRenderTarget</code> 为 <code>m_CommandBuffer</code> 设置了输出位置，表示将 <code>m_CommandBuffer</code> 的渲染结果放入上面申请的 Render Texture 中；
+<code>ClearRenderTarget</code> 即清空这个 Render Texture 开始新一轮渲染；
+最后 <code>SetGlobalTexture</code> 将这个 Render Texture 设置为全局 Texture 以供其他着色器使用。</p> <h4 id="执行渲染"><a href="#执行渲染" class="header-anchor">#</a> 执行渲染</h4> <div class="language-c# line-numbers-mode"><pre class="language-text"><code>    // add sorting, view calc and drawing commands for each splat object
+    Material matComposite = SortAndRenderSplats(cam, m_CommandBuffer);
+
+    // compose
+    m_CommandBuffer.BeginSample(s_ProfCompose);
+    m_CommandBuffer.SetRenderTarget(BuiltinRenderTextureType.CameraTarget);
+    m_CommandBuffer.DrawProcedural(Matrix4x4.identity, matComposite, 0, MeshTopology.Triangles, 3, 1);
+    m_CommandBuffer.EndSample(s_ProfCompose);
+    m_CommandBuffer.ReleaseTemporaryRT(GaussianSplatRenderer.Props.GaussianSplatRT);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></div> <footer class="page-edit" style="display:none;"><div class="edit-link"><a href="https://github.com/yindaheng98/Notebook/edit/master/学习笔记/图形学/UnityGaussianSplatting.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">创建于: </span> <span class="time">2025-04-24 18:54:48</span></div> <br> <div class="last-updated"><span class="prefix">更新于: </span> <span class="time">2025-04-25 00:06:23</span></div></footer> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-44bd5a18 data-v-44bd5a18><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-44bd5a18><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-44bd5a18></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-44bd5a18></path></svg></div></div></div>
+    <script src="/assets/js/app.14d1c0f2.js" defer></script><script src="/assets/js/3.83ed42a4.js" defer></script><script src="/assets/js/1.5e69c820.js" defer></script><script src="/assets/js/186.fa134f8a.js" defer></script>
+  </body>
+</html>
